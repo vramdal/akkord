@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.staff {
+
+}
+
+.staff__line {
+  fill: white;
+}
+
+.note__head {
+  fill: white;
+}
