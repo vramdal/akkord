@@ -30,7 +30,7 @@ interface NoteHeadProps {
 }
 
 const NoteHead = (props: NoteHeadProps) => (
-    <ellipse cx={props.x} cy={positionInStaffToY(props.positionInStaff) + 3} rx={11} ry={11} className={'note__head'}/>
+    <ellipse data-testid={`x:${props.x},pos:${props.positionInStaff}`} cx={props.x} cy={positionInStaffToY(props.positionInStaff) + 3} rx={11} ry={11} className={'note__head'}/>
 )
 
 interface NoteProps {
@@ -57,7 +57,7 @@ const ExtensionLines = (props: ExtensionLinesProps) => {
     </>;
 }
 
-const Note = ({tone, x}: NoteProps) => {
+export const Note = ({tone, x}: NoteProps) => {
     let positionInStaff = mapToneToY(tone);
     return (
         <>
