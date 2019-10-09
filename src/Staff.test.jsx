@@ -10,6 +10,10 @@ import { _testing } from "./Staff.tsx";
 
 const { Note, ExtensionLines } = _testing;
 
+const toneA_1 = { baseTone: BaseTone.A, octave: -1, midiNote: 36, strKey: 'A-1', staffPosition: 13, hasNeighbor: false };
+const toneA0 = { baseTone: BaseTone.A, octave: 0, midiNote: 12, strKey: 'A0', staffPosition: 6, hasNeighbor: false };
+
+
 describe("integration", () => {
   it("should render staff and chord", () => {
     const testRenderer = TestRenderer.create(
@@ -112,8 +116,7 @@ describe("Chord", () => {
     expect(result.props.children).toHaveLength(1);
     const [note] = result.props.children;
     expect(note.props).toMatchObject({
-      hasNeighbor: false,
-      tone: expect.objectContaining(toneA0)
+      toneInfo: expect.objectContaining({...toneA0, hasNeighbor: false})
     });
   });
 
@@ -128,16 +131,13 @@ describe("Chord", () => {
     expect(result.props.children).toHaveLength(3);
     const [noteD0, noteA0, noteH0] = result.props.children;
     expect(noteA0.props).toMatchObject({
-      hasNeighbor: true,
-      tone: expect.objectContaining(toneA0)
+      toneInfo: expect.objectContaining({...toneA0, hasNeighbor: true})
     });
     expect(noteH0.props).toMatchObject({
-      hasNeighbor: true,
-      tone: expect.objectContaining(toneH0)
+      toneInfo: expect.objectContaining({...toneH0, hasNeighbor: true})
     });
     expect(noteD0.props).toMatchObject({
-      hasNeighbor: false,
-      tone: expect.objectContaining(toneD0)
+      toneInfo: expect.objectContaining({...toneD0, hasNeighbor: false})
     });
   });
 });
@@ -145,11 +145,10 @@ describe("Chord", () => {
 describe("Note", () => {
   const renderer = new ShallowRenderer();
   it("should render a single note", () => {
-    const toneA0 = { baseTone: BaseTone.A, octave: 0 };
     const x = 50;
 
     const result = renderer.render(
-      <Note tone={toneA0} hasNeighbor={false} x={x} />
+      <Note toneInfo={toneA0} x={x} />
     );
     const children = result.props.children.filter(child => child);
 
@@ -159,11 +158,10 @@ describe("Note", () => {
   });
 
   it("should render a note with extension lines", () => {
-    const toneA_1 = { baseTone: BaseTone.A, octave: -1 };
     const x = 50;
 
     const result = renderer.render(
-      <Note tone={toneA_1} hasNeighbor={false} x={x} />
+      <Note toneInfo={toneA_1} x={x} />
     );
     const children = result.props.children.filter(child => child);
 
@@ -180,6 +178,7 @@ describe("Extension lines", () => {
     const x = 50;
 
     const result = renderer.render(<ExtensionLines x={x} maxExtent={-3} />);
+
     const children = result.props.children.filter(child => child);
 
     expect(children).toHaveLength(2);

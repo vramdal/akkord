@@ -34,9 +34,8 @@ const NoteHead = (props: NoteHeadProps) => (
 );
 
 interface NoteProps {
-    tone: Tone,
-    x: number,
-    hasNeighbor: boolean
+    toneInfo: ToneInChord,
+    x: number
 }
 
 interface ExtensionLinesProps {
@@ -56,19 +55,18 @@ const ExtensionLines = (props: ExtensionLinesProps) => {
     </>;
 };
 
-const Note = ({tone, x, hasNeighbor}: NoteProps) => {
-    let positionInStaff = mapToneToStaffPosition(tone);
-    const neighborOffset = hasNeighbor && positionInStaff % 2 === 0;
+const Note = ({toneInfo, x}: NoteProps) => {
+    const {staffPosition, hasNeighbor} = toneInfo;
+    const neighborOffset = hasNeighbor && staffPosition % 2 === 0;
     return (
         <>
-            { ((positionInStaff >= 11 || positionInStaff < 0) && <ExtensionLines maxExtent={positionInStaff} x={x}/>) || undefined }
-            <NoteHead key={tone.baseTone + tone.octave} x={x + (neighborOffset ? 22 : 0)} positionInStaff={positionInStaff}/>
+            { ((staffPosition >= 11 || staffPosition < 0) && <ExtensionLines maxExtent={staffPosition} x={x}/>) || undefined }
+            <NoteHead key={toneInfo.strKey} x={x + (neighborOffset ? 22 : 0)} positionInStaff={staffPosition}/>
         </>
     )
 };
 
 Note.defaultProps = {
-    hasNeighbor: false
 };
 
 
@@ -118,7 +116,7 @@ const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) => MIDINoteA
 
 //const compareTones = (toneA: Tone, toneB: Tone) => toneToMidiNote(toneA) - toneToMidiNote(toneB);
 
-const compareToneInfos = (toneInfoA: ToneInfo, toneInfoB: ToneInfo) => compareMIDINotes(toneInfoA.midiNote, toneInfoB.midiNote);
+const compareToneInfos = (toneInfoA: {midiNote: MIDINote}, toneInfoB: {midiNote: MIDINote}) => compareMIDINotes(toneInfoA.midiNote, toneInfoB.midiNote);
 
 interface ToneInfo extends Tone {
     midiNote: MIDINote,
@@ -126,29 +124,34 @@ interface ToneInfo extends Tone {
     staffPosition: PositionInStaff,
 }
 
+interface ToneInChord extends ToneInfo {
+    hasNeighbor: boolean
+}
+
 interface ChordProps {
     tones: Array<Tone>
 }
 
 export const Chord = (props: ChordProps) => {
-    const toneInfos: Array<ToneInfo> = props.tones.map(tone => ({
+
+    const partialToneInfos: Array<ToneInfo> = props.tones.map((tone: Tone) => ({
         ...tone,
         midiNote: toneToMidiNote(tone),
         strKey: toneToStrKey(tone),
         staffPosition: mapToneToStaffPosition(tone),
     }));
-    const sortedTones = toneInfos.sort(compareToneInfos);
+    const sortedTones = partialToneInfos.sort(compareToneInfos);
     const neighbors = sortedTones.map((tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
         const hasNeighbor = (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
             (idx < tones.length - 1 && tones[idx + 1].staffPosition === tone.staffPosition - 1);
         return hasNeighbor;
     });
+    const toneInfos: Array<ToneInChord> = partialToneInfos.map((partialToneInfo, idx) => ({...partialToneInfo, hasNeighbor: neighbors[idx]}));
 
     return <>
-        {sortedTones.map((tone: ToneInfo, idx : number) => (<Note key={tone.strKey} x={50} tone={tone} hasNeighbor={neighbors[idx]}/>))}
+        {toneInfos.map((toneInfo: ToneInChord) => (<Note key={toneInfo.strKey} x={50} toneInfo={toneInfo}/>))}
     </>
 };
-
 
 export default (props: ChordProps) => {
 
