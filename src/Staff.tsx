@@ -109,7 +109,7 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
     }
 
     const baseTone = getNormalizedBaseTone(tone.baseTone);
-    const midiNote: MIDINote = baseTones.findIndex(currentBaseTone => baseTone) + 12 + tone.octave * 12;
+    const midiNote: MIDINote = baseTones.findIndex(currentBaseTone => currentBaseTone == baseTone) + 12 + tone.octave * 12;
 
     return midiNote;
 }
@@ -132,13 +132,14 @@ interface ChordProps {
     tones: Array<Tone>
 }
 
-const Chord = (props: ChordProps) => {
+export const Chord = (props: ChordProps) => {
     const toneInfos: Array<ToneInfo> = props.tones.map(tone => ({
         ...tone,
         midiNote: toneToMidiNote(tone),
         strKey: toneToStrKey(tone),
         staffPosition: mapToneToStaffPosition(tone),
     }));
+    debugger;
     const sortedTones = toneInfos.sort(compareToneInfos);
     const neighbors = sortedTones.map((tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
         const hasNeighbor = (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
