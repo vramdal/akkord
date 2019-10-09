@@ -1,7 +1,5 @@
 import React from "react";
-import { render, queries } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import App from "./App";
 import Staff, { Chord } from "./Staff.tsx";
 import ShallowRenderer from "react-test-renderer/shallow";
 import TestRenderer from "react-test-renderer";
@@ -61,58 +59,101 @@ describe("integration", () => {
             height="4"
             width={200}
             x={0}
-            y={25}
+            y={61}
           />
           <rect
             className="staff__line"
             height="4"
             width={200}
             x={0}
-            y={49}
+            y={85}
           />
           <rect
             className="staff__line"
             height="4"
             width={200}
             x={0}
-            y={73}
+            y={109}
           />
           <rect
             className="staff__line"
             height="4"
             width={200}
             x={0}
-            y={97}
+            y={133}
           />
           <rect
             className="staff__line"
             height="4"
             width={200}
             x={0}
-            y={121}
+            y={157}
           />
           <rect
             className="staff__line"
             height="4"
             width={40}
             x={30}
-            y={145}
+            y={181}
           />
           <ellipse
             className="note__head"
             cx={50}
-            cy={147}
+            cy={183}
             data-testid="x:50,pos:11"
-            rx={11}
+            rx={15}
             ry={11}
+          />
+          <rect
+            className="staff__line"
+            height={91}
+            width={4}
+            x={60}
+            y={89}
           />
           <ellipse
             className="note__head"
             cx={50}
-            cy={87}
+            cy={123}
             data-testid="x:50,pos:6"
-            rx={11}
+            rx={15}
             ry={11}
+          />
+          <rect
+            className="staff__line"
+            height={91}
+            width={4}
+            x={60}
+            y={29}
+          />
+          <rect
+            className="staff__line"
+            height="4"
+            width={40}
+            x={130}
+            y={37}
+          />
+          <rect
+            className="staff__line"
+            height="4"
+            width={40}
+            x={130}
+            y={13}
+          />
+          <ellipse
+            className="note__head"
+            cx={150}
+            cy={15}
+            data-testid="x:150,pos:-3"
+            rx={15}
+            ry={11}
+          />
+          <rect
+            className="staff__line"
+            height={91}
+            width={4}
+            x={135}
+            y={17}
           />
         </svg>
       </div>
@@ -120,20 +161,12 @@ describe("integration", () => {
   });
 });
 
-it("should place an A note on the right place", () => {
-  const { getByTestId } = render(<App />, {
-    queries: { ...queries }
-  });
-
-  expect(getByTestId("x:50,pos:5")).toBeInTheDocument();
-});
-
 describe("Chord", () => {
   const renderer = new ShallowRenderer();
   it("should render a single Note", () => {
     const toneA0 = { baseTone: BaseTone.A, octave: 0 };
 
-    const result = renderer.render(<Chord tones={[toneA0]} />);
+    const result = renderer.render(<Chord tones={[toneA0]} x={50}/>);
 
     expect(result.props.children).toHaveLength(1);
     const [note] = result.props.children;
@@ -148,7 +181,7 @@ describe("Chord", () => {
     const toneH0 = { baseTone: BaseTone.H, octave: 0 };
     const tones = [toneA0, toneD0, toneH0];
 
-    const result = renderer.render(<Chord tones={tones} />);
+    const result = renderer.render(<Chord tones={tones} x={50} />);
 
     expect(result.props.children).toHaveLength(3);
     const [noteD0, noteA0, noteH0] = result.props.children;
@@ -187,8 +220,8 @@ describe("Note", () => {
     const result = renderer.render(<Note toneInfo={toneA0} x={x} />);
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(1);
-    const [noteHead] = children;
+    expect(children).toHaveLength(2);
+    const [noteHead, stem] = children;
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 6 });
   });
 
@@ -198,8 +231,8 @@ describe("Note", () => {
     );
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(2);
-    const [ledgerLines, noteHead] = children;
+    expect(children).toHaveLength(3);
+    const [ledgerLines, noteHead, stem] = children;
     expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: 13 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 13 });
   });
@@ -210,8 +243,8 @@ describe("Note", () => {
     );
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(2);
-    const [ledgerLines, noteHead] = children;
+    expect(children).toHaveLength(3);
+    const [ledgerLines, noteHead, stem] = children;
     expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: -2 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: -2 });
   });

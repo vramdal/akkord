@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570519148048</updated>
       <workItem from="1570519151193" duration="35498000" />
-      <workItem from="1570631487521" duration="331000" />
+      <workItem from="1570631487521" duration="2449000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -163,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570630064839</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Extension lines -&gt; Ledger lines">
+      <created>1570631843232</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1570631843232</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Extension lines -&gt; Ledger lines">
+      <created>1570634311708</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570634311708</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +207,19 @@
     <MESSAGE value="Flytter mer logikk til Chord" />
     <MESSAGE value="Lager ikke lenger dobbelt opp med extension lines" />
     <MESSAGE value="Prettified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prettified" />
+    <MESSAGE value="Extension lines -&gt; Ledger lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extension lines -&gt; Ledger lines" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Staff.tsx</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

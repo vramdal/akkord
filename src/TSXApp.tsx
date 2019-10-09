@@ -25,7 +25,7 @@ function TSXApp() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Staff tones={[tone1, tone3, tone2]} />
+        <Staff tones={[tone1, tone2, tone3]} />
         <a
           className="App-link"
           href="https://reactjs.org"

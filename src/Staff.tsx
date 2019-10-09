@@ -1,5 +1,5 @@
 import React from "react";
-import { BaseTone, Tone } from "./Notes";
+import {BaseTone, Tone} from "./Notes";
 
 type PositionInStaff = number;
 
@@ -12,7 +12,7 @@ interface StaffLineProps {
 }
 
 function positionInStaffToY(position: PositionInStaff) {
-  return position * 12 + 12;
+  return position * 12 + 48;
 }
 
 const StaffLine = (props: StaffLineProps) => (
@@ -41,11 +41,34 @@ const NoteHead = (props: NoteHeadProps) => (
     data-testid={`x:${props.x},pos:${props.positionInStaff}`}
     cx={props.x}
     cy={positionInStaffToY(props.positionInStaff) + 3}
-    rx={11}
+    rx={15}
     ry={11}
     className={"note__head"}
   />
 );
+
+interface StemProps {
+  x: number,
+  notePosition: PositionInStaff,
+}
+
+const Stem = ({x, notePosition}: StemProps) => {
+  let stemDirection : "up" | "down" = (notePosition > 5 && notePosition < 14) ? "up" : "down";
+  const startPosition = stemDirection === "up" ? notePosition - 8 : notePosition;
+  const endPosition = stemDirection === "down" ? notePosition + 8 : notePosition;
+  const y = positionInStaffToY(startPosition) + 5;
+  const length = positionInStaffToY(endPosition) - y;
+  const xOffset = stemDirection === "down" ? -15 : +10;
+  return (
+      <rect
+          y={positionInStaffToY(startPosition) + 5}
+          x={x + xOffset}
+          width={4}
+          height={length}
+          className={"staff__line"}
+      />
+  );
+};
 
 interface NoteProps {
   toneInfo: ToneInChord;
@@ -100,6 +123,7 @@ const Note = ({ toneInfo, x }: NoteProps) => {
         x={x + (neighborOffset ? 22 : 0)}
         positionInStaff={staffPosition}
       />
+      <Stem notePosition={staffPosition} x={x}/>
     </>
   );
 };
@@ -108,6 +132,7 @@ Note.defaultProps = {
   isTop: true,
   isBottom: true
 };
+
 
 interface ChordProps {
   tones: Array<Tone>;
@@ -213,6 +238,7 @@ interface ToneInChord extends ToneInfo {
 
 interface ChordProps {
   tones: Array<Tone>;
+  x: number;
 }
 
 export const Chord = (props: ChordProps) => {
@@ -245,13 +271,13 @@ export const Chord = (props: ChordProps) => {
   return (
     <>
       {toneInfos.map((toneInfo: ToneInChord) => (
-        <Note key={toneInfo.strKey} x={50} toneInfo={toneInfo} />
+        <Note key={toneInfo.strKey} x={props.x} toneInfo={toneInfo} />
       ))}
     </>
   );
 };
 
-export default (props: ChordProps) => {
+export default (props: Omit<ChordProps, "x">) => {
   return (
     <div className={"staff"}>
       <svg
@@ -263,7 +289,8 @@ export default (props: ChordProps) => {
         {[1, 3, 5, 7, 9].map(lineIdx => (
           <StaffLine key={lineIdx} position={lineIdx} />
         ))}
-        <Chord tones={props.tones} />
+        <Chord tones={props.tones} x={50} />
+        <Chord tones={[{baseTone: BaseTone.C, octave: 2}]} x={150} />
       </svg>
     </div>
   );
