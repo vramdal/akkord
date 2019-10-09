@@ -35,7 +35,9 @@ const NoteHead = (props: NoteHeadProps) => (
 
 interface NoteProps {
     toneInfo: ToneInChord,
-    x: number
+    x: number,
+    isTop: boolean,
+    isBottom: boolean
 }
 
 interface ExtensionLinesProps {
@@ -56,17 +58,19 @@ const ExtensionLines = (props: ExtensionLinesProps) => {
 };
 
 const Note = ({toneInfo, x}: NoteProps) => {
-    const {staffPosition, hasNeighbor} = toneInfo;
+    const {staffPosition, hasNeighbor, isBottom, isTop} = toneInfo;
     const neighborOffset = hasNeighbor && staffPosition % 2 === 0;
     return (
         <>
-            { ((staffPosition >= 11 || staffPosition < 0) && <ExtensionLines maxExtent={staffPosition} x={x}/>) || undefined }
+            { ((isBottom && staffPosition >= 11 || isTop && staffPosition < 0) && <ExtensionLines maxExtent={staffPosition} x={x}/>) || undefined }
             <NoteHead key={toneInfo.strKey} x={x + (neighborOffset ? 22 : 0)} positionInStaff={staffPosition}/>
         </>
     )
 };
 
 Note.defaultProps = {
+    isTop: true,
+    isBottom: true,
 };
 
 
@@ -105,6 +109,7 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
     };
 
     const baseTone = getNormalizedBaseTone(tone.baseTone);
+    // noinspection UnnecessaryLocalVariableJS
     const midiNote: MIDINote = baseTones.findIndex(currentBaseTone => currentBaseTone === baseTone) + 12 + tone.octave * 12;
 
     return midiNote;
@@ -125,7 +130,9 @@ interface ToneInfo extends Tone {
 }
 
 interface ToneInChord extends ToneInfo {
-    hasNeighbor: boolean
+    hasNeighbor: boolean,
+    isTop: boolean,
+    isBottom: boolean
 }
 
 interface ChordProps {
@@ -142,14 +149,29 @@ export const Chord = (props: ChordProps) => {
     }));
     const sortedTones = partialToneInfos.sort(compareToneInfos);
     const neighbors = sortedTones.map((tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
+        // noinspection UnnecessaryLocalVariableJS
         const hasNeighbor = (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
             (idx < tones.length - 1 && tones[idx + 1].staffPosition === tone.staffPosition - 1);
         return hasNeighbor;
     });
-    const toneInfos: Array<ToneInChord> = partialToneInfos.map((partialToneInfo, idx) => ({...partialToneInfo, hasNeighbor: neighbors[idx]}));
+    const toneInfos: Array<ToneInChord> = partialToneInfos.map((partialToneInfo, idx) => ({
+        ...partialToneInfo,
+        hasNeighbor: neighbors[idx],
+        isTop: idx === partialToneInfos.length - 1,
+        isBottom: idx === 0
+    }));
 
     return <>
-        {toneInfos.map((toneInfo: ToneInChord) => (<Note key={toneInfo.strKey} x={50} toneInfo={toneInfo}/>))}
+        {
+            toneInfos.map((toneInfo: ToneInChord) => (
+                    <Note
+                        key={toneInfo.strKey}
+                        x={50}
+                        toneInfo={toneInfo}
+                    />
+                )
+            )
+        }
     </>
 };
 

@@ -12,6 +12,7 @@ const { Note, ExtensionLines } = _testing;
 
 const toneA_1 = { baseTone: BaseTone.A, octave: -1, midiNote: 36, strKey: 'A-1', staffPosition: 13, hasNeighbor: false };
 const toneA0 = { baseTone: BaseTone.A, octave: 0, midiNote: 12, strKey: 'A0', staffPosition: 6, hasNeighbor: false };
+const toneA1 = { baseTone: BaseTone.A, octave: 1, midiNote: 12, strKey: 'A1', staffPosition: -2, hasNeighbor: false };
 
 
 describe("integration", () => {
@@ -24,6 +25,7 @@ describe("integration", () => {
         ]}
       />
     );
+    // noinspection HtmlUnknownAttribute
     expect(testRenderer.toJSON()).toMatchInlineSnapshot(`
       <div
         className="staff"
@@ -99,7 +101,7 @@ describe("integration", () => {
 });
 
 it("should place an A note on the right place", () => {
-  const { getByText, getByTestId } = render(<App />, {
+  const { getByTestId } = render(<App />, {
     queries: { ...queries }
   });
 
@@ -130,22 +132,23 @@ describe("Chord", () => {
 
     expect(result.props.children).toHaveLength(3);
     const [noteD0, noteA0, noteH0] = result.props.children;
+    expect(noteD0.props).toMatchObject({
+      toneInfo: expect.objectContaining({...toneD0, hasNeighbor: false, isTop: false, isBottom: true})
+    });
     expect(noteA0.props).toMatchObject({
-      toneInfo: expect.objectContaining({...toneA0, hasNeighbor: true})
+      toneInfo: expect.objectContaining({...toneA0, hasNeighbor: true, isTop: false, isBottom: false})
     });
     expect(noteH0.props).toMatchObject({
-      toneInfo: expect.objectContaining({...toneH0, hasNeighbor: true})
-    });
-    expect(noteD0.props).toMatchObject({
-      toneInfo: expect.objectContaining({...toneD0, hasNeighbor: false})
+      toneInfo: expect.objectContaining({...toneH0, hasNeighbor: true, isTop: true, isBottom: false})
     });
   });
 });
 
 describe("Note", () => {
   const renderer = new ShallowRenderer();
+  const x = 50;
+
   it("should render a single note", () => {
-    const x = 50;
 
     const result = renderer.render(
       <Note toneInfo={toneA0} x={x} />
@@ -157,11 +160,9 @@ describe("Note", () => {
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 6 });
   });
 
-  it("should render a note with extension lines", () => {
-    const x = 50;
-
+  it("should render a note with extension lines below", () => {
     const result = renderer.render(
-      <Note toneInfo={toneA_1} x={x} />
+      <Note toneInfo={{...toneA_1, isBottom: true}} x={x} />
     );
     const children = result.props.children.filter(child => child);
 
@@ -169,6 +170,18 @@ describe("Note", () => {
     const [extensionLines, noteHead] = children;
     expect(extensionLines.props).toMatchObject({ x: x, maxExtent: 13 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 13 });
+  });
+
+  it("should render a note with extension lines above", () => {
+    const result = renderer.render(
+      <Note toneInfo={{...toneA1, isTop: true}} x={x} />
+    );
+    const children = result.props.children.filter(child => child);
+
+    expect(children).toHaveLength(2);
+    const [extensionLines, noteHead] = children;
+    expect(extensionLines.props).toMatchObject({ x: x, maxExtent: -2 });
+    expect(noteHead.props).toMatchObject({ x: x, positionInStaff: -2 });
   });
 });
 
