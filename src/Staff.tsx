@@ -17,12 +17,12 @@ function positionInStaffToY(position: PositionInStaff) {
 
 const StaffLine = (props: StaffLineProps) => (
     <rect y={positionInStaffToY(props.position) + 1} x={props.x} key={props.position} width={props.width} height="4" className={'staff__line'}/>
-)
+);
 
 StaffLine.defaultProps = {
     width: 200,
     x: 0
-}
+};
 
 interface NoteHeadProps {
     x: number,
@@ -31,7 +31,7 @@ interface NoteHeadProps {
 
 const NoteHead = (props: NoteHeadProps) => (
     <ellipse data-testid={`x:${props.x},pos:${props.positionInStaff}`} cx={props.x} cy={positionInStaffToY(props.positionInStaff) + 3} rx={11} ry={11} className={'note__head'}/>
-)
+);
 
 interface NoteProps {
     tone: Tone,
@@ -47,31 +47,29 @@ interface ExtensionLinesProps {
 const ExtensionLines = (props: ExtensionLinesProps) => {
     let positions: Array<number> = [];
     if (props.maxExtent >= 11) {
-        positions = new Array(props.maxExtent - 10).fill(0).map((position, idx) => idx + 11).filter(pos => pos % 2 === 1);
+        positions = new Array(props.maxExtent - 10).fill(0).map((position, idx) => idx + 11).filter(pos => pos % 2 !== 0);
     } else if (props.maxExtent < 0) {
-        positions = new Array(props.maxExtent * -1).fill(0).map((position, idx) => idx * -1).filter(pos => pos % 2 === 1);
+        positions = new Array(props.maxExtent * -1).fill(0).map((position, idx) => idx * -1 - 1).filter(pos => pos % 2 !== 0);
     }
-    console.log('positions', positions);  // eslint-disable-line no-console
-
     return <>
         {positions.map(position => <StaffLine key={position} position={position} x={props.x - 20} width={40}/>)}
     </>;
-}
+};
 
-export const Note = ({tone, x, hasNeighbor}: NoteProps) => {
+const Note = ({tone, x, hasNeighbor}: NoteProps) => {
     let positionInStaff = mapToneToStaffPosition(tone);
     const neighborOffset = hasNeighbor && positionInStaff % 2 === 0;
     return (
         <>
-            { (positionInStaff >= 11 || positionInStaff < 0) && <ExtensionLines maxExtent={positionInStaff} x={x}/> }
+            { ((positionInStaff >= 11 || positionInStaff < 0) && <ExtensionLines maxExtent={positionInStaff} x={x}/>) || undefined }
             <NoteHead key={tone.baseTone + tone.octave} x={x + (neighborOffset ? 22 : 0)} positionInStaff={positionInStaff}/>
         </>
     )
-}
+};
 
 Note.defaultProps = {
     hasNeighbor: false
-}
+};
 
 
 interface ChordProps {
@@ -90,9 +88,9 @@ const mapToneToStaffPosition = (tone: Tone) : PositionInStaff => {
             case BaseTone.H: case BaseTone.HFlat: return 5;
             default: throw new Error();
         }
-    }
+    };
     return getBasePosition() - tone.octave * 7;
-}
+};
 
 
 const toneToMidiNote = (tone: Tone): MIDINote => {
@@ -106,13 +104,13 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
             case BaseTone.HFlat: return BaseTone.ASharp;
             default: return baseTone;
         }
-    }
+    };
 
     const baseTone = getNormalizedBaseTone(tone.baseTone);
-    const midiNote: MIDINote = baseTones.findIndex(currentBaseTone => currentBaseTone == baseTone) + 12 + tone.octave * 12;
+    const midiNote: MIDINote = baseTones.findIndex(currentBaseTone => currentBaseTone === baseTone) + 12 + tone.octave * 12;
 
     return midiNote;
-}
+};
 
 const toneToStrKey = (tone: Tone) => tone.baseTone + tone.octave;
 
@@ -139,7 +137,6 @@ export const Chord = (props: ChordProps) => {
         strKey: toneToStrKey(tone),
         staffPosition: mapToneToStaffPosition(tone),
     }));
-    debugger;
     const sortedTones = toneInfos.sort(compareToneInfos);
     const neighbors = sortedTones.map((tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
         const hasNeighbor = (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
@@ -156,7 +153,7 @@ export const Chord = (props: ChordProps) => {
 export default (props: ChordProps) => {
 
     return <div className={'staff'}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" className={'staff'}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" className={'staff'}>
             {
                 [1, 3, 5, 7, 9].map(lineIdx => (<StaffLine key={lineIdx} position={lineIdx}/>))
             }
@@ -165,3 +162,4 @@ export default (props: ChordProps) => {
     </div>
 }
 
+export const _testing = {Note, ExtensionLines};

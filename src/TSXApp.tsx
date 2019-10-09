@@ -7,7 +7,7 @@ import { BaseTone, Tone } from './Notes';
 function TSXApp() {
     const tone1: Tone = {
         baseTone: BaseTone.A,
-        octave: 0
+        octave: 1
     };
     const tone2: Tone = {
         baseTone: BaseTone.H,
