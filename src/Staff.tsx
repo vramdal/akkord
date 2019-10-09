@@ -59,7 +59,7 @@ interface ExtensionLinesProps {
   x: number;
 }
 
-const ExtensionLines = (props: ExtensionLinesProps) => {
+const LedgerLines = (props: ExtensionLinesProps) => {
   let positions: Array<number> = [];
   if (props.maxExtent >= 11) {
     positions = new Array(props.maxExtent - 10)
@@ -92,7 +92,7 @@ const Note = ({ toneInfo, x }: NoteProps) => {
   return (
     <>
       {(((isBottom && staffPosition >= 11) || (isTop && staffPosition < 0)) && (
-        <ExtensionLines maxExtent={staffPosition} x={x} />
+        <LedgerLines maxExtent={staffPosition} x={x} />
       )) ||
         undefined}
       <NoteHead
@@ -269,4 +269,4 @@ export default (props: ChordProps) => {
   );
 };
 
-export const _testing = { Note, ExtensionLines };
+export const _testing = { Note, LedgerLines };

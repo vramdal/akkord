@@ -8,7 +8,7 @@ import TestRenderer from "react-test-renderer";
 import { BaseTone } from "./Notes";
 import { _testing } from "./Staff.tsx";
 
-const { Note, ExtensionLines } = _testing;
+const { Note, LedgerLines } = _testing;
 
 const toneA_1 = {
   baseTone: BaseTone.A,
@@ -192,37 +192,38 @@ describe("Note", () => {
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 6 });
   });
 
-  it("should render a note with extension lines below", () => {
+  it("should render a note with ledger lines below", () => {
     const result = renderer.render(
       <Note toneInfo={{ ...toneA_1, isBottom: true }} x={x} />
     );
     const children = result.props.children.filter(child => child);
 
     expect(children).toHaveLength(2);
-    const [extensionLines, noteHead] = children;
-    expect(extensionLines.props).toMatchObject({ x: x, maxExtent: 13 });
+    const [ledgerLines, noteHead] = children;
+    expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: 13 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 13 });
   });
 
-  it("should render a note with extension lines above", () => {
+  it("should render a note with ledger lines above", () => {
     const result = renderer.render(
       <Note toneInfo={{ ...toneA1, isTop: true }} x={x} />
     );
     const children = result.props.children.filter(child => child);
 
     expect(children).toHaveLength(2);
-    const [extensionLines, noteHead] = children;
-    expect(extensionLines.props).toMatchObject({ x: x, maxExtent: -2 });
+    const [ledgerLines, noteHead] = children;
+    expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: -2 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: -2 });
   });
 });
 
-describe("Extension lines", () => {
+describe("Ledger lines", () => {
   const renderer = new ShallowRenderer();
-  it("should render extension lines above", () => {
+
+  it("should render ledger lines above", () => {
     const x = 50;
 
-    const result = renderer.render(<ExtensionLines x={x} maxExtent={-3} />);
+    const result = renderer.render(<LedgerLines x={x} maxExtent={-3} />);
 
     const children = result.props.children.filter(child => child);
 
@@ -231,10 +232,11 @@ describe("Extension lines", () => {
     expect(line1.props).toMatchObject({ position: -1 });
     expect(line2.props).toMatchObject({ position: -3 });
   });
-  it("should render extension lines below", () => {
+
+  it("should render ledger lines below", () => {
     const x = 50;
 
-    const result = renderer.render(<ExtensionLines x={x} maxExtent={13} />);
+    const result = renderer.render(<LedgerLines x={x} maxExtent={13} />);
     const children = result.props.children.filter(child => child);
 
     expect(children).toHaveLength(2);
