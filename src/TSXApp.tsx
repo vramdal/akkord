@@ -1,22 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Staff from './Staff';
-import { BaseTone, Tone } from './Notes';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Staff from "./Staff";
+import { BaseTone, Tone } from "./Notes";
 
 function TSXApp() {
-    const tone1: Tone = {
-        baseTone: BaseTone.A,
-        octave: 1
-    };
-    const tone2: Tone = {
-        baseTone: BaseTone.H,
-        octave: 0
-    };
-    const tone3: Tone = {
-        baseTone: BaseTone.D,
-        octave: 0
-    };
+  const tone1: Tone = {
+    baseTone: BaseTone.A,
+    octave: 1
+  };
+  const tone2: Tone = {
+    baseTone: BaseTone.H,
+    octave: 0
+  };
+  const tone3: Tone = {
+    baseTone: BaseTone.D,
+    octave: 0
+  };
 
   return (
     <div className="App">
@@ -25,7 +25,7 @@ function TSXApp() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Staff tones={[tone1, tone3, tone2]}/>
+        <Staff tones={[tone1, tone3, tone2]} />
         <a
           className="App-link"
           href="https://reactjs.org"
