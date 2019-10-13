@@ -116,8 +116,8 @@ describe("integration", () => {
             className="staff__line"
             height={151}
             width={4}
-            x={35}
-            y={125}
+            x={60}
+            y={29}
           />
           <rect
             className="staff__line"
@@ -174,8 +174,8 @@ describe("integration", () => {
             className="staff__line"
             height={91}
             width={4}
-            x={235}
-            y={209}
+            x={260}
+            y={113}
           />
         </svg>
       </div>

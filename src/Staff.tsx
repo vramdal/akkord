@@ -55,7 +55,7 @@ interface StemProps {
 const Stem = ({x, sortedNotePositions}: StemProps) => {
   const topNotePosition = sortedNotePositions[0];
   const bottomNotePosition = sortedNotePositions[sortedNotePositions.length - 1];
-  let stemDirection : "up" | "down" = (bottomNotePosition - topNotePosition > 5 && bottomNotePosition - topNotePosition < 14) ? "up" : "down";
+  const stemDirection : "up" | "down" = (bottomNotePosition > 5 && bottomNotePosition < 14) ? "up" : "down";
   const startPosition = stemDirection === "up" ? bottomNotePosition - 8 : bottomNotePosition;
   const endPosition = stemDirection === "down" ? topNotePosition + 8 : topNotePosition;
   const y = positionInStaffToY(startPosition) + 5;
