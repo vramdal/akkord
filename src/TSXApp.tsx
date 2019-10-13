@@ -17,7 +17,6 @@ function TSXApp() {
     baseTone: BaseTone.D,
     octave: 0
   };
-
   return (
     <div className="App">
       <header className="App-header">

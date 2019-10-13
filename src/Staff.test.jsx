@@ -51,41 +51,41 @@ describe("integration", () => {
         <svg
           className="staff"
           height="300"
-          width="200"
+          width="300"
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
             className="staff__line"
             height="4"
-            width={200}
+            width={300}
             x={0}
             y={61}
           />
           <rect
             className="staff__line"
             height="4"
-            width={200}
+            width={300}
             x={0}
             y={85}
           />
           <rect
             className="staff__line"
             height="4"
-            width={200}
+            width={300}
             x={0}
             y={109}
           />
           <rect
             className="staff__line"
             height="4"
-            width={200}
+            width={300}
             x={0}
             y={133}
           />
           <rect
             className="staff__line"
             height="4"
-            width={200}
+            width={300}
             x={0}
             y={157}
           />
@@ -104,13 +104,6 @@ describe("integration", () => {
             rx={15}
             ry={11}
           />
-          <rect
-            className="staff__line"
-            height={91}
-            width={4}
-            x={60}
-            y={89}
-          />
           <ellipse
             className="note__head"
             cx={50}
@@ -121,10 +114,10 @@ describe("integration", () => {
           />
           <rect
             className="staff__line"
-            height={91}
+            height={151}
             width={4}
-            x={60}
-            y={29}
+            x={35}
+            y={125}
           />
           <rect
             className="staff__line"
@@ -155,6 +148,35 @@ describe("integration", () => {
             x={135}
             y={17}
           />
+          <rect
+            className="staff__line"
+            height="4"
+            width={40}
+            x={230}
+            y={181}
+          />
+          <rect
+            className="staff__line"
+            height="4"
+            width={40}
+            x={230}
+            y={205}
+          />
+          <ellipse
+            className="note__head"
+            cx={250}
+            cy={207}
+            data-testid="x:250,pos:13"
+            rx={15}
+            ry={11}
+          />
+          <rect
+            className="staff__line"
+            height={91}
+            width={4}
+            x={235}
+            y={209}
+          />
         </svg>
       </div>
     `);
@@ -166,10 +188,10 @@ describe("Chord", () => {
   it("should render a single Note", () => {
     const toneA0 = { baseTone: BaseTone.A, octave: 0 };
 
-    const result = renderer.render(<Chord tones={[toneA0]} x={50}/>);
+    const result = renderer.render(<Chord tones={[toneA0]} x={50} />);
+    const [notes] = result.props.children;
+    const [note] = notes;
 
-    expect(result.props.children).toHaveLength(1);
-    const [note] = result.props.children;
     expect(note.props).toMatchObject({
       toneInfo: expect.objectContaining({ ...toneA0, hasNeighbor: false })
     });
@@ -182,9 +204,9 @@ describe("Chord", () => {
     const tones = [toneA0, toneD0, toneH0];
 
     const result = renderer.render(<Chord tones={tones} x={50} />);
+    const [notes] = result.props.children;
+    const [noteD0, noteA0, noteH0] = notes;
 
-    expect(result.props.children).toHaveLength(3);
-    const [noteD0, noteA0, noteH0] = result.props.children;
     expect(noteD0.props).toMatchObject({
       toneInfo: expect.objectContaining({
         ...toneD0,
@@ -220,8 +242,8 @@ describe("Note", () => {
     const result = renderer.render(<Note toneInfo={toneA0} x={x} />);
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(2);
-    const [noteHead, stem] = children;
+    expect(children).toHaveLength(1);
+    const [noteHead] = children;
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 6 });
   });
 
@@ -231,8 +253,7 @@ describe("Note", () => {
     );
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(3);
-    const [ledgerLines, noteHead, stem] = children;
+    const [ledgerLines, noteHead] = children;
     expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: 13 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: 13 });
   });
@@ -243,8 +264,8 @@ describe("Note", () => {
     );
     const children = result.props.children.filter(child => child);
 
-    expect(children).toHaveLength(3);
-    const [ledgerLines, noteHead, stem] = children;
+    expect(children).toHaveLength(2);
+    const [ledgerLines, noteHead] = children;
     expect(ledgerLines.props).toMatchObject({ x: x, maxExtent: -2 });
     expect(noteHead.props).toMatchObject({ x: x, positionInStaff: -2 });
   });

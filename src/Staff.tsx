@@ -49,13 +49,15 @@ const NoteHead = (props: NoteHeadProps) => (
 
 interface StemProps {
   x: number,
-  notePosition: PositionInStaff,
+  sortedNotePositions: Array<PositionInStaff>,
 }
 
-const Stem = ({x, notePosition}: StemProps) => {
-  let stemDirection : "up" | "down" = (notePosition > 5 && notePosition < 14) ? "up" : "down";
-  const startPosition = stemDirection === "up" ? notePosition - 8 : notePosition;
-  const endPosition = stemDirection === "down" ? notePosition + 8 : notePosition;
+const Stem = ({x, sortedNotePositions}: StemProps) => {
+  const topNotePosition = sortedNotePositions[0];
+  const bottomNotePosition = sortedNotePositions[sortedNotePositions.length - 1];
+  let stemDirection : "up" | "down" = (bottomNotePosition - topNotePosition > 5 && bottomNotePosition - topNotePosition < 14) ? "up" : "down";
+  const startPosition = stemDirection === "up" ? bottomNotePosition - 8 : bottomNotePosition;
+  const endPosition = stemDirection === "down" ? topNotePosition + 8 : topNotePosition;
   const y = positionInStaffToY(startPosition) + 5;
   const length = positionInStaffToY(endPosition) - y;
   const xOffset = stemDirection === "down" ? -15 : +10;
@@ -123,7 +125,6 @@ const Note = ({ toneInfo, x }: NoteProps) => {
         x={x + (neighborOffset ? 22 : 0)}
         positionInStaff={staffPosition}
       />
-      <Stem notePosition={staffPosition} x={x}/>
     </>
   );
 };
@@ -267,12 +268,16 @@ export const Chord = (props: ChordProps) => {
       isBottom: idx === 0
     })
   );
+  const staffPositions = toneInfos.map(toneInfo => toneInfo.staffPosition);
+  // const topPosition : number = Math.min(...staffPositions);
+  // const bottomPosition : number = Math.max(...staffPositions);
 
   return (
     <>
       {toneInfos.map((toneInfo: ToneInChord) => (
         <Note key={toneInfo.strKey} x={props.x} toneInfo={toneInfo} />
       ))}
+      <Stem x={props.x} sortedNotePositions={staffPositions}/>
     </>
   );
 };
@@ -282,15 +287,16 @@ export default (props: Omit<ChordProps, "x">) => {
     <div className={"staff"}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="200"
+        width="300"
         height="300"
         className={"staff"}
       >
         {[1, 3, 5, 7, 9].map(lineIdx => (
-          <StaffLine key={lineIdx} position={lineIdx} />
+          <StaffLine key={lineIdx} position={lineIdx} width={300} />
         ))}
         <Chord tones={props.tones} x={50} />
         <Chord tones={[{baseTone: BaseTone.C, octave: 2}]} x={150} />
+        <Chord tones={[{baseTone: BaseTone.A, octave: -1}]} x={250} />
       </svg>
     </div>
   );
