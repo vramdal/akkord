@@ -51,131 +51,43 @@ describe("integration", () => {
         <svg
           className="staff"
           height="300"
-          width="300"
+          width={0}
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
             className="staff__line"
             height="4"
-            width={300}
+            width={0}
             x={0}
             y={61}
           />
           <rect
             className="staff__line"
             height="4"
-            width={300}
+            width={0}
             x={0}
             y={85}
           />
           <rect
             className="staff__line"
             height="4"
-            width={300}
+            width={0}
             x={0}
             y={109}
           />
           <rect
             className="staff__line"
             height="4"
-            width={300}
+            width={0}
             x={0}
             y={133}
           />
           <rect
             className="staff__line"
             height="4"
-            width={300}
+            width={0}
             x={0}
             y={157}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={40}
-            x={30}
-            y={181}
-          />
-          <ellipse
-            className="note__head"
-            cx={50}
-            cy={183}
-            data-testid="x:50,pos:11"
-            rx={15}
-            ry={11}
-          />
-          <ellipse
-            className="note__head"
-            cx={50}
-            cy={123}
-            data-testid="x:50,pos:6"
-            rx={15}
-            ry={11}
-          />
-          <rect
-            className="staff__line"
-            height={151}
-            width={4}
-            x={60}
-            y={29}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={40}
-            x={130}
-            y={37}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={40}
-            x={130}
-            y={13}
-          />
-          <ellipse
-            className="note__head"
-            cx={150}
-            cy={15}
-            data-testid="x:150,pos:-3"
-            rx={15}
-            ry={11}
-          />
-          <rect
-            className="staff__line"
-            height={91}
-            width={4}
-            x={135}
-            y={17}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={40}
-            x={230}
-            y={181}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={40}
-            x={230}
-            y={205}
-          />
-          <ellipse
-            className="note__head"
-            cx={250}
-            cy={207}
-            data-testid="x:250,pos:13"
-            rx={15}
-            ry={11}
-          />
-          <rect
-            className="staff__line"
-            height={91}
-            width={4}
-            x={260}
-            y={113}
           />
         </svg>
       </div>

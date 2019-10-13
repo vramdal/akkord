@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {BaseTone, Tone} from "./Notes";
 
 type PositionInStaff = number;
@@ -16,14 +16,14 @@ function positionInStaffToY(position: PositionInStaff) {
 }
 
 const StaffLine = (props: StaffLineProps) => (
-  <rect
-    y={positionInStaffToY(props.position) + 1}
-    x={props.x}
-    key={props.position}
-    width={props.width}
-    height="4"
-    className={"staff__line"}
-  />
+    <rect
+        y={positionInStaffToY(props.position) + 1}
+        x={props.x}
+        key={props.position}
+        width={props.width}
+        height="4"
+        className={"staff__line"}
+    />
 );
 
 StaffLine.defaultProps = {
@@ -37,22 +37,21 @@ interface NoteHeadProps {
 }
 
 const NoteHead = (props: NoteHeadProps) => (
-  <ellipse
-    data-testid={`x:${props.x},pos:${props.positionInStaff}`}
-    cx={props.x}
-    cy={positionInStaffToY(props.positionInStaff) + 3}
-    rx={15}
-    ry={11}
-    className={"note__head"}
-  />
+    <ellipse
+        data-testid={`x:${props.x},pos:${props.positionInStaff}`}
+        cx={props.x}
+        cy={positionInStaffToY(props.positionInStaff) + 3}
+        rx={15}
+        ry={11}
+        className={"note__head"}
+    />
 );
 
 interface StemProps {
-  x: number,
   sortedNotePositions: Array<PositionInStaff>,
 }
 
-const Stem = ({x, sortedNotePositions}: StemProps) => {
+const Stem = ({sortedNotePositions}: StemProps) => {
   const topNotePosition = sortedNotePositions[0];
   const bottomNotePosition = sortedNotePositions[sortedNotePositions.length - 1];
   const stemDirection : "up" | "down" = (bottomNotePosition > 5 && bottomNotePosition < 14) ? "up" : "down";
@@ -61,10 +60,11 @@ const Stem = ({x, sortedNotePositions}: StemProps) => {
   const y = positionInStaffToY(startPosition) + 5;
   const length = positionInStaffToY(endPosition) - y;
   const xOffset = stemDirection === "down" ? -15 : +10;
+  const cursor = useContext(CursorContext);
   return (
       <rect
           y={positionInStaffToY(startPosition) + 5}
-          x={x + xOffset}
+          x={cursor.x + xOffset}
           width={4}
           height={length}
           className={"staff__line"}
@@ -88,26 +88,26 @@ const LedgerLines = (props: ExtensionLinesProps) => {
   let positions: Array<number> = [];
   if (props.maxExtent >= 11) {
     positions = new Array(props.maxExtent - 10)
-      .fill(0)
-      .map((position, idx) => idx + 11)
-      .filter(pos => pos % 2 !== 0);
+        .fill(0)
+        .map((position, idx) => idx + 11)
+        .filter(pos => pos % 2 !== 0);
   } else if (props.maxExtent < 0) {
     positions = new Array(props.maxExtent * -1)
-      .fill(0)
-      .map((position, idx) => idx * -1 - 1)
-      .filter(pos => pos % 2 !== 0);
+        .fill(0)
+        .map((position, idx) => idx * -1 - 1)
+        .filter(pos => pos % 2 !== 0);
   }
   return (
-    <>
-      {positions.map(position => (
-        <StaffLine
-          key={position}
-          position={position}
-          x={props.x - 20}
-          width={40}
-        />
-      ))}
-    </>
+      <>
+        {positions.map(position => (
+            <StaffLine
+                key={position}
+                position={position}
+                x={props.x - 20}
+                width={40}
+            />
+        ))}
+      </>
   );
 };
 
@@ -115,17 +115,17 @@ const Note = ({ toneInfo, x }: NoteProps) => {
   const { staffPosition, hasNeighbor, isBottom, isTop } = toneInfo;
   const neighborOffset = hasNeighbor && staffPosition % 2 === 0;
   return (
-    <>
-      {(((isBottom && staffPosition >= 11) || (isTop && staffPosition < 0)) && (
-        <LedgerLines maxExtent={staffPosition} x={x} />
-      )) ||
+      <>
+        {(((isBottom && staffPosition >= 11) || (isTop && staffPosition < 0)) && (
+            <LedgerLines maxExtent={staffPosition} x={x} />
+        )) ||
         undefined}
-      <NoteHead
-        key={toneInfo.strKey}
-        x={x + (neighborOffset ? 22 : 0)}
-        positionInStaff={staffPosition}
-      />
-    </>
+        <NoteHead
+            key={toneInfo.strKey}
+            x={x + (neighborOffset ? 22 : 0)}
+            positionInStaff={staffPosition}
+        />
+      </>
   );
 };
 
@@ -206,9 +206,9 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
   const baseTone = getNormalizedBaseTone(tone.baseTone);
   // noinspection UnnecessaryLocalVariableJS
   const midiNote: MIDINote =
-    baseTones.findIndex(currentBaseTone => currentBaseTone === baseTone) +
-    12 +
-    tone.octave * 12;
+      baseTones.findIndex(currentBaseTone => currentBaseTone === baseTone) +
+      12 +
+      tone.octave * 12;
 
   return midiNote;
 };
@@ -216,13 +216,13 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
 const toneToStrKey = (tone: Tone) => tone.baseTone + tone.octave;
 
 const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) =>
-  MIDINoteA - MIDINoteB;
+    MIDINoteA - MIDINoteB;
 
 //const compareTones = (toneA: Tone, toneB: Tone) => toneToMidiNote(toneA) - toneToMidiNote(toneB);
 
 const compareToneInfos = (
-  toneInfoA: { midiNote: MIDINote },
-  toneInfoB: { midiNote: MIDINote }
+    toneInfoA: { midiNote: MIDINote },
+    toneInfoB: { midiNote: MIDINote }
 ) => compareMIDINotes(toneInfoA.midiNote, toneInfoB.midiNote);
 
 interface ToneInfo extends Tone {
@@ -237,9 +237,18 @@ interface ToneInChord extends ToneInfo {
   isBottom: boolean;
 }
 
+const CursorContext = React.createContext({x: 50});
+
+
+const Cursor = (props: {x: number, children: any}) =>
+    <CursorContext.Provider value={{x: props.x}}>
+      {props.children}
+    </CursorContext.Provider>
+;
+
+
 interface ChordProps {
   tones: Array<Tone>;
-  x: number;
 }
 
 export const Chord = (props: ChordProps) => {
@@ -249,56 +258,60 @@ export const Chord = (props: ChordProps) => {
     strKey: toneToStrKey(tone),
     staffPosition: mapToneToStaffPosition(tone)
   }));
+  const cursor = useContext(CursorContext);
   const sortedTones = partialToneInfos.sort(compareToneInfos);
   const neighbors = sortedTones.map(
-    (tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
-      // noinspection UnnecessaryLocalVariableJS
-      const hasNeighbor =
-        (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
-        (idx < tones.length - 1 &&
-          tones[idx + 1].staffPosition === tone.staffPosition - 1);
-      return hasNeighbor;
-    }
+      (tone: ToneInfo, idx: number, tones: Array<ToneInfo>) => {
+        // noinspection UnnecessaryLocalVariableJS
+        const hasNeighbor =
+            (idx > 0 && tones[idx - 1].staffPosition === tone.staffPosition + 1) ||
+            (idx < tones.length - 1 &&
+                tones[idx + 1].staffPosition === tone.staffPosition - 1);
+        return hasNeighbor;
+      }
   );
   const toneInfos: Array<ToneInChord> = partialToneInfos.map(
-    (partialToneInfo, idx) => ({
-      ...partialToneInfo,
-      hasNeighbor: neighbors[idx],
-      isTop: idx === partialToneInfos.length - 1,
-      isBottom: idx === 0
-    })
+      (partialToneInfo, idx) => ({
+        ...partialToneInfo,
+        hasNeighbor: neighbors[idx],
+        isTop: idx === partialToneInfos.length - 1,
+        isBottom: idx === 0
+      })
   );
   const staffPositions = toneInfos.map(toneInfo => toneInfo.staffPosition);
   // const topPosition : number = Math.min(...staffPositions);
   // const bottomPosition : number = Math.max(...staffPositions);
 
   return (
-    <>
-      {toneInfos.map((toneInfo: ToneInChord) => (
-        <Note key={toneInfo.strKey} x={props.x} toneInfo={toneInfo} />
-      ))}
-      <Stem x={props.x} sortedNotePositions={staffPositions}/>
-    </>
+      <>
+        {toneInfos.map((toneInfo: ToneInChord) => (
+            <Note key={toneInfo.strKey} x={cursor.x} toneInfo={toneInfo} />
+        ))}
+        <Stem sortedNotePositions={staffPositions}/>
+      </>
   );
 };
 
-export default (props: Omit<ChordProps, "x">) => {
+export default (props: {children: Array<any>}) => {
+  const staffWidth = props.children && props.children.length * 100 + 100 || 0;
   return (
-    <div className={"staff"}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="300"
-        height="300"
-        className={"staff"}
-      >
-        {[1, 3, 5, 7, 9].map(lineIdx => (
-          <StaffLine key={lineIdx} position={lineIdx} width={300} />
-        ))}
-        <Chord tones={props.tones} x={50} />
-        <Chord tones={[{baseTone: BaseTone.C, octave: 2}]} x={150} />
-        <Chord tones={[{baseTone: BaseTone.A, octave: -1}]} x={250} />
-      </svg>
-    </div>
+      <div className={"staff"}>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={staffWidth}
+            height="300"
+            className={"staff"}
+        >
+          {[1, 3, 5, 7, 9].map(lineIdx => (
+              <StaffLine key={lineIdx} position={lineIdx} width={staffWidth} />
+          ))}
+          {props.children && props.children.map((child, idx) =>
+              <Cursor x={50 + idx * 100} key={`child-${idx}`}>
+                {child}
+              </Cursor>
+          )}
+        </svg>
+      </div>
   );
 };
 

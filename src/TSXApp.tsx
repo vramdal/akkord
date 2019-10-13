@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Staff from "./Staff";
+import Staff, {Chord} from "./Staff";
 import { BaseTone, Tone } from "./Notes";
 
 function TSXApp() {
@@ -17,6 +17,14 @@ function TSXApp() {
     baseTone: BaseTone.D,
     octave: 0
   };
+  const tone4: Tone = {
+    baseTone: BaseTone.G,
+    octave: 0
+  };
+  const tone5: Tone = {
+    baseTone: BaseTone.E,
+    octave: 0
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +32,15 @@ function TSXApp() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Staff tones={[tone1, tone2, tone3]} />
+        <Staff>
+          <Chord tones={[tone1]} />
+          <Chord tones={[tone2, tone3]} />
+          <Chord tones={[tone1, tone3]} />
+          <Chord tones={[tone1, tone2]} />
+          <Chord tones={[tone4]} />
+          <Chord tones={[tone4, tone5]} />
+          <Chord tones={[tone3, tone5]} />
+        </Staff>
         <a
           className="App-link"
           href="https://reactjs.org"
