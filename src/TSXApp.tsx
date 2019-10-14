@@ -33,11 +33,11 @@ function TSXApp() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Staff>
-          <Chord tones={[tone1]} />
-          <Chord tones={[tone2, tone3]} />
-          <Chord tones={[tone1, tone3]} />
-          <Chord tones={[tone1, tone2]} />
-          <Chord tones={[tone4]} />
+          {/*<Chord tones={[tone1]} />*/}
+          {/*<Chord tones={[tone2, tone3]} />*/}
+          {/*<Chord tones={[tone1, tone3]} />*/}
+          {/*<Chord tones={[tone1, tone2]} />*/}
+          {/*<Chord tones={[tone4]} />*/}
           <Chord tones={[tone4, tone5]} />
           <Chord tones={[tone3, tone5]} />
         </Staff>
