@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Stems, WIP">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Jest_tests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Staff">
+  <component name="RunManager" selected="Jest.Chord.should render a half note">
+    <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-names>
+        <test-name value="Chord" />
+        <test-name value="should render a half note" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -123,9 +137,11 @@
       <item itemvalue="Jest.Note.should render a single note" />
       <item itemvalue="Jest.Staff" />
       <item itemvalue="Jest.Staff.should render a single chord" />
+      <item itemvalue="Jest.Chord.should render a half note" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Chord.should render a half note" />
         <item itemvalue="Jest.Staff.should render a single chord" />
       </list>
     </recent_temporary>
@@ -142,7 +158,7 @@
       <updated>1570519148048</updated>
       <workItem from="1570519151193" duration="35498000" />
       <workItem from="1570631487521" duration="3177000" />
-      <workItem from="1570714584724" duration="13229000" />
+      <workItem from="1570714584724" duration="18117000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -242,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570634580983</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fikser problem med at bredde ble 0 når det bare vare en akkord. Innfører mer snapshot-testing.">
+      <created>1571125980855</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571125980855</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,21 +296,17 @@
     <MESSAGE value="Prettified" />
     <MESSAGE value="Extension lines -&gt; Ledger lines" />
     <MESSAGE value="Stems, WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stems, WIP" />
+    <MESSAGE value="Fikser problem med at bredde ble 0 når det bare vare en akkord. Innfører mer snapshot-testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikser problem med at bredde ble 0 når det bare vare en akkord. Innfører mer snapshot-testing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Staff.tsx</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Staff.test.jsx</url>
-          <line>51</line>
+          <line>125</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {BaseTone, Tone} from "./Notes";
+import {BaseTone, NoteValues, Tone} from "./Notes";
 
 type PositionInStaff = number;
 
@@ -34,21 +34,27 @@ StaffLine.defaultProps = {
 interface NoteHeadProps {
   x: number;
   positionInStaff: PositionInStaff;
+  noteValue: NoteValue;
 }
 
-const NoteHead = (props: NoteHeadProps) => (
+const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => (
     <ellipse
-        data-testid={`x:${props.x},pos:${props.positionInStaff}`}
-        cx={props.x}
-        cy={positionInStaffToY(props.positionInStaff) + 3}
+        data-testid={`x:${x},pos:${positionInStaff}`}
+        cx={x}
+        cy={positionInStaffToY(positionInStaff) + 3}
         rx={15}
         ry={11}
         className={"note__head"}
+        fillOpacity={noteValue >= 0.5 ? 0 : 1}
+        strokeOpacity={1}
+        strokeWidth={5}
+        stroke={"white"}
     />
 );
 
 interface StemProps {
   sortedNotePositions: Array<PositionInStaff>,
+  noteValue: NoteValue;
 }
 
 const Stem = ({sortedNotePositions}: StemProps) => {
@@ -83,6 +89,7 @@ interface NoteProps {
   isTop: boolean;
   isBottom: boolean;
   stemSide: StemSide;
+  noteValue: NoteValue;
 }
 
 interface ExtensionLinesProps {
@@ -117,9 +124,9 @@ const LedgerLines = (props: ExtensionLinesProps) => {
   );
 };
 
-const Note = ({ toneInfo, stemSide, isBottom, isTop }: NoteProps) => {
+const Note = ({ toneInfo, stemSide, isBottom, isTop, noteValue }: NoteProps) => {
   const { staffPosition } = toneInfo;
-  const xOffset = stemSide === Side.RIGHT ? -12 : +15;
+  const xOffset = stemSide === Side.RIGHT ? -12 : +17;
   const cursor = useContext(CursorContext);
   return (
       <>
@@ -131,6 +138,7 @@ const Note = ({ toneInfo, stemSide, isBottom, isTop }: NoteProps) => {
             key={toneInfo.strKey}
             x={cursor.x + (xOffset)}
             positionInStaff={staffPosition}
+            noteValue={noteValue}
         />
       </>
   );
@@ -138,12 +146,15 @@ const Note = ({ toneInfo, stemSide, isBottom, isTop }: NoteProps) => {
 
 Note.defaultProps = {
   isTop: true,
-  isBottom: true
+  isBottom: true,
+  noteValue: NoteValues.QUARTER
 };
 
+type NoteValue = number;
 
 interface ChordProps {
   tones: Array<Tone>;
+  noteValue: NoteValue;
 }
 
 const mapToneToStaffPosition = (tone: Tone): PositionInStaff => {
@@ -302,8 +313,8 @@ export const Chord = (props: ChordProps) => {
               },
               isTop: clusterIdx === clusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
-              stemSide: determineStemSide(toneInfo, positionInCluster, cluster)
-
+              stemSide: determineStemSide(toneInfo, positionInCluster, cluster),
+              noteValue: props.noteValue
             })
         )
       }));
@@ -314,9 +325,13 @@ export const Chord = (props: ChordProps) => {
         {notesProps.map((noteProps: NoteProps) => (
             <Note key={noteProps.toneInfo.strKey} {...noteProps} />
         ))}
-        <Stem sortedNotePositions={staffPositions}/>
+        <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
       </>
   );
+};
+
+Chord.defaultProps = {
+  noteValue: NoteValues.QUARTER
 };
 
 export default (props: {children: Array<any>}) => {

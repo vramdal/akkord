@@ -25,4 +25,19 @@ export interface Tone {
   octave: MIDIOctave;
 }
 
+export enum NoteValues {
+  OCTUPLE = 8,
+  LONGA = 4,
+  BREVE = 2,
+  WHOLE = 1,
+  HALF = 1/2,
+  QUARTER = 1/4,
+  EIGHTH = 1/8,
+  SIXTEENTH = 1/16,
+  THIRTYSECOND = 1/32,
+  SIXTYFOURTH = 1/64,
+  HUNDREDTWENTYEIGHTH = 1/128,
+  TWOHUNDREDFIFTYSIXTH = 1/256
+}
+
 export {};

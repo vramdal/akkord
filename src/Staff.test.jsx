@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 import Staff, { Chord, Side } from "./Staff.tsx";
 import ShallowRenderer from "react-test-renderer/shallow";
 import TestRenderer from "react-test-renderer";
-import { BaseTone } from "./Notes";
+import { BaseTone, NoteValues } from "./Notes";
 import { _testing } from "./Staff.tsx";
 
 const { Note, LedgerLines, cluster } = _testing;
@@ -52,6 +52,14 @@ describe('Staff', () => {
     const result = TestRenderer.create(<Staff>
       <Chord tones={[toneA0]}/>
     </Staff>);
+
+    expect(result.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render a half note', () => {
+    const result = TestRenderer.create(
+        <Chord tones={[toneA0]} noteValue={NoteValues.HALF}/>
+    );
 
     expect(result.toJSON()).toMatchSnapshot();
   });
@@ -109,6 +117,17 @@ describe("Chord", () => {
       })
     });
   });
+
+  it('should render a half note', () => {
+    const toneA0 = { baseTone: BaseTone.A, octave: 0 };
+    const tones = [toneA0];
+
+    const result = renderer.render(<Chord tones={tones} noteValue={NoteValues.HALF}/>);
+    const [notes, stem] = result.props.children;
+
+    expect(notes[0].props.noteValue).toEqual(NoteValues.HALF);
+    expect(stem.props.noteValue).toEqual(NoteValues.HALF);
+  });
 });
 
 describe("Note", () => {
@@ -145,6 +164,7 @@ describe("Note", () => {
     expect(ledgerLines.props).toMatchObject({ maxExtent: -2 });
     expect(noteHead.props).toMatchObject({ positionInStaff: -2 });
   });
+
 });
 
 describe("Ledger lines", () => {

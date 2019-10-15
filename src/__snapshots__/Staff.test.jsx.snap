@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Staff should render a half note 1`] = `
+Array [
+  <ellipse
+    className="note__head"
+    cx={67}
+    cy={123}
+    data-testid="x:67,pos:6"
+    fillOpacity={0}
+    rx={15}
+    ry={11}
+    stroke="white"
+    strokeOpacity={1}
+    strokeWidth={5}
+  />,
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={50}
+    y={29}
+  />,
+]
+`;
+
 exports[`Staff should render a single chord 1`] = `
 <div
   className="staff"
@@ -47,11 +71,15 @@ exports[`Staff should render a single chord 1`] = `
     />
     <ellipse
       className="note__head"
-      cx={65}
+      cx={67}
       cy={123}
-      data-testid="x:65,pos:6"
+      data-testid="x:67,pos:6"
+      fillOpacity={1}
       rx={15}
       ry={11}
+      stroke="white"
+      strokeOpacity={1}
+      strokeWidth={5}
     />
     <rect
       className="staff__line"

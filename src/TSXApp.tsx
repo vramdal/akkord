@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Staff, {Chord} from "./Staff";
-import { BaseTone, Tone } from "./Notes";
+import {BaseTone, NoteValues, Tone} from "./Notes";
 
 function TSXApp() {
   const tone1: Tone = {
@@ -34,7 +34,7 @@ function TSXApp() {
         </p>
         <Staff>
           <Chord tones={[tone1]} />
-          <Chord tones={[tone2, tone3]} />
+          <Chord tones={[tone2, tone3]} noteValue={NoteValues.HALF} />
           <Chord tones={[tone1, tone3]} />
           <Chord tones={[tone1, tone2]} />
           <Chord tones={[tone4]} />
