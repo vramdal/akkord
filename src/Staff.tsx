@@ -37,20 +37,41 @@ interface NoteHeadProps {
   noteValue: NoteValue;
 }
 
-const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => (
-    <ellipse
-        data-testid={`x:${x},pos:${positionInStaff}`}
-        cx={x}
-        cy={positionInStaffToY(positionInStaff) + 3}
-        rx={15}
-        ry={11}
-        className={"note__head"}
-        fillOpacity={noteValue >= 0.5 ? 0 : 1}
-        strokeOpacity={1}
-        strokeWidth={5}
-        stroke={"white"}
-    />
-);
+const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => {
+  const rx = 15;
+  const ry = 11;
+  const y = positionInStaffToY(positionInStaff) + 3;
+  const maskId = `noteHeadMask${x}${positionInStaff}`;
+  return (
+      <>
+        <mask id={maskId} maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+          <rect x={x - rx - 3} y={y - ry - 3} width={rx * 2 + x} height={ry*2 + y}  fill={"white"}/>
+          <ellipse
+              cx={x}
+              cy={y}
+              rx={rx - 2}
+              ry={ry - 3}
+              fill="black"
+              transform="rotate(-30, 20, 20)"
+          />
+        </mask>
+
+        <ellipse
+            cx={x}
+            cy={y}
+            rx={rx}
+            ry={ry}
+            className={"note__head"}
+            // fillOpacity={noteValue >= 0.5 ? 0 : 1}
+            strokeOpacity={1}
+            strokeWidth={5}
+            stroke={"red"}
+            fill={"yellow"}
+            mask={`url(#${maskId})`}
+        />
+      </>
+  );
+};
 
 interface StemProps {
   sortedNotePositions: Array<PositionInStaff>,

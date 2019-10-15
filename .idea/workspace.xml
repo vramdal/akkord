@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +155,7 @@
       <updated>1570519148048</updated>
       <workItem from="1570519151193" duration="35498000" />
       <workItem from="1570631487521" duration="3177000" />
-      <workItem from="1570714584724" duration="18117000" />
+      <workItem from="1570714584724" duration="26718000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -265,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571125980855</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Støtter nå halvnoter">
+      <created>1571137178533</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571137178533</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,18 +301,7 @@
     <MESSAGE value="Extension lines -&gt; Ledger lines" />
     <MESSAGE value="Stems, WIP" />
     <MESSAGE value="Fikser problem med at bredde ble 0 når det bare vare en akkord. Innfører mer snapshot-testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fikser problem med at bredde ble 0 når det bare vare en akkord. Innfører mer snapshot-testing." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Staff.test.jsx</url>
-          <line>125</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Støtter nå halvnoter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Støtter nå halvnoter" />
   </component>
 </project>
