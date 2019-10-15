@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Staff should render a single chord 1`] = `
+<div
+  className="staff"
+>
+  <svg
+    className="staff"
+    height="300"
+    width={200}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      className="staff__line"
+      height="4"
+      width={200}
+      x={0}
+      y={61}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={200}
+      x={0}
+      y={85}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={200}
+      x={0}
+      y={109}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={200}
+      x={0}
+      y={133}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={200}
+      x={0}
+      y={157}
+    />
+    <ellipse
+      className="note__head"
+      cx={65}
+      cy={123}
+      data-testid="x:65,pos:6"
+      rx={15}
+      ry={11}
+    />
+    <rect
+      className="staff__line"
+      height={91}
+      width={4}
+      x={50}
+      y={29}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Staff should render empty staff 1`] = `
+<div
+  className="staff"
+>
+  <svg
+    className="staff"
+    height="300"
+    width={100}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      className="staff__line"
+      height="4"
+      width={100}
+      x={0}
+      y={61}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={100}
+      x={0}
+      y={85}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={100}
+      x={0}
+      y={109}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={100}
+      x={0}
+      y={133}
+    />
+    <rect
+      className="staff__line"
+      height="4"
+      width={100}
+      x={0}
+      y={157}
+    />
+  </svg>
+</div>
+`;

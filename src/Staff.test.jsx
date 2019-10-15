@@ -33,8 +33,10 @@ const toneA1 = {
   hasNeighbor: false
 };
 
-describe("integration", () => {
-  it("should render staff and chord", () => {
+describe('Staff', () => {
+  const toneA0 = { baseTone: BaseTone.A, octave: 0 };
+
+  it("should render empty staff", () => {
     const testRenderer = TestRenderer.create(
         <Staff
             tones={[
@@ -43,56 +45,17 @@ describe("integration", () => {
             ]}
         />
     );
-    // noinspection HtmlUnknownAttribute
-    expect(testRenderer.toJSON()).toMatchInlineSnapshot(`
-      <div
-        className="staff"
-      >
-        <svg
-          className="staff"
-          height="300"
-          width={0}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            className="staff__line"
-            height="4"
-            width={0}
-            x={0}
-            y={61}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={0}
-            x={0}
-            y={85}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={0}
-            x={0}
-            y={109}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={0}
-            x={0}
-            y={133}
-          />
-          <rect
-            className="staff__line"
-            height="4"
-            width={0}
-            x={0}
-            y={157}
-          />
-        </svg>
-      </div>
-    `);
+    expect(testRenderer.toJSON()).toMatchSnapshot();
   });
+
+  it('should render a single chord', () => {
+    const result = TestRenderer.create(<Staff>
+      <Chord tones={[toneA0]}/>
+    </Staff>);
+
+    expect(result.toJSON()).toMatchSnapshot();
+  });
+
 });
 
 describe("Chord", () => {

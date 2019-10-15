@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Stems, WIP">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Jest_tests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
@@ -29,19 +31,29 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -49,7 +61,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
@@ -64,13 +76,57 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Staff.test.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/Staff.test.jsx" working-dir="$PROJECT_DIR$/src">
+  <component name="RunManager" selected="Jest.Staff">
+    <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-names>
+        <test-name value="Note" />
+        <test-name value="should render a single note" />
+      </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Staff" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-names>
+        <test-name value="Staff" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Staff.should render a single chord" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-names>
+        <test-name value="Staff" />
+        <test-name value="should render a single chord" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.Jest-tests" />
+      <item itemvalue="Jest.Note.should render a single note" />
+      <item itemvalue="Jest.Staff" />
+      <item itemvalue="Jest.Staff.should render a single chord" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.Staff.test.jsx" />
+        <item itemvalue="Jest.Staff.should render a single chord" />
       </list>
     </recent_temporary>
   </component>
@@ -85,7 +141,8 @@
       <option name="presentableId" value="Default" />
       <updated>1570519148048</updated>
       <workItem from="1570519151193" duration="35498000" />
-      <workItem from="1570631487521" duration="2449000" />
+      <workItem from="1570631487521" duration="3177000" />
+      <workItem from="1570714584724" duration="13229000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -178,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570634311708</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Stems, WIP">
+      <created>1570634580983</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570634580983</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +272,8 @@
     <MESSAGE value="Lager ikke lenger dobbelt opp med extension lines" />
     <MESSAGE value="Prettified" />
     <MESSAGE value="Extension lines -&gt; Ledger lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extension lines -&gt; Ledger lines" />
+    <MESSAGE value="Stems, WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stems, WIP" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -216,8 +281,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Staff.tsx</url>
           <line>51</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Staff.test.jsx</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

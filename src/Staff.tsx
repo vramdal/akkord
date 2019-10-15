@@ -320,7 +320,7 @@ export const Chord = (props: ChordProps) => {
 };
 
 export default (props: {children: Array<any>}) => {
-  const staffWidth = (props.children && props.children.length * 100 + 100) || 0;
+  const staffWidth = (React.Children.count(props.children) * 100 + 100) || 0;
   return (
       <div className={"staff"}>
         <svg
