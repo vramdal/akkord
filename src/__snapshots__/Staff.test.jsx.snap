@@ -2,15 +2,36 @@
 
 exports[`Staff should render a half note 1`] = `
 Array [
+  <mask
+    id="noteHeadMask676"
+    maskContentUnits="userSpaceOnUse"
+    maskUnits="userSpaceOnUse"
+  >
+    <rect
+      fill="white"
+      height={145}
+      width={97}
+      x={49}
+      y={109}
+    />
+    <ellipse
+      cx={67}
+      cy={123}
+      fill="black"
+      rx={13}
+      ry={8}
+      transform="rotate(-30, 20, 20)"
+    />
+  </mask>,
   <ellipse
     className="note__head"
     cx={67}
     cy={123}
-    data-testid="x:67,pos:6"
-    fillOpacity={0}
+    fill="yellow"
+    mask="url(#noteHeadMask676)"
     rx={15}
     ry={11}
-    stroke="white"
+    stroke="red"
     strokeOpacity={1}
     strokeWidth={5}
   />,
@@ -69,15 +90,36 @@ exports[`Staff should render a single chord 1`] = `
       x={0}
       y={157}
     />
+    <mask
+      id="noteHeadMask676"
+      maskContentUnits="userSpaceOnUse"
+      maskUnits="userSpaceOnUse"
+    >
+      <rect
+        fill="white"
+        height={145}
+        width={97}
+        x={49}
+        y={109}
+      />
+      <ellipse
+        cx={67}
+        cy={123}
+        fill="black"
+        rx={13}
+        ry={8}
+        transform="rotate(-30, 20, 20)"
+      />
+    </mask>
     <ellipse
       className="note__head"
       cx={67}
       cy={123}
-      data-testid="x:67,pos:6"
-      fillOpacity={1}
+      fill="yellow"
+      mask="url(#noteHeadMask676)"
       rx={15}
       ry={11}
-      stroke="white"
+      stroke="red"
       strokeOpacity={1}
       strokeWidth={5}
     />

@@ -37,39 +37,30 @@ interface NoteHeadProps {
   noteValue: NoteValue;
 }
 
+const maskReference = (noteValue: NoteValue) : string | undefined => {
+  if (noteValue < 0.5) {
+    return undefined;
+  } else if (noteValue < 1) {
+    return `url(#hollowNoteHeadMask${Side.LEFT})`;
+  } else {
+    return `url(#hollowNoteHeadMask${Side.RIGHT})`;
+  }
+};
+
 const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => {
   const rx = 15;
   const ry = 11;
   const y = positionInStaffToY(positionInStaff) + 3;
-  const maskId = `noteHeadMask${x}${positionInStaff}`;
   return (
-      <>
-        <mask id={maskId} maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
-          <rect x={x - rx - 3} y={y - ry - 3} width={rx * 2 + x} height={ry*2 + y}  fill={"white"}/>
-          <ellipse
-              cx={x}
-              cy={y}
-              rx={rx - 2}
-              ry={ry - 3}
-              fill="black"
-              transform="rotate(-30, 20, 20)"
-          />
-        </mask>
-
-        <ellipse
-            cx={x}
-            cy={y}
-            rx={rx}
-            ry={ry}
-            className={"note__head"}
-            // fillOpacity={noteValue >= 0.5 ? 0 : 1}
-            strokeOpacity={1}
-            strokeWidth={5}
-            stroke={"red"}
-            fill={"yellow"}
-            mask={`url(#${maskId})`}
-        />
-      </>
+      <ellipse
+          cx={x}
+          cy={y}
+          rx={rx}
+          ry={ry}
+          className={"note__head"}
+          fill={"white"}
+          mask={maskReference(noteValue)}
+      />
   );
 };
 
@@ -147,7 +138,7 @@ const LedgerLines = (props: ExtensionLinesProps) => {
 
 const Note = ({ toneInfo, stemSide, isBottom, isTop, noteValue }: NoteProps) => {
   const { staffPosition } = toneInfo;
-  const xOffset = stemSide === Side.RIGHT ? -12 : +17;
+  const xOffset = stemSide === Side.RIGHT ? +16 : -12;
   const cursor = useContext(CursorContext);
   return (
       <>
@@ -355,6 +346,19 @@ Chord.defaultProps = {
   noteValue: NoteValues.QUARTER
 };
 
+const HollowNoteHeadMask = ({ direction } : {direction: Side }) => (
+    <mask id={ `hollowNoteHeadMask${direction}`}
+          maskContentUnits="objectBoundingBox"
+          maskUnits="objectBoundingBox"
+    >
+      <rect x="0" y="0" width="1" height="1" fill="white"/>
+      <ellipse cx=".5" cy=".5" rx=".25" ry=".4"
+               fill="black"
+               transform={`rotate(${40 * (direction === Side.LEFT ? 1 : -1)}, .5, .5)`}/>
+    </mask>
+
+);
+
 export default (props: {children: Array<any>}) => {
   const staffWidth = (React.Children.count(props.children) * 100 + 100) || 0;
   return (
@@ -365,6 +369,9 @@ export default (props: {children: Array<any>}) => {
             height="300"
             className={"staff"}
         >
+          <HollowNoteHeadMask direction={Side.LEFT} />
+          <HollowNoteHeadMask direction={Side.RIGHT} />
+
           {[1, 3, 5, 7, 9].map(lineIdx => (
               <StaffLine key={lineIdx} position={lineIdx} width={staffWidth} />
           ))}
