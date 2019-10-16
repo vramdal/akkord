@@ -5,6 +5,11 @@ type PositionInStaff = number;
 
 type MIDINote = number;
 
+export enum Side {
+    LEFT = "LEFT",
+    RIGHT = "RIGHT"
+}
+
 interface StaffLineProps {
   position: PositionInStaff;
   width: number;
@@ -88,11 +93,6 @@ const Stem = ({sortedNotePositions}: StemProps) => {
       />
   );
 };
-
-export enum Side {
-  LEFT = "LEFT",
-  RIGHT = "RIGHT"
-}
 
 type StemSide = Side;
 
@@ -297,10 +297,11 @@ function flattenArray<T>(arrays: Array<Array<T>>): Array<T> {
 
 const determineStemSide = (note: ToneInfo,
                            positionInCluster: number,
-                           cluster: Array<ToneInfo>
+                           cluster: Array<ToneInfo>,
+                           stemSideForChord: StemSide
 ) => {
   if (cluster.length === 1) {
-    return note.staffPosition > 5 ? Side.LEFT : Side.RIGHT;
+    return stemSideForChord;
   } else {
     return (positionInCluster % 2 === 0 && Side.RIGHT) || Side.LEFT;
   }
@@ -316,6 +317,8 @@ export const Chord = (props: ChordProps) => {
 
   const clusters = cluster(partialToneInfos);
 
+  const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 5 ? Side.RIGHT : Side.LEFT;
+
   const notesProps: Array<NoteProps> = flattenArray<NoteProps>(
       clusters.map((cluster, clusterIdx) => {
         return cluster.map(
@@ -325,7 +328,7 @@ export const Chord = (props: ChordProps) => {
               },
               isTop: clusterIdx === clusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
-              stemSide: determineStemSide(toneInfo, positionInCluster, cluster),
+              stemSide: determineStemSide(toneInfo, positionInCluster, cluster, stemSideForChord),
               noteValue: props.noteValue
             })
         )
@@ -359,7 +362,8 @@ const HollowNoteHeadMask = ({ direction } : {direction: Side }) => (
 
 );
 
-export default (props: {children: Array<any>}) => {
+
+export default (props: {children: any}) => {
   const staffWidth = (React.Children.count(props.children) * 100 + 100) || 0;
   return (
       <div className={"staff"}>

@@ -118,6 +118,18 @@ describe("Chord", () => {
     });
   });
 
+  it('should use the stem side of the top-most node for the entire chord', () => {
+    const toneA1 = { baseTone: BaseTone.A, octave: 1 };
+    const toneD0 = { baseTone: BaseTone.D, octave: 0 };
+
+    const result = renderer.render(<Chord tones={[toneA1, toneD0]}/>);
+    const [notes] = result.props.children;
+    const [noteA1, noteD0] = notes;
+
+    expect(noteA1.props.stemSide).toEqual(Side.RIGHT);
+    expect(noteD0.props.stemSide).toEqual(Side.RIGHT);
+  });
+
   it('should render a half note', () => {
     const toneA0 = { baseTone: BaseTone.A, octave: 0 };
     const tones = [toneA0];

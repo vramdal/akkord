@@ -5,24 +5,37 @@ import Staff, {Chord} from "./Staff";
 import {BaseTone, NoteValues, Tone} from "./Notes";
 
 function TSXApp() {
-  const tone1: Tone = {
+  const toneA1: Tone = {
     baseTone: BaseTone.A,
     octave: 1
   };
-  const tone2: Tone = {
+  const toneA0: Tone = {
+    baseTone: BaseTone.A,
+    octave: 0
+  };
+  // noinspection JSUnusedLocalSymbols
+    const toneH0: Tone = {
     baseTone: BaseTone.H,
     octave: 0
   };
-  const tone3: Tone = {
+    // noinspection JSUnusedLocalSymbols
+  const toneD0: Tone = {
     baseTone: BaseTone.D,
     octave: 0
   };
-  const tone4: Tone = {
+    // noinspection JSUnusedLocalSymbols
+  const toneG0: Tone = {
     baseTone: BaseTone.G,
     octave: 0
   };
-  const tone5: Tone = {
+    // noinspection JSUnusedLocalSymbols
+  const toneE0: Tone = {
     baseTone: BaseTone.E,
+    octave: 0
+  };
+    // noinspection JSUnusedLocalSymbols
+  const toneF0: Tone = {
+    baseTone: BaseTone.F,
     octave: 0
   };
   return (
@@ -33,13 +46,7 @@ function TSXApp() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Staff>
-          <Chord tones={[tone1]} />
-          <Chord tones={[tone2, tone3]} noteValue={NoteValues.HALF} />
-          <Chord tones={[tone1, tone3]} />
-          <Chord tones={[tone1, tone2]} />
-          <Chord tones={[tone4]} />
-          <Chord tones={[tone4, tone5]} />
-          <Chord tones={[tone3, tone5]} />
+          <Chord tones={[toneA1, toneA0]} noteValue={NoteValues.HALF} />
         </Staff>
         <a
           className="App-link"
