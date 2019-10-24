@@ -2,38 +2,14 @@
 
 exports[`Staff should render a half note 1`] = `
 Array [
-  <mask
-    id="noteHeadMask676"
-    maskContentUnits="userSpaceOnUse"
-    maskUnits="userSpaceOnUse"
-  >
-    <rect
-      fill="white"
-      height={145}
-      width={97}
-      x={49}
-      y={109}
-    />
-    <ellipse
-      cx={67}
-      cy={123}
-      fill="black"
-      rx={13}
-      ry={8}
-      transform="rotate(-30, 20, 20)"
-    />
-  </mask>,
   <ellipse
     className="note__head"
-    cx={67}
+    cx={38}
     cy={123}
-    fill="yellow"
-    mask="url(#noteHeadMask676)"
+    fill="white"
+    mask="url(#hollowNoteHeadMaskLEFT)"
     rx={15}
     ry={11}
-    stroke="red"
-    strokeOpacity={1}
-    strokeWidth={5}
   />,
   <rect
     className="staff__line"
@@ -55,6 +31,48 @@ exports[`Staff should render a single chord 1`] = `
     width={200}
     xmlns="http://www.w3.org/2000/svg"
   >
+    <mask
+      id="hollowNoteHeadMaskLEFT"
+      maskContentUnits="objectBoundingBox"
+      maskUnits="objectBoundingBox"
+    >
+      <rect
+        fill="white"
+        height="1"
+        width="1"
+        x="0"
+        y="0"
+      />
+      <ellipse
+        cx=".5"
+        cy=".5"
+        fill="black"
+        rx=".25"
+        ry=".4"
+        transform="rotate(40, .5, .5)"
+      />
+    </mask>
+    <mask
+      id="hollowNoteHeadMaskRIGHT"
+      maskContentUnits="objectBoundingBox"
+      maskUnits="objectBoundingBox"
+    >
+      <rect
+        fill="white"
+        height="1"
+        width="1"
+        x="0"
+        y="0"
+      />
+      <ellipse
+        cx=".5"
+        cy=".5"
+        fill="black"
+        rx=".25"
+        ry=".4"
+        transform="rotate(-40, .5, .5)"
+      />
+    </mask>
     <rect
       className="staff__line"
       height="4"
@@ -90,38 +108,13 @@ exports[`Staff should render a single chord 1`] = `
       x={0}
       y={157}
     />
-    <mask
-      id="noteHeadMask676"
-      maskContentUnits="userSpaceOnUse"
-      maskUnits="userSpaceOnUse"
-    >
-      <rect
-        fill="white"
-        height={145}
-        width={97}
-        x={49}
-        y={109}
-      />
-      <ellipse
-        cx={67}
-        cy={123}
-        fill="black"
-        rx={13}
-        ry={8}
-        transform="rotate(-30, 20, 20)"
-      />
-    </mask>
     <ellipse
       className="note__head"
-      cx={67}
+      cx={38}
       cy={123}
-      fill="yellow"
-      mask="url(#noteHeadMask676)"
+      fill="white"
       rx={15}
       ry={11}
-      stroke="red"
-      strokeOpacity={1}
-      strokeWidth={5}
     />
     <rect
       className="staff__line"
@@ -144,6 +137,48 @@ exports[`Staff should render empty staff 1`] = `
     width={100}
     xmlns="http://www.w3.org/2000/svg"
   >
+    <mask
+      id="hollowNoteHeadMaskLEFT"
+      maskContentUnits="objectBoundingBox"
+      maskUnits="objectBoundingBox"
+    >
+      <rect
+        fill="white"
+        height="1"
+        width="1"
+        x="0"
+        y="0"
+      />
+      <ellipse
+        cx=".5"
+        cy=".5"
+        fill="black"
+        rx=".25"
+        ry=".4"
+        transform="rotate(40, .5, .5)"
+      />
+    </mask>
+    <mask
+      id="hollowNoteHeadMaskRIGHT"
+      maskContentUnits="objectBoundingBox"
+      maskUnits="objectBoundingBox"
+    >
+      <rect
+        fill="white"
+        height="1"
+        width="1"
+        x="0"
+        y="0"
+      />
+      <ellipse
+        cx=".5"
+        cy=".5"
+        fill="black"
+        rx=".25"
+        ry=".4"
+        transform="rotate(-40, .5, .5)"
+      />
+    </mask>
     <rect
       className="staff__line"
       height="4"

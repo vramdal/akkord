@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
-import {BaseTone, NoteValues, Tone} from "./Notes";
+import {addToTone, BaseTone, MIDINote, NoteValues, Tone} from "./Notes";
 
 type PositionInStaff = number;
 
-type MIDINote = number;
 
 export enum Side {
     LEFT = "LEFT",
@@ -196,7 +195,7 @@ const mapToneToStaffPosition = (tone: Tone): PositionInStaff => {
       case BaseTone.HFlat:
         return 5;
       default:
-        throw new Error();
+        throw new Error("Invalid tone: " + JSON.stringify(tone));
     }
   };
   return getBasePosition() - tone.octave * 7;
@@ -246,7 +245,7 @@ const toneToMidiNote = (tone: Tone): MIDINote => {
 const toneToStrKey = (tone: Tone) => tone.baseTone + tone.octave;
 
 const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) =>
-    MIDINoteA - MIDINoteB;
+    MIDINoteA.valueOf() - MIDINoteB.valueOf();
 
 //const compareTones = (toneA: Tone, toneB: Tone) => toneToMidiNote(toneA) - toneToMidiNote(toneB);
 
@@ -387,6 +386,19 @@ export default (props: {children: any}) => {
         </svg>
       </div>
   );
+};
+
+interface ScaleProps {
+  startTone: Tone,
+  noteValue: NoteValue
+}
+
+export const MajorThree = ({startTone, noteValue}: ScaleProps) => {
+  const second = addToTone(startTone, 3);
+  const third = addToTone(second, 3);
+  console.log("startTone, second, third = ", startTone, second, third);
+  const tones = [startTone, second, third];
+  return <Chord tones={tones} noteValue={noteValue}/>
 };
 
 export const _testing = { Note, LedgerLines, cluster };
