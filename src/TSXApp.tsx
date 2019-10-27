@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Staff, {Chord, MajorThree} from "./Staff";
+import Staff, {Chord, MajorThree, MinorThree} from "./Staff";
 import {BaseTone, createTone, NoteValues} from "./Notes";
 
 function TSXApp() {
@@ -48,6 +48,7 @@ function TSXApp() {
         <Staff>
           <Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>
           <MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
+          <MinorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
         </Staff>
         <a
           className="App-link"

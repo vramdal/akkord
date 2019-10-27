@@ -394,9 +394,15 @@ interface ScaleProps {
 }
 
 export const MajorThree = ({startTone, noteValue}: ScaleProps) => {
-  const second = addToTone(startTone, 3);
-  const third = addToTone(second, 3);
-  console.log("startTone, second, third = ", startTone, second, third);
+  const second = addToTone(startTone, 2);
+  const third = addToTone(second, 1.5);
+  const tones = [startTone, second, third];
+  return <Chord tones={tones} noteValue={noteValue}/>
+};
+
+export const MinorThree = ({startTone, noteValue}: ScaleProps) => {
+  const second = addToTone(startTone, 1.5);
+  const third = addToTone(second, 2);
   const tones = [startTone, second, third];
   return <Chord tones={tones} noteValue={noteValue}/>
 };

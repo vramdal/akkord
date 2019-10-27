@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Lar øverste note styre side for de andre notene i akkorden">
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Fikser 3-tone-akkorder">
+      <change afterPath="$PROJECT_DIR$/src/Notes.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Notes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +20,7 @@
     </execution>
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -46,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="398" column="71" lean-forward="true" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
+            <state relative-caret-position="330">
+              <caret line="407" column="2" selection-start-line="407" selection-start-column="2" selection-end-line="407" selection-end-column="2" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -67,8 +66,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Notes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+            <state relative-caret-position="345">
+              <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -85,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+            <state relative-caret-position="443">
+              <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -120,6 +128,7 @@
       <find>Tone</find>
       <find>tomidi</find>
       <find>midiNote</find>
+      <find>http</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +137,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/TSXApp.tsx" />
+        <option value="$PROJECT_DIR$/src/Notes.test.ts" />
         <option value="$PROJECT_DIR$/src/Notes.ts" />
         <option value="$PROJECT_DIR$/src/Staff.tsx" />
-        <option value="$PROJECT_DIR$/src/TSXApp.tsx" />
       </list>
     </option>
   </component>
@@ -148,10 +158,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="97" />
+    <option name="x" value="468" />
     <option name="y" value="23" />
-    <option name="width" value="1434" />
-    <option name="height" value="960" />
+    <option name="width" value="1193" />
+    <option name="height" value="944" />
   </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -181,6 +191,12 @@
             </path>
             <path>
               <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akkord" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Notes.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
             <path>
@@ -196,6 +212,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TF_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
@@ -230,35 +247,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Chord.should use the stem side of the top-most node for the entire chord">
-    <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
-      <test-names>
-        <test-name value="Chord" />
-        <test-name value="should render a half note" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Chord.should use the stem side of the top-most node for the entire chord" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
-      <test-names>
-        <test-name value="Chord" />
-        <test-name value="should use the stem side of the top-most node for the entire chord" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Jest.addToTone.should add 1.5 notes to F">
     <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -271,6 +260,16 @@
         <test-name value="Note" />
         <test-name value="should render a single note" />
       </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Notes.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
       <method v="2" />
     </configuration>
     <configuration name="Staff" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
@@ -286,17 +285,57 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Staff.should render a single chord" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="addToTone" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
+      <test-names>
+        <test-name value="addToTone" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="addToTone.should add 1.5 notes to F" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
       <test-names>
-        <test-name value="Staff" />
-        <test-name value="should render a single chord" />
+        <test-name value="addToTone" />
+        <test-name value="should add 1.5 notes to F" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="addToTone.should add 2 notes to F" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
+      <test-names>
+        <test-name value="addToTone" />
+        <test-name value="should add 2 notes to F" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="toneAsMIDINote" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
+      <test-names>
+        <test-name value="toneAsMIDINote" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -304,15 +343,19 @@
       <item itemvalue="Jest.Jest-tests" />
       <item itemvalue="Jest.Note.should render a single note" />
       <item itemvalue="Jest.Staff" />
-      <item itemvalue="Jest.Staff.should render a single chord" />
-      <item itemvalue="Jest.Chord.should render a half note" />
-      <item itemvalue="Jest.Chord.should use the stem side of the top-most node for the entire chord" />
+      <item itemvalue="Jest.addToTone" />
+      <item itemvalue="Jest.toneAsMIDINote" />
+      <item itemvalue="Jest.addToTone.should add 2 notes to F" />
+      <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
+      <item itemvalue="Jest.Notes.test.ts" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Chord.should use the stem side of the top-most node for the entire chord" />
-        <item itemvalue="Jest.Chord.should render a half note" />
-        <item itemvalue="Jest.Staff.should render a single chord" />
+        <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
+        <item itemvalue="Jest.Notes.test.ts" />
+        <item itemvalue="Jest.toneAsMIDINote" />
+        <item itemvalue="Jest.addToTone" />
+        <item itemvalue="Jest.addToTone.should add 2 notes to F" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +373,9 @@
       <workItem from="1570631487521" duration="3177000" />
       <workItem from="1570714584724" duration="30525000" />
       <workItem from="1571931000047" duration="4886000" />
-      <workItem from="1571953268904" duration="1189000" />
+      <workItem from="1571953268904" duration="1801000" />
+      <workItem from="1572205257439" duration="269000" />
+      <workItem from="1572208459205" duration="3931000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -451,17 +496,56 @@
       <option name="project" value="LOCAL" />
       <updated>1571152987722</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Begynner på treakkorder">
+      <created>1571955959265</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1571955959265</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="addToTone_should_add_2_notes_to_F - 2019.10.27 at 22h 33m 17s.xml">
+      <configuration name="addToTone.should add 2 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_2_notes_to_F - 2019.10.27 at 22h 33m 55s.xml">
+      <configuration name="addToTone.should add 2 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone - 2019.10.27 at 22h 34m 30s.xml">
+      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneAsMIDINote - 2019.10.27 at 22h 35m 07s.xml">
+      <configuration name="toneAsMIDINote" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 37m 50s.xml">
+      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 40m 10s.xml">
+      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 40m 22s.xml">
+      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Notes_test_ts - 2019.10.27 at 22h 40m 38s.xml">
+      <configuration name="Notes.test.ts" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 41m 57s.xml">
+      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 42m 13s.xml">
+      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7730000" />
+    <option name="totallyTimeSpent" value="12542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="97" y="23" width="1434" height="960" extended-state="0" />
+    <frame x="468" y="23" width="1193" height="944" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13577586" />
+      <window_info content_ui="combo" x="176" y="677" width="314" height="821" id="Project" order="0" type="FLOATING" visible="true" weight="0.21743388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -473,13 +557,13 @@
       <window_info id="npm" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.48842874" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289941" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" x="483" y="701" width="1021" height="270" id="Run" order="2" type="SLIDING" weight="0.33913043" />
+      <window_info anchor="bottom" x="209" y="129" width="525" height="940" id="Debug" order="3" weight="0.31552795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.38976857" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.41169307" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="AWS Tail" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -489,7 +573,7 @@
       <window_info anchor="bottom" id="GraphQL" order="15" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
       <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="18" weight="0.3289941" />
+      <window_info active="true" anchor="bottom" id="Messages" order="18" visible="true" weight="0.3279503" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -553,7 +637,67 @@
     <MESSAGE value="Støtter nå halvnoter" />
     <MESSAGE value="WIP: SVG for halvnoter" />
     <MESSAGE value="Lar øverste note styre side for de andre notene i akkorden" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lar øverste note styre side for de andre notene i akkorden" />
+    <MESSAGE value="Begynner på treakkorder" />
+    <MESSAGE value="Fikser 3-tone-akkorder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikser 3-tone-akkorder" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
+          <line>56</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
+          <line>57</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
+          <line>52</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>toneDelta * 2</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>toneDelta</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>BaseTonesInOrder[remainder]</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>toneAsMIDINote(tone)</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>number</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>BaseTonesInOrder[remainder * 2]</expression-string>
+        <language-id>TypeScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -594,27 +738,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Notes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        <state relative-caret-position="443">
+          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Notes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="398" column="71" lean-forward="true" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
+        <state relative-caret-position="330">
+          <caret line="407" column="2" selection-start-line="407" selection-start-column="2" selection-end-line="407" selection-end-column="2" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
