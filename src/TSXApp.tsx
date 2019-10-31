@@ -5,10 +5,12 @@ import Staff, {Chord, MajorThree, MinorThree} from "./Staff";
 import {BaseTone, createTone, NoteValues} from "./Notes";
 
 function TSXApp() {
+  // noinspection JSUnusedLocalSymbols
   const toneA1 = createTone({
     baseTone: BaseTone.A,
     octave: 1
   });
+  // noinspection JSUnusedLocalSymbols
   const toneA0 = createTone( {
     baseTone: BaseTone.A,
     octave: 0
@@ -49,6 +51,7 @@ function TSXApp() {
           <Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>
           <MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
           <MinorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
+          <MajorThree startTone={createTone({baseTone: BaseTone.H, octave: 0})} noteValue={NoteValues.HALF}/>
         </Staff>
         <a
           className="App-link"

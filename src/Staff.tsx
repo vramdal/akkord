@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {addToTone, BaseTone, MIDINote, NoteValues, Tone} from "./Notes";
+import {addToTone, BaseTone, MIDINote, NoteValues, Tone, getAccidental, Accidental} from "./Notes";
 
 type PositionInStaff = number;
 
@@ -101,6 +101,7 @@ interface NoteProps {
   isBottom: boolean;
   stemSide: StemSide;
   noteValue: NoteValue;
+  accidental: Accidental;
 }
 
 interface ExtensionLinesProps {
@@ -135,9 +136,57 @@ const LedgerLines = (props: ExtensionLinesProps) => {
   );
 };
 
-const Note = ({ toneInfo, stemSide, isBottom, isTop, noteValue }: NoteProps) => {
+interface SharpProps {
+  staffPosition: PositionInStaff;
+}
+
+const Sharp = ({staffPosition}: SharpProps) => {
+  const cursor = useContext(CursorContext);
+  const startY = positionInStaffToY(staffPosition - 1);
+  const endY = positionInStaffToY(staffPosition + 2);
+  const length = endY - startY - 3;
+  return <>
+    <g className={'sharp'} stroke="black" width={4}>
+      <rect
+          y={startY}
+          x={cursor.x - 50}
+          height={length}
+          width={5}
+      />
+      <rect
+          y={startY - 5}
+          x={cursor.x - 40}
+          height={length}
+          width={5}
+      />
+      <rect
+          y={startY + 3}
+          x={cursor.x - 33}
+          width={5}
+          height={22}
+          transform={`rotate(80, ${cursor.x - 33}, ${startY + 3})`}/>
+
+      />
+      <rect
+          y={startY + 20}
+          x={cursor.x - 35}
+          width={5}
+          height={22}
+          transform={`rotate(80, ${cursor.x - 33}, ${startY + 20})`}/>
+      />
+
+
+      {/*<path d="M15.8,7.1 L15.8,120.5" stroke-width="6"/>*/}
+      {/*<path d="M59.3,0.5 L59.3,112.4" stroke-width="6"/>*/}
+      {/*<path d="M1.4,42.8 L74,22.4" stroke-width="6"/>*/}
+      {/*<path d="M1.4,100.4 L73.1,78.8" stroke-width="6"/>*/}
+    </g>
+  </>;
+};
+
+const Note = ({ toneInfo, stemSide, isBottom, isTop, noteValue}: NoteProps) => {
   const { staffPosition } = toneInfo;
-  const xOffset = stemSide === Side.RIGHT ? +16 : -12;
+  const xOffset = (stemSide === Side.RIGHT ? +16 : -12);
   const cursor = useContext(CursorContext);
   return (
       <>
@@ -258,6 +307,7 @@ interface ToneInfo extends Tone {
   midiNote: MIDINote;
   strKey: string;
   staffPosition: PositionInStaff;
+  accidental: Accidental
 }
 
 const CursorContext = React.createContext({x: 50});
@@ -268,13 +318,13 @@ const Cursor = (props: {x: number, children: any}) =>
     </CursorContext.Provider>
 ;
 
-interface ChordProps {
-  tones: Array<Tone>;
-}
+// interface ChordProps {
+//   tones: Array<Tone>;
+// }
 
-function cluster(toneInfos: Array<ToneInfo>) {
-  const clusters: Array<Array<ToneInfo>> = [];
-  let currentCluster: Array<ToneInfo> = [];
+function cluster<Placed extends {staffPosition: PositionInStaff}>(toneInfos: Array<Placed>) {
+  const clusters: Array<Array<Placed>> = [];
+  let currentCluster: Array<Placed> = [];
   for (let i = 0; i < toneInfos.length; i++) {
     const currentTone = toneInfos[i];
     const previousTone = i > 0 && toneInfos[i - 1];
@@ -311,7 +361,8 @@ export const Chord = (props: ChordProps) => {
     ...tone,
     midiNote: toneToMidiNote(tone),
     strKey: toneToStrKey(tone),
-    staffPosition: mapToneToStaffPosition(tone)
+    staffPosition: mapToneToStaffPosition(tone),
+    accidental: getAccidental(tone),
   })).sort(compareToneInfos);
 
   const clusters = cluster(partialToneInfos);
@@ -328,18 +379,23 @@ export const Chord = (props: ChordProps) => {
               isTop: clusterIdx === clusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
               stemSide: determineStemSide(toneInfo, positionInCluster, cluster, stemSideForChord),
-              noteValue: props.noteValue
+              noteValue: props.noteValue,
+              accidental: toneInfo.accidental,
             })
         )
       }));
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
+  // TODO: Test accidentals
   return (
       <>
         {notesProps.map((noteProps: NoteProps) => (
             <Note key={noteProps.toneInfo.strKey} {...noteProps} />
         ))}
         <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
+        {notesProps.filter((noteProps: NoteProps) => noteProps.accidental).map((noteProps: NoteProps) => (
+            noteProps.accidental === "sharp" && <Sharp key={`${noteProps.toneInfo.strKey}-accidental`} staffPosition={noteProps.toneInfo.staffPosition}/>
+        ))}
       </>
   );
 };

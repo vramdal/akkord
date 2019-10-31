@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+rect {
+  fill: white;
+  stroke: none;
+}
+
 .staff {
 }
 

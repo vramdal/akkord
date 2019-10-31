@@ -9,6 +9,9 @@ describe('addToTone', function () {
     it('should add 1.5 notes to F', function () {
         expect(addToTone({octave: 0, baseTone: BaseTone.E}, 1.5)).toEqual({octave: 0, baseTone: BaseTone.G})
     });
+    it('should add 1.5 notes to CSharp', function () {
+        expect(addToTone({octave: 1, baseTone: BaseTone.CSharp}, 1.5)).toEqual({octave: 1, baseTone: BaseTone.E})
+    });
 });
 
 describe('toneAsMIDINote', function () {

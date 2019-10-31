@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Fikser 3-tone-akkorder">
-      <change afterPath="$PROJECT_DIR$/src/Notes.test.ts" afterDir="false" />
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/sharp.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notes.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Notes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,34 +26,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yarn.lock">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139440">
-              <caret line="9296" column="50" selection-start-line="9296" selection-start-column="50" selection-end-line="9296" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="407" column="2" selection-start-line="407" selection-start-column="2" selection-end-line="407" selection-end-column="2" />
+            <state relative-caret-position="257">
+              <caret line="393" column="11" lean-forward="true" selection-start-line="393" selection-start-column="11" selection-end-line="393" selection-end-column="11" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sharp.svg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -66,8 +75,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Notes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+            <state relative-caret-position="405">
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+            <state relative-caret-position="180">
+              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -93,20 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="376">
+              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -128,7 +137,28 @@
       <find>Tone</find>
       <find>tomidi</find>
       <find>midiNote</find>
+      <find>wikipe</find>
       <find>http</find>
+      <find>notehead</find>
+      <find>toneinfo</find>
+      <find>toneprops</find>
+      <find>tone</find>
+      <find>acciden</find>
+      <find>getaccide</find>
+      <find>svg</find>
+      <find>sharp</find>
+      <find>sharpsvg</find>
+      <find>&lt;svg</find>
+      <find>&lt;note</find>
+      <find>ellipse</find>
+      <find>M1</find>
+      <find>mask</find>
+      <find>stem</find>
+      <find>positioninstaff</find>
+      <find>cursor</find>
+      <find>chord</find>
+      <find>transfo</find>
+      <find>&lt;sharp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,6 +167,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/TSXApp.tsx" />
         <option value="$PROJECT_DIR$/src/Notes.test.ts" />
         <option value="$PROJECT_DIR$/src/Notes.ts" />
@@ -158,9 +189,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="468" />
+    <option name="x" value="273" />
     <option name="y" value="23" />
-    <option name="width" value="1193" />
+    <option name="width" value="1381" />
     <option name="height" value="944" />
   </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
@@ -247,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.addToTone.should add 1.5 notes to F">
+  <component name="RunManager" selected="Jest.Jest-tests">
     <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -351,10 +382,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.addToTone" />
         <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
         <item itemvalue="Jest.Notes.test.ts" />
         <item itemvalue="Jest.toneAsMIDINote" />
-        <item itemvalue="Jest.addToTone" />
         <item itemvalue="Jest.addToTone.should add 2 notes to F" />
       </list>
     </recent_temporary>
@@ -375,7 +406,7 @@
       <workItem from="1571931000047" duration="4886000" />
       <workItem from="1571953268904" duration="1801000" />
       <workItem from="1572205257439" duration="269000" />
-      <workItem from="1572208459205" duration="3931000" />
+      <workItem from="1572208459205" duration="10970000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -503,22 +534,17 @@
       <option name="project" value="LOCAL" />
       <updated>1571955959265</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fikser 3-tone-akkorder">
+      <created>1572212784272</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1572212784272</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="addToTone_should_add_2_notes_to_F - 2019.10.27 at 22h 33m 17s.xml">
-      <configuration name="addToTone.should add 2 notes to F" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="addToTone_should_add_2_notes_to_F - 2019.10.27 at 22h 33m 55s.xml">
-      <configuration name="addToTone.should add 2 notes to F" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="addToTone - 2019.10.27 at 22h 34m 30s.xml">
-      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="toneAsMIDINote - 2019.10.27 at 22h 35m 07s.xml">
-      <configuration name="toneAsMIDINote" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 37m 50s.xml">
       <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -537,15 +563,27 @@
     <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 42m 13s.xml">
       <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="addToTone - 2019.10.31 at 01h 08m 01s.xml">
+      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="addToTone - 2019.10.31 at 01h 09m 52s.xml">
+      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Jest-tests - 2019.10.31 at 01h 18m 59s.xml">
+      <configuration name="Jest-tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Jest-tests - 2019.10.31 at 01h 20m 19s.xml">
+      <configuration name="Jest-tests" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12542000" />
+    <option name="totallyTimeSpent" value="19581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="468" y="23" width="1193" height="944" extended-state="0" />
+    <frame x="273" y="23" width="1381" height="944" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="176" y="677" width="314" height="821" id="Project" order="0" type="FLOATING" visible="true" weight="0.21743388" />
+      <window_info content_ui="combo" x="-13" y="67" width="314" height="805" id="Project" order="0" type="WINDOWED" visible="true" weight="0.21743388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -557,7 +595,7 @@
       <window_info id="npm" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.48842874" />
-      <window_info anchor="bottom" x="483" y="701" width="1021" height="270" id="Run" order="2" type="SLIDING" weight="0.33913043" />
+      <window_info anchor="bottom" x="483" y="701" width="1021" height="270" id="Run" order="2" type="SLIDING" weight="0.2955368" />
       <window_info anchor="bottom" x="209" y="129" width="525" height="940" id="Debug" order="3" weight="0.31552795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -573,7 +611,7 @@
       <window_info anchor="bottom" id="GraphQL" order="15" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
       <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="18" visible="true" weight="0.3279503" />
+      <window_info anchor="bottom" id="Messages" order="18" visible="true" weight="0.4354644" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -646,19 +684,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>56</line>
+          <line>58</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>57</line>
+          <line>59</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>52</line>
+          <line>54</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -700,13 +738,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/yarn.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139440">
@@ -728,20 +759,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="165">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sharp.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="51" column="16" lean-forward="true" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        <state relative-caret-position="376">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -750,22 +797,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        <state relative-caret-position="180">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Notes.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+        <state relative-caret-position="405">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="407" column="2" selection-start-line="407" selection-start-column="2" selection-end-line="407" selection-end-column="2" />
+        <state relative-caret-position="257">
+          <caret line="393" column="11" lean-forward="true" selection-start-line="393" selection-start-column="11" selection-end-line="393" selection-end-column="11" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
