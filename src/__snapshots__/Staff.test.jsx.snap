@@ -2,41 +2,41 @@
 
 exports[`Chord should render a half note 1`] = `
 Array [
-  <rect
-    className="staff__line"
-    height={91}
-    width={4}
-    x={-Infinity}
-    y={29}
-  />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={50}
     cy={123}
     fill="white"
     mask="url(#hollowNoteHeadMaskLEFT)"
     rx={15}
     ry={11}
   />,
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={62}
+    y={29}
+  />,
 ]
 `;
 
 exports[`Chord should render a single Note 1`] = `
 Array [
-  <rect
-    className="staff__line"
-    height={91}
-    width={4}
-    x={-Infinity}
-    y={29}
-  />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={50}
     cy={123}
     fill="white"
     rx={15}
     ry={11}
+  />,
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={62}
+    y={29}
   />,
 ]
 `;
@@ -45,7 +45,15 @@ exports[`Chord should render two adjacent nodes as neighbors 1`] = `
 Array [
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={50}
+    cy={171}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+  <ellipse
+    className="note__head"
+    cx={50}
     cy={123}
     fill="white"
     rx={15}
@@ -55,20 +63,12 @@ Array [
     className="staff__line"
     height={151}
     width={4}
-    x={-Infinity}
+    x={62}
     y={113}
   />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
-    cy={171}
-    fill="white"
-    rx={15}
-    ry={11}
-  />,
-  <ellipse
-    className="note__head"
-    cx={-Infinity}
+    cx={78}
     cy={111}
     fill="white"
     rx={15}
@@ -79,9 +79,16 @@ Array [
 
 exports[`Chord should use the stem side of the top-most node for the entire chord 1`] = `
 Array [
+  <rect
+    className="staff__line"
+    height={223}
+    width={4}
+    x={50}
+    y={41}
+  />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={66}
     cy={171}
     fill="white"
     rx={15}
@@ -91,44 +98,37 @@ Array [
     className="staff__line"
     height="1"
     width={40}
-    x={-Infinity}
+    x={46}
     y={38}
   />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={66}
     cy={39}
     fill="white"
     rx={15}
     ry={11}
-  />,
-  <rect
-    className="staff__line"
-    height={223}
-    width={4}
-    x={-Infinity}
-    y={41}
   />,
 ]
 `;
 
 exports[`Staff should render a half note 1`] = `
 Array [
-  <rect
-    className="staff__line"
-    height={91}
-    width={4}
-    x={-Infinity}
-    y={29}
-  />,
   <ellipse
     className="note__head"
-    cx={-Infinity}
+    cx={50}
     cy={123}
     fill="white"
     mask="url(#hollowNoteHeadMaskLEFT)"
     rx={15}
     ry={11}
+  />,
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={62}
+    y={29}
   />,
 ]
 `;
@@ -220,20 +220,20 @@ exports[`Staff should render a single chord 1`] = `
       x={0}
       y={158}
     />
-    <rect
-      className="staff__line"
-      height={91}
-      width={4}
-      x={-Infinity}
-      y={29}
-    />
     <ellipse
       className="note__head"
-      cx={-Infinity}
+      cx={50}
       cy={123}
       fill="white"
       rx={15}
       ry={11}
+    />
+    <rect
+      className="staff__line"
+      height={91}
+      width={4}
+      x={62}
+      y={29}
     />
   </svg>
 </div>

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
     </list>
@@ -19,6 +20,102 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Notes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-808">
+              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8310">
+              <caret line="567" column="4" selection-start-line="567" selection-start-column="4" selection-end-line="567" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -26,8 +123,33 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>accidental</find>
+      <find>stem</find>
+      <find>COLUMN</find>
+      <find>debug</find>
+      <find>json</find>
+      <find>expect(result).toM</find>
+      <find>staffline</find>
+      <find>C</find>
+      <find>accident</find>
+      <find>sharp</find>
+      <find>accidentalst</find>
+      <find>stemside</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Staff.test.jsx" />
+        <option value="$PROJECT_DIR$/src/TSXApp.tsx" />
+        <option value="$PROJECT_DIR$/src/Staff.tsx" />
+      </list>
+    </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -44,6 +166,51 @@
   </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akkord" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akkord" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akkord" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="akkord" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Notes.ts" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
@@ -63,7 +230,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -81,7 +248,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Jest-tests">
+  <component name="RunManager" selected="Jest.Staff.test.jsx">
+    <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <test-names>
+        <test-name value="Chord" />
+        <test-name value="should render a half note" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -119,6 +300,16 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Staff.test.jsx" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
+      <method v="2" />
+    </configuration>
     <configuration name="addToTone" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -146,50 +337,23 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="addToTone.should add 2 notes to F" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
-      <test-names>
-        <test-name value="addToTone" />
-        <test-name value="should add 2 notes to F" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="toneAsMIDINote" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
-      <test-names>
-        <test-name value="toneAsMIDINote" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Jest.Jest-tests" />
       <item itemvalue="Jest.Note.should render a single note" />
       <item itemvalue="Jest.Staff" />
       <item itemvalue="Jest.addToTone" />
-      <item itemvalue="Jest.toneAsMIDINote" />
-      <item itemvalue="Jest.addToTone.should add 2 notes to F" />
       <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
       <item itemvalue="Jest.Notes.test.ts" />
+      <item itemvalue="Jest.Chord.should render a half note" />
+      <item itemvalue="Jest.Staff.test.jsx" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Staff.test.jsx" />
+        <item itemvalue="Jest.Chord.should render a half note" />
+        <item itemvalue="Jest.Notes.test.ts" />
         <item itemvalue="Jest.addToTone" />
         <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
-        <item itemvalue="Jest.Notes.test.ts" />
-        <item itemvalue="Jest.toneAsMIDINote" />
-        <item itemvalue="Jest.addToTone.should add 2 notes to F" />
       </list>
     </recent_temporary>
   </component>
@@ -354,40 +518,94 @@
       <option name="project" value="LOCAL" />
       <updated>1572212784272</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Posisjonering">
+      <created>1572563910333</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1572563910333</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 37m 50s.xml">
-      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.10.31 at 23h 59m 03s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 40m 10s.xml">
-      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Staff - 2019.10.31 at 23h 59m 28s.xml">
+      <configuration name="Staff" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 40m 22s.xml">
-      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Notes_test_ts - 2019.10.27 at 22h 40m 38s.xml">
+    <history-entry file="Notes_test_ts - 2019.11.01 at 00h 00m 08s.xml">
       <configuration name="Notes.test.ts" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 41m 57s.xml">
-      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 00m 29s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone_should_add_1_5_notes_to_F - 2019.10.27 at 22h 42m 13s.xml">
-      <configuration name="addToTone.should add 1.5 notes to F" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 00s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone - 2019.10.31 at 01h 08m 01s.xml">
-      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 33s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="addToTone - 2019.10.31 at 01h 09m 52s.xml">
-      <configuration name="addToTone" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 58s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Jest-tests - 2019.10.31 at 01h 18m 59s.xml">
-      <configuration name="Jest-tests" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 02m 33s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="Jest-tests - 2019.10.31 at 01h 20m 19s.xml">
-      <configuration name="Jest-tests" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 04m 14s.xml">
+      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="Staff_test_jsx - 2019.11.01 at 00h 17m 35s.xml">
+      <configuration name="Staff.test.jsx" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6238000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="273" y="23" width="1381" height="944" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" x="-13" y="67" width="314" height="805" id="Project" order="0" type="WINDOWED" visible="true" weight="0.21743388" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="JRebel" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="aws.explorer" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="UI Designer" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info id="npm" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31966224" />
+      <window_info anchor="bottom" x="483" y="701" width="1021" height="270" id="Run" order="2" type="SLIDING" weight="0.2955368" />
+      <window_info anchor="bottom" x="209" y="129" width="525" height="940" id="Debug" order="3" weight="0.31483716" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3835947" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="AWS Tail" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="RNConsole" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3289941" />
+      <window_info anchor="bottom" id="GraphQL" order="15" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="18" weight="0.2726176" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -398,6 +616,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -437,7 +661,8 @@
     <MESSAGE value="Lar øverste note styre side for de andre notene i akkorden" />
     <MESSAGE value="Begynner på treakkorder" />
     <MESSAGE value="Fikser 3-tone-akkorder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fikser 3-tone-akkorder" />
+    <MESSAGE value="Posisjonering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Posisjonering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,5 +718,117 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="430" column="17" lean-forward="true" selection-start-line="430" selection-start-column="17" selection-end-line="430" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>akkord</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

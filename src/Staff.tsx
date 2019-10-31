@@ -368,7 +368,7 @@ export const Chord = (props: ChordProps) => {
   const noteClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos, 1);
   const accidentalClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos.filter(toneInfo => toneInfo.accidental), 2);
 
-  const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 5 ? Side.RIGHT : Side.LEFT;
+  const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 5 ? Side.LEFT : Side.RIGHT;
 
   const notesProps: Array<NoteProps> = flattenArray<NoteProps>(
       noteClusters.map((cluster, clusterIdx) => {
@@ -409,10 +409,11 @@ export const Chord = (props: ChordProps) => {
   const cursor = useContext(CursorContext);
 
   const accidentalsStartX = cursor.x;
-  const leftNoteHeadsStartX = accidentalsStartX + (Math.max(...(accidentalsProps.map(accidentalProps => accidentalProps.column + 1))) || 0) * accidentalsStackWidth;
+  const numAccidentalColumns = Math.max(0, ...(accidentalsProps.map(accidentalProps => accidentalProps.column + 1)));
+  const leftNoteHeadsStartX = accidentalsStartX + (numAccidentalColumns) * accidentalsStackWidth;
   const stemX = (notesProps.find(noteProps => noteProps.stemSide === Side.RIGHT) ? leftNoteHeadsStartX + noteHeadsStackWidth : leftNoteHeadsStartX);
   const rightNodeHeadsStartX = stemX + stemWidth + 12;
-  // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX);
+  console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
   // TODO: Test accidentals
   return (
