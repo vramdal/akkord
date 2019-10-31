@@ -136,50 +136,50 @@ const LedgerLines = (props: ExtensionLinesProps) => {
   );
 };
 
-interface SharpProps {
+interface AccidentalProps {
   staffPosition: PositionInStaff;
+  accidental: Accidental
+  isTop: boolean;
+  isBottom: boolean;
+  column: number;
+  strKey: string;
 }
 
-const Sharp = ({staffPosition}: SharpProps) => {
+const Sharp = ({staffPosition, column}: AccidentalProps) => {
   const cursor = useContext(CursorContext);
   const startY = positionInStaffToY(staffPosition - 1);
   const endY = positionInStaffToY(staffPosition + 2);
+  const xOffset = -33 + (-30 * column);
   const length = endY - startY - 3;
   return <>
     <g className={'sharp'} stroke="black" width={4}>
       <rect
           y={startY}
-          x={cursor.x - 50}
+          x={cursor.x - 17 + xOffset}
           height={length}
           width={5}
       />
       <rect
           y={startY - 5}
-          x={cursor.x - 40}
+          x={cursor.x - 7 + xOffset}
           height={length}
           width={5}
       />
       <rect
           y={startY + 3}
-          x={cursor.x - 33}
+          x={cursor.x + xOffset}
           width={5}
           height={22}
-          transform={`rotate(80, ${cursor.x - 33}, ${startY + 3})`}/>
+          transform={`rotate(80, ${cursor.x + xOffset}, ${startY + 3})`}/>
 
       />
       <rect
           y={startY + 20}
-          x={cursor.x - 35}
+          x={cursor.x - 2 + xOffset}
           width={5}
           height={22}
-          transform={`rotate(80, ${cursor.x - 33}, ${startY + 20})`}/>
+          transform={`rotate(80, ${cursor.x + xOffset}, ${startY + 20})`}/>
       />
-
-
-      {/*<path d="M15.8,7.1 L15.8,120.5" stroke-width="6"/>*/}
-      {/*<path d="M59.3,0.5 L59.3,112.4" stroke-width="6"/>*/}
-      {/*<path d="M1.4,42.8 L74,22.4" stroke-width="6"/>*/}
-      {/*<path d="M1.4,100.4 L73.1,78.8" stroke-width="6"/>*/}
     </g>
   </>;
 };
@@ -322,13 +322,13 @@ const Cursor = (props: {x: number, children: any}) =>
 //   tones: Array<Tone>;
 // }
 
-function cluster<Placed extends {staffPosition: PositionInStaff}>(toneInfos: Array<Placed>) {
+function cluster<Placed extends {staffPosition: PositionInStaff}>(objectsInStaff: Array<Placed>, maxDiffInCluster = 1) {
   const clusters: Array<Array<Placed>> = [];
   let currentCluster: Array<Placed> = [];
-  for (let i = 0; i < toneInfos.length; i++) {
-    const currentTone = toneInfos[i];
-    const previousTone = i > 0 && toneInfos[i - 1];
-    if (previousTone && (previousTone.staffPosition - currentTone.staffPosition > 1)) {
+  for (let i = 0; i < objectsInStaff.length; i++) {
+    const currentTone = objectsInStaff[i];
+    const previousTone = i > 0 && objectsInStaff[i - 1];
+    if (previousTone && (previousTone.staffPosition - currentTone.staffPosition > maxDiffInCluster)) {
       // End cluster
       clusters.push(currentCluster);
       currentCluster = [];
@@ -365,18 +365,19 @@ export const Chord = (props: ChordProps) => {
     accidental: getAccidental(tone),
   })).sort(compareToneInfos);
 
-  const clusters = cluster(partialToneInfos);
+  const noteClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos, 1);
+  const accidentalClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos.filter(toneInfo => toneInfo.accidental), 2);
 
   const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 5 ? Side.RIGHT : Side.LEFT;
 
   const notesProps: Array<NoteProps> = flattenArray<NoteProps>(
-      clusters.map((cluster, clusterIdx) => {
+      noteClusters.map((cluster, clusterIdx) => {
         return cluster.map(
             (toneInfo, positionInCluster) => ({
               toneInfo: {
                 ...toneInfo,
               },
-              isTop: clusterIdx === clusters.length - 1 && positionInCluster === cluster.length - 1,
+              isTop: clusterIdx === noteClusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
               stemSide: determineStemSide(toneInfo, positionInCluster, cluster, stemSideForChord),
               noteValue: props.noteValue,
@@ -384,6 +385,21 @@ export const Chord = (props: ChordProps) => {
             })
         )
       }));
+
+  const accidentalsProps: Array<AccidentalProps> = flattenArray<AccidentalProps>(
+      accidentalClusters.map((cluster, clusterIdx) => {
+        return cluster.map(
+            (toneInfo : ToneInfo, positionInCluster : number) => ({
+              accidental: "sharp",
+              isTop: clusterIdx === accidentalClusters.length - 1 && positionInCluster === cluster.length - 1,
+              isBottom: clusterIdx === 0 && positionInCluster === 0,
+              staffPosition: toneInfo.staffPosition,
+              column: positionInCluster % 2,
+              strKey: `${toneInfo.strKey}-accidental`,
+            })
+        )
+      }));
+
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
   // TODO: Test accidentals
@@ -393,8 +409,9 @@ export const Chord = (props: ChordProps) => {
             <Note key={noteProps.toneInfo.strKey} {...noteProps} />
         ))}
         <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
-        {notesProps.filter((noteProps: NoteProps) => noteProps.accidental).map((noteProps: NoteProps) => (
-            noteProps.accidental === "sharp" && <Sharp key={`${noteProps.toneInfo.strKey}-accidental`} staffPosition={noteProps.toneInfo.staffPosition}/>
+        { accidentalsProps.map((accidentalProps: AccidentalProps) => (
+            accidentalProps.accidental === "sharp"
+            && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
         ))}
       </>
   );

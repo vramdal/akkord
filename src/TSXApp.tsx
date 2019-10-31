@@ -52,6 +52,7 @@ function TSXApp() {
           <MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
           <MinorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
           <MajorThree startTone={createTone({baseTone: BaseTone.H, octave: 0})} noteValue={NoteValues.HALF}/>
+          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>
         </Staff>
         <a
           className="App-link"
