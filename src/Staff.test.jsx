@@ -67,17 +67,12 @@ describe('Staff', () => {
 });
 
 describe("Chord", () => {
-  const renderer = new ShallowRenderer();
   it("should render a single Note", () => {
     const toneA0 = { baseTone: BaseTone.A, octave: 0 };
 
-    const result = renderer.render(<Chord tones={[toneA0]} x={50} />);
-    const [notes] = result.props.children;
-    const [note] = notes;
+    const result = TestRenderer.create(<Chord tones={[toneA0]} x={50} />);
 
-    expect(note.props).toMatchObject({
-      toneInfo: expect.objectContaining({ ...toneA0 })
-    });
+    expect(result.toJSON()).toMatchSnapshot();
   });
 
   it("should render two adjacent nodes as neighbors", () => {
@@ -86,59 +81,26 @@ describe("Chord", () => {
     const toneH0 = { baseTone: BaseTone.H, octave: 0 };
     const tones = [toneA0, toneD0, toneH0];
 
-    const result = renderer.render(<Chord tones={tones} x={50} />);
+    const result = TestRenderer.create(<Chord tones={tones} x={50} />);
 
-    const [notes] = result.props.children;
-    const [noteD0, noteA0, noteH0 ] = notes;
-
-    expect(noteD0.props).toMatchObject(
-        expect.objectContaining({
-              isTop: false,
-              isBottom: true,
-              toneInfo: expect.objectContaining({
-                ...toneD0,
-              })
-            }
-        )
-    );
-
-    expect(noteA0.props).toMatchObject({
-      isTop: false,
-      isBottom: false,
-      toneInfo: expect.objectContaining({
-        ...toneA0,
-      })
-    });
-    expect(noteH0.props).toMatchObject({
-      isTop: true,
-      isBottom: false,
-      toneInfo: expect.objectContaining({
-        ...toneH0,
-      })
-    });
+    expect(result.toJSON()).toMatchSnapshot();
   });
 
   it('should use the stem side of the top-most node for the entire chord', () => {
     const toneA1 = { baseTone: BaseTone.A, octave: 1 };
     const toneD0 = { baseTone: BaseTone.D, octave: 0 };
 
-    const result = renderer.render(<Chord tones={[toneA1, toneD0]}/>);
-    const [notes] = result.props.children;
-    const [noteA1, noteD0] = notes;
+    const result = TestRenderer.create(<Chord tones={[toneA1, toneD0]}/>);
 
-    expect(noteA1.props.stemSide).toEqual(Side.RIGHT);
-    expect(noteD0.props.stemSide).toEqual(Side.RIGHT);
+    expect(result.toJSON()).toMatchSnapshot();
   });
 
   it('should render a half note', () => {
     const toneA0 = { baseTone: BaseTone.A, octave: 0 };
     const tones = [toneA0];
 
-    const result = renderer.render(<Chord tones={tones} noteValue={NoteValues.HALF}/>);
-    const [notes, stem] = result.props.children;
-
-    expect(notes[0].props.noteValue).toEqual(NoteValues.HALF);
-    expect(stem.props.noteValue).toEqual(NoteValues.HALF);
+    const renderer = TestRenderer.create(<Chord tones={tones} noteValue={NoteValues.HALF}/>);
+    expect(renderer.toJSON()).toMatchSnapshot()
   });
 });
 

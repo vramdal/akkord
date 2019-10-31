@@ -1,22 +1,134 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Staff should render a half note 1`] = `
+exports[`Chord should render a half note 1`] = `
 Array [
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={-Infinity}
+    y={29}
+  />,
   <ellipse
     className="note__head"
-    cx={38}
+    cx={-Infinity}
     cy={123}
     fill="white"
     mask="url(#hollowNoteHeadMaskLEFT)"
     rx={15}
     ry={11}
   />,
+]
+`;
+
+exports[`Chord should render a single Note 1`] = `
+Array [
   <rect
     className="staff__line"
     height={91}
     width={4}
-    x={50}
+    x={-Infinity}
     y={29}
+  />,
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={123}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+]
+`;
+
+exports[`Chord should render two adjacent nodes as neighbors 1`] = `
+Array [
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={123}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+  <rect
+    className="staff__line"
+    height={151}
+    width={4}
+    x={-Infinity}
+    y={113}
+  />,
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={171}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={111}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+]
+`;
+
+exports[`Chord should use the stem side of the top-most node for the entire chord 1`] = `
+Array [
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={171}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+  <rect
+    className="staff__line"
+    height="1"
+    width={40}
+    x={-Infinity}
+    y={38}
+  />,
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={39}
+    fill="white"
+    rx={15}
+    ry={11}
+  />,
+  <rect
+    className="staff__line"
+    height={223}
+    width={4}
+    x={-Infinity}
+    y={41}
+  />,
+]
+`;
+
+exports[`Staff should render a half note 1`] = `
+Array [
+  <rect
+    className="staff__line"
+    height={91}
+    width={4}
+    x={-Infinity}
+    y={29}
+  />,
+  <ellipse
+    className="note__head"
+    cx={-Infinity}
+    cy={123}
+    fill="white"
+    mask="url(#hollowNoteHeadMaskLEFT)"
+    rx={15}
+    ry={11}
   />,
 ]
 `;
@@ -28,7 +140,7 @@ exports[`Staff should render a single chord 1`] = `
   <svg
     className="staff"
     height="300"
-    width={200}
+    width={250}
     xmlns="http://www.w3.org/2000/svg"
   >
     <mask
@@ -75,53 +187,53 @@ exports[`Staff should render a single chord 1`] = `
     </mask>
     <rect
       className="staff__line"
-      height="4"
-      width={200}
+      height="1"
+      width={250}
       x={0}
-      y={61}
+      y={62}
     />
     <rect
       className="staff__line"
-      height="4"
-      width={200}
+      height="1"
+      width={250}
       x={0}
-      y={85}
+      y={86}
     />
     <rect
       className="staff__line"
-      height="4"
-      width={200}
+      height="1"
+      width={250}
       x={0}
-      y={109}
+      y={110}
     />
     <rect
       className="staff__line"
-      height="4"
-      width={200}
+      height="1"
+      width={250}
       x={0}
-      y={133}
+      y={134}
     />
     <rect
       className="staff__line"
-      height="4"
-      width={200}
+      height="1"
+      width={250}
       x={0}
-      y={157}
-    />
-    <ellipse
-      className="note__head"
-      cx={38}
-      cy={123}
-      fill="white"
-      rx={15}
-      ry={11}
+      y={158}
     />
     <rect
       className="staff__line"
       height={91}
       width={4}
-      x={50}
+      x={-Infinity}
       y={29}
+    />
+    <ellipse
+      className="note__head"
+      cx={-Infinity}
+      cy={123}
+      fill="white"
+      rx={15}
+      ry={11}
     />
   </svg>
 </div>
@@ -181,38 +293,38 @@ exports[`Staff should render empty staff 1`] = `
     </mask>
     <rect
       className="staff__line"
-      height="4"
+      height="1"
       width={100}
       x={0}
-      y={61}
+      y={62}
     />
     <rect
       className="staff__line"
-      height="4"
+      height="1"
       width={100}
       x={0}
-      y={85}
+      y={86}
     />
     <rect
       className="staff__line"
-      height="4"
+      height="1"
       width={100}
       x={0}
-      y={109}
+      y={110}
     />
     <rect
       className="staff__line"
-      height="4"
+      height="1"
       width={100}
       x={0}
-      y={133}
+      y={134}
     />
     <rect
       className="staff__line"
-      height="4"
+      height="1"
       width={100}
       x={0}
-      y={157}
+      y={158}
     />
   </svg>
 </div>

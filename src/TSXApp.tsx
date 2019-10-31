@@ -48,11 +48,11 @@ function TSXApp() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Staff>
-          <Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>
-          <MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
+          {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
+          {/*<MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />*/}
           <MinorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
           <MajorThree startTone={createTone({baseTone: BaseTone.H, octave: 0})} noteValue={NoteValues.HALF}/>
-          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>
+          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.CSharp, octave: 1}]}/>
         </Staff>
         <a
           className="App-link"

@@ -21,11 +21,11 @@ function positionInStaffToY(position: PositionInStaff) {
 
 const StaffLine = (props: StaffLineProps) => (
     <rect
-        y={positionInStaffToY(props.position) + 1}
+        y={positionInStaffToY(props.position) + 2}
         x={props.x}
         key={props.position}
         width={props.width}
-        height="4"
+        height="1"
         className={"staff__line"}
     />
 );
@@ -101,7 +101,7 @@ interface NoteProps {
   isBottom: boolean;
   stemSide: StemSide;
   noteValue: NoteValue;
-  accidental: Accidental;
+  accidental?: Accidental;
 }
 
 interface ExtensionLinesProps {
@@ -149,44 +149,44 @@ const Sharp = ({staffPosition, column}: AccidentalProps) => {
   const cursor = useContext(CursorContext);
   const startY = positionInStaffToY(staffPosition - 1);
   const endY = positionInStaffToY(staffPosition + 2);
-  const xOffset = -33 + (-30 * column);
+  const xOffset = (30 * column);
   const length = endY - startY - 3;
   return <>
     <g className={'sharp'} stroke="black" width={4}>
       <rect
           y={startY}
-          x={cursor.x - 17 + xOffset}
+          x={cursor.x - 14 + xOffset}
           height={length}
-          width={5}
+          width={2}
       />
       <rect
           y={startY - 5}
           x={cursor.x - 7 + xOffset}
           height={length}
-          width={5}
+          width={2}
       />
       <rect
-          y={startY + 3}
-          x={cursor.x + xOffset}
+          y={startY + 9}
+          x={cursor.x + xOffset + 5}
           width={5}
-          height={22}
-          transform={`rotate(80, ${cursor.x + xOffset}, ${startY + 3})`}/>
+          height={17}
+          transform={`rotate(80, ${cursor.x + xOffset + 5}, ${startY + 3})`}/>
 
       />
       <rect
-          y={startY + 20}
-          x={cursor.x - 2 + xOffset}
+          y={startY + 26}
+          x={cursor.x - 2 + xOffset + 5}
           width={5}
-          height={22}
-          transform={`rotate(80, ${cursor.x + xOffset}, ${startY + 20})`}/>
+          height={17}
+          transform={`rotate(80, ${cursor.x + xOffset + 5}, ${startY + 20})`}/>
       />
     </g>
   </>;
 };
 
-const Note = ({ toneInfo, stemSide, isBottom, isTop, noteValue}: NoteProps) => {
+const Note = ({ toneInfo, isBottom, isTop, noteValue}: NoteProps) => {
   const { staffPosition } = toneInfo;
-  const xOffset = (stemSide === Side.RIGHT ? +16 : -12);
+  const xOffset = 0;// (stemSide === Side.RIGHT ? +16 : -12);
   const cursor = useContext(CursorContext);
   return (
       <>
@@ -394,7 +394,7 @@ export const Chord = (props: ChordProps) => {
               isTop: clusterIdx === accidentalClusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
               staffPosition: toneInfo.staffPosition,
-              column: positionInCluster % 2,
+              column: 3 - positionInCluster % 3,
               strKey: `${toneInfo.strKey}-accidental`,
             })
         )
@@ -402,17 +402,41 @@ export const Chord = (props: ChordProps) => {
 
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
+  const accidentalsStackWidth = 27;
+  const noteHeadsStackWidth = 12;
+  const stemWidth = 4;
+
+  const cursor = useContext(CursorContext);
+
+  const accidentalsStartX = cursor.x;
+  const leftNoteHeadsStartX = accidentalsStartX + (Math.max(...(accidentalsProps.map(accidentalProps => accidentalProps.column + 1))) || 0) * accidentalsStackWidth;
+  const stemX = (notesProps.find(noteProps => noteProps.stemSide === Side.RIGHT) ? leftNoteHeadsStartX + noteHeadsStackWidth : leftNoteHeadsStartX);
+  const rightNodeHeadsStartX = stemX + stemWidth + 12;
+  // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX);
+
   // TODO: Test accidentals
   return (
       <>
-        {notesProps.map((noteProps: NoteProps) => (
-            <Note key={noteProps.toneInfo.strKey} {...noteProps} />
-        ))}
-        <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
-        { accidentalsProps.map((accidentalProps: AccidentalProps) => (
-            accidentalProps.accidental === "sharp"
-            && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
-        ))}
+        <Cursor x={accidentalsStartX}>
+          { accidentalsProps.map((accidentalProps: AccidentalProps) => (
+              accidentalProps.accidental === "sharp"
+              && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
+          ))}
+        </Cursor>
+        <Cursor x={leftNoteHeadsStartX}>
+          {notesProps.filter(noteProps => noteProps.stemSide === Side.RIGHT).map((noteProps: NoteProps) => (
+              <Note key={noteProps.toneInfo.strKey} {...noteProps} />
+          ))}
+        </Cursor>
+        <Cursor x={stemX}>
+          <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
+        </Cursor>
+        <Cursor x={rightNodeHeadsStartX}>
+          {notesProps.filter(noteProps => noteProps.stemSide === Side.LEFT).map((noteProps: NoteProps) => (
+              <Note key={noteProps.toneInfo.strKey} {...noteProps} />
+          ))}
+        </Cursor>
+
       </>
   );
 };
@@ -436,7 +460,7 @@ const HollowNoteHeadMask = ({ direction } : {direction: Side }) => (
 
 
 export default (props: {children: any}) => {
-  const staffWidth = (React.Children.count(props.children) * 100 + 100) || 0;
+  const staffWidth = (React.Children.count(props.children) * 150 + 100) || 0;
   return (
       <div className={"staff"}>
         <svg
@@ -452,7 +476,7 @@ export default (props: {children: any}) => {
               <StaffLine key={lineIdx} position={lineIdx} width={staffWidth} />
           ))}
           {React.Children.map(props.children,(child, idx) =>
-              <Cursor x={50 + idx * 100} key={`child-${idx}`}>
+              <Cursor x={50 + idx * 150} key={`child-${idx}`}>
                 {child}
               </Cursor>
           )}
