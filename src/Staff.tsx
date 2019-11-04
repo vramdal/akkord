@@ -54,15 +54,16 @@ const maskReference = (noteValue: NoteValue) : string | undefined => {
 const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => {
   const rx = 15;
   const ry = 11;
-  const y = positionInStaffToY(positionInStaff) + 3;
+  const y = positionInStaffToY(positionInStaff);
   return (
       <ellipse
-          cx={x}
+          cx={x + rx}
           cy={y}
           rx={rx}
           ry={ry}
           className={"note__head"}
           fill={"white"}
+          strokeWidth={0}
           mask={maskReference(noteValue)}
       />
   );
@@ -186,17 +187,16 @@ const Sharp = ({staffPosition, column}: AccidentalProps) => {
 
 const Note = ({ toneInfo, isBottom, isTop, noteValue}: NoteProps) => {
   const { staffPosition } = toneInfo;
-  const xOffset = 0;// (stemSide === Side.RIGHT ? +16 : -12);
   const cursor = useContext(CursorContext);
   return (
       <>
         {(((isBottom && staffPosition >= 11) || (isTop && staffPosition < 0)) && (
-            <LedgerLines maxExtent={staffPosition} x={cursor.x + xOffset} />
+            <LedgerLines maxExtent={staffPosition} x={cursor.x} />
         )) ||
         undefined}
         <NoteHead
             key={toneInfo.strKey}
-            x={cursor.x + (xOffset)}
+            x={cursor.x}
             positionInStaff={staffPosition}
             noteValue={noteValue}
         />
@@ -403,7 +403,7 @@ export const Chord = (props: ChordProps) => {
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
   const accidentalsStackWidth = 27;
-  const noteHeadsStackWidth = 12;
+  const noteHeadsStackWidth = 30;
   const stemWidth = 4;
 
   const cursor = useContext(CursorContext);
@@ -413,11 +413,23 @@ export const Chord = (props: ChordProps) => {
   const leftNoteHeadsStartX = accidentalsStartX + (numAccidentalColumns) * accidentalsStackWidth;
   const stemX = (notesProps.find(noteProps => noteProps.stemSide === Side.RIGHT) ? leftNoteHeadsStartX + noteHeadsStackWidth : leftNoteHeadsStartX);
   const rightNodeHeadsStartX = stemX + stemWidth + 12;
+  const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
   console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
   // TODO: Test accidentals
   return (
       <>
+        <rect
+            x={cursor.x}
+            y={0}
+            width={endX}
+            height={positionInStaffToY(12) + 2}
+            stroke={'white'}
+            fill={'transparent'}
+            strokeWidth={2}
+            className={'outline'}
+        >
+        </rect>
         <Cursor x={accidentalsStartX}>
           { accidentalsProps.map((accidentalProps: AccidentalProps) => (
               accidentalProps.accidental === "sharp"

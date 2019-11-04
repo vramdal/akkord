@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-rect {
+rect:not(.outline) {
   fill: white;
   stroke: none;
 }
