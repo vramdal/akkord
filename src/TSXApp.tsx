@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Staff, {Chord, MajorThree, MinorThree} from "./Staff";
+import Staff, {Chord, MajorThree, MinorThree, Position} from "./Staff";
 import {BaseTone, createTone, NoteValues} from "./Notes";
 
 function TSXApp() {
@@ -40,6 +40,7 @@ function TSXApp() {
     baseTone: BaseTone.F,
     octave: 0
   });
+  const root = createTone({baseTone: BaseTone.D, octave: 0});
   return (
       <div className="App">
       <header className="App-header">
@@ -49,11 +50,13 @@ function TSXApp() {
         </p>
         <Staff>
           {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
-          <MajorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
-          <MinorThree startTone={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />
-          <MajorThree startTone={createTone({baseTone: BaseTone.G, octave: 0})} noteValue={NoteValues.HALF}/>
-          <MajorThree startTone={createTone({baseTone: BaseTone.F, octave: 0})} noteValue={NoteValues.HALF}/>
-          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.CSharp, octave: 1}]}/>
+          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.ROOT}/>
+          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.FIRST_INVERSION}/>
+          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.SECOND_INVERSION}/>
+          {/*<MinorThree root={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />*/}
+          {/*<MajorThree root={createTone({baseTone: BaseTone.G, octave: 0})} noteValue={NoteValues.HALF}/>*/}
+          {/*<MajorThree root={createTone({baseTone: BaseTone.F, octave: 0})} noteValue={NoteValues.HALF}/>*/}
+          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>
         </Staff>
         <a
           className="App-link"

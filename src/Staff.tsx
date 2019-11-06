@@ -15,8 +15,10 @@ interface StaffLineProps {
   x: number;
 }
 
+const LINE_HEIGHT = 12;
+
 function positionInStaffToY(position: PositionInStaff) {
-  return position * 12 + 48;
+  return position * LINE_HEIGHT;
 }
 
 const StaffLine = (props: StaffLineProps) => (
@@ -58,7 +60,7 @@ const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => {
   return (
       <ellipse
           cx={x + rx}
-          cy={y}
+          cy={y + 2}
           rx={rx}
           ry={ry}
           className={"note__head"}
@@ -129,7 +131,7 @@ const LedgerLines = (props: ExtensionLinesProps) => {
             <StaffLine
                 key={position}
                 position={position}
-                x={props.x - 20}
+                x={props.x - 5}
                 width={40}
             />
         ))}
@@ -149,40 +151,10 @@ interface AccidentalProps {
 const Sharp = ({staffPosition, column}: AccidentalProps) => {
   const cursor = useContext(CursorContext);
   const startY = positionInStaffToY(staffPosition - 1);
-  const endY = positionInStaffToY(staffPosition + 2);
+  // const endY = positionInStaffToY(staffPosition + 2);
   const xOffset = (30 * column);
-  const length = endY - startY - 3;
-  return <>
-    <g className={'sharp'} stroke="black" width={4}>
-      <rect
-          y={startY}
-          x={cursor.x - 14 + xOffset}
-          height={length}
-          width={2}
-      />
-      <rect
-          y={startY - 5}
-          x={cursor.x - 7 + xOffset}
-          height={length}
-          width={2}
-      />
-      <rect
-          y={startY + 9}
-          x={cursor.x + xOffset + 5}
-          width={5}
-          height={17}
-          transform={`rotate(80, ${cursor.x + xOffset + 5}, ${startY + 3})`}/>
-
-      />
-      <rect
-          y={startY + 26}
-          x={cursor.x - 2 + xOffset + 5}
-          width={5}
-          height={17}
-          transform={`rotate(80, ${cursor.x + xOffset + 5}, ${startY + 20})`}/>
-      />
-    </g>
-  </>;
+  // const length = endY - startY - 3;
+  return <use xlinkHref="#sharp" x={cursor.x + xOffset}  y={startY} />
 };
 
 const Note = ({ toneInfo, isBottom, isTop, noteValue}: NoteProps) => {
@@ -310,7 +282,7 @@ interface ToneInfo extends Tone {
   accidental: Accidental
 }
 
-const CursorContext = React.createContext({x: 50});
+const CursorContext = React.createContext({x: 0});
 
 const Cursor = (props: {x: number, children: any}) =>
     <CursorContext.Provider value={{x: props.x}}>
@@ -394,7 +366,7 @@ export const Chord = (props: ChordProps) => {
               isTop: clusterIdx === accidentalClusters.length - 1 && positionInCluster === cluster.length - 1,
               isBottom: clusterIdx === 0 && positionInCluster === 0,
               staffPosition: toneInfo.staffPosition,
-              column: 3 - positionInCluster % 3,
+              column: positionInCluster % 3,
               strKey: `${toneInfo.strKey}-accidental`,
             })
         )
@@ -402,9 +374,9 @@ export const Chord = (props: ChordProps) => {
 
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
-  const accidentalsStackWidth = 27;
-  const noteHeadsStackWidth = 30;
-  const stemWidth = 4;
+  const accidentalsStackWidth = 34;
+  const noteHeadsStackWidth = 27;
+  const stemWidth = 1;
 
   const cursor = useContext(CursorContext);
 
@@ -412,24 +384,24 @@ export const Chord = (props: ChordProps) => {
   const numAccidentalColumns = Math.max(0, ...(accidentalsProps.map(accidentalProps => accidentalProps.column + 1)));
   const leftNoteHeadsStartX = accidentalsStartX + (numAccidentalColumns) * accidentalsStackWidth;
   const stemX = (notesProps.find(noteProps => noteProps.stemSide === Side.RIGHT) ? leftNoteHeadsStartX + noteHeadsStackWidth : leftNoteHeadsStartX);
-  const rightNodeHeadsStartX = stemX + stemWidth + 12;
-  const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
-  console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
+  const rightNodeHeadsStartX = stemX + stemWidth;
+  // const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
+  // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
   // TODO: Test accidentals
   return (
       <>
-        <rect
-            x={cursor.x}
-            y={0}
-            width={endX}
-            height={positionInStaffToY(12) + 2}
-            stroke={'white'}
-            fill={'transparent'}
-            strokeWidth={2}
-            className={'outline'}
-        >
-        </rect>
+        {/*<rect*/}
+        {/*    x={cursor.x}*/}
+        {/*    y={0}*/}
+        {/*    width={endX}*/}
+        {/*    height={positionInStaffToY(12) + 2}*/}
+        {/*    stroke={'white'}*/}
+        {/*    fill={'transparent'}*/}
+        {/*    strokeWidth={2}*/}
+        {/*    className={'outline'}*/}
+        {/*>*/}
+        {/*</rect>*/}
         <Cursor x={accidentalsStartX}>
           { accidentalsProps.map((accidentalProps: AccidentalProps) => (
               accidentalProps.accidental === "sharp"
@@ -472,6 +444,16 @@ const HollowNoteHeadMask = ({ direction } : {direction: Side }) => (
 );
 
 
+const SharpSymbolDefinition = () => <symbol id={"sharp"} width={40} height={LINE_HEIGHT * 2.5}
+                                            viewBox={`0 0 10 20`}>
+  <g className={"sharp"} stroke="white" strokeWidth={2.5}>
+    <line x1={2} x2={2} y1={1} y2={20} strokeWidth={1.5}/>
+    <line x1={8} x2={8} y1={0} y2={19} strokeWidth={1.5}/>
+    <line x1={0} x2={10} y1={6} y2={3} strokeWidth={3.5}/>
+    <line x1={0} x2={10} y1={16} y2={13} strokeWidth={3.5}/>
+  </g>
+</symbol>;
+
 export default (props: {children: any}) => {
   const staffWidth = (React.Children.count(props.children) * 150 + 100) || 0;
   return (
@@ -482,14 +464,16 @@ export default (props: {children: any}) => {
             height="300"
             className={"staff"}
         >
-          <HollowNoteHeadMask direction={Side.LEFT} />
-          <HollowNoteHeadMask direction={Side.RIGHT} />
+          <HollowNoteHeadMask direction={Side.LEFT}/>
+          <HollowNoteHeadMask direction={Side.RIGHT}/>
+          <SharpSymbolDefinition/>
+
 
           {[1, 3, 5, 7, 9].map(lineIdx => (
-              <StaffLine key={lineIdx} position={lineIdx} width={staffWidth} />
+              <StaffLine key={lineIdx} position={lineIdx} width={staffWidth}/>
           ))}
-          {React.Children.map(props.children,(child, idx) =>
-              <Cursor x={50 + idx * 150} key={`child-${idx}`}>
+          {React.Children.map(props.children, (child, idx) =>
+              <Cursor x={idx * 150} key={`child-${idx}`}>
                 {child}
               </Cursor>
           )}
@@ -498,22 +482,32 @@ export default (props: {children: any}) => {
   );
 };
 
-interface ScaleProps {
-  startTone: Tone,
-  noteValue: NoteValue
+export enum Position {
+  ROOT = 0,
+  FIRST_INVERSION = 1,
+  SECOND_INVERSION = 2
 }
 
-export const MajorThree = ({startTone, noteValue}: ScaleProps) => {
-  const second = addToTone(startTone, 2);
-  const third = addToTone(second, 1.5);
-  const tones = [startTone, second, third];
+
+interface ScaleProps {
+  root: Tone,
+  noteValue: NoteValue,
+  position?: Position,
+}
+
+export const MajorThree = ({root, noteValue, position = Position.ROOT}: ScaleProps) => {
+  const first = addToTone(root, position > 0 ? 6 : 0);
+  const second = addToTone(root, 2 + (position > 1 ? 6 : 0));
+  const third = addToTone(root, 2 + 1.5);
+  const tones = [first, second, third];
   return <Chord tones={tones} noteValue={noteValue}/>
 };
 
-export const MinorThree = ({startTone, noteValue}: ScaleProps) => {
-  const second = addToTone(startTone, 1.5);
-  const third = addToTone(second, 2);
-  const tones = [startTone, second, third];
+export const MinorThree = ({root, noteValue, position = Position.ROOT}: ScaleProps) => {
+  const first = addToTone(root, position > 0 ? 6 : 0);
+  const second = addToTone(root, 1.5 + (position > 1 ? 6 : 0));
+  const third = addToTone(root, 2 + 1.5);
+  const tones = [first, second, third];
   return <Chord tones={tones} noteValue={noteValue}/>
 };
 
