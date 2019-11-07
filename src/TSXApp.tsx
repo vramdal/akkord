@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Staff, {Chord, majorThree, Position} from "./Staff";
-import {BaseTone, createTone, NoteValues} from "./Notes";
+import Staff from "./components/Staff";
+import {createTone} from "./domain/Tone";
+import {BaseTone, NoteValues, Position} from "./domain/Types";
+import {majorThree} from "./domain/Functions";
+import {Chord} from "./components/Chord";
 
 function TSXApp() {
   // noinspection JSUnusedLocalSymbols

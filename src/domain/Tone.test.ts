@@ -1,4 +1,5 @@
-import {addToTone, BaseTone, _testing} from "./Notes";
+import {addToTone, _testing} from "./Tone";
+import {BaseTone} from "./Types";
 
 const toneAsMIDINote = _testing.toneAsMIDINote;
 

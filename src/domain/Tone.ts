@@ -1,36 +1,8 @@
-export enum BaseTone {
-  C = "C",
-  CSharp = "CSharp",
-  D = "D",
-  DSharp = "DSharp",
-  E = "E",
-  F = "F",
-  FSharp = "FSharp",
-  G = "G",
-  GSharp = "GSharp",
-  A = "A",
-  ASharp = "ASharp",
-  H = "H",
-  DFlat = CSharp,
-  EFlat = DSharp,
-  GFlat = FSharp,
-  AFlat = GSharp,
-  HFlat = ASharp
-}
+import {Accidental, BaseTone, MIDINote, MIDIOctave, Tone} from "./Types";
 
 const BaseTonesInOrder = [BaseTone.C, BaseTone.CSharp, BaseTone.D, BaseTone.DSharp, BaseTone.E, BaseTone.F, BaseTone.FSharp, BaseTone.G, BaseTone.GSharp, BaseTone.A, BaseTone.ASharp, BaseTone.H];
 
-export type Accidental = 'sharp' | 'flat' | null
-
-export type MIDIOctave = -5 | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6; // https://en.wikipedia.org/wiki/Octave#Notation
-export type MIDINote = number;
-
 const OctavesInOrder : Array<MIDIOctave> = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6];
-
-export interface Tone {
-  baseTone: BaseTone;
-  octave: MIDIOctave;
-}
 
 export const createTone = (props: {
   baseTone: BaseTone,
@@ -42,7 +14,6 @@ export const createTone = (props: {
   };
 };
 
-
 const toneAsMIDINote = (tone: Tone) : number => {
   const noteIndex = BaseTonesInOrder.findIndex((toneInList => toneInList === tone.baseTone));
   return noteIndex + tone.octave * 12;
@@ -51,6 +22,12 @@ const toneAsMIDINote = (tone: Tone) : number => {
 export const addToTone = (tone: Tone, toneDelta: number) : Tone => {
   const MIDINote = toneAsMIDINote(tone);
   return toneFromNumber(MIDINote + toneDelta * 2);
+};
+
+const division = (y: number, x: number) => {
+  const quotient = Math.floor(y / x);
+  const remainder = y % x;
+  return [quotient, remainder];
 };
 
 const toneFromNumber = (number: MIDINote) : Tone => {
@@ -77,27 +54,6 @@ export const getAccidental = (tone: Tone) : Accidental => {
   }
 };
 
-
-const division = (y : number, x : number) => {
-  const quotient = Math.floor(y/x);
-  const remainder = y % x;
-  return [quotient, remainder];
-};
-
-export enum NoteValues {
-  OCTUPLE = 8,
-  LONGA = 4,
-  BREVE = 2,
-  WHOLE = 1,
-  HALF = 1/2,
-  QUARTER = 1/4,
-  EIGHTH = 1/8,
-  SIXTEENTH = 1/16,
-  THIRTYSECOND = 1/32,
-  SIXTYFOURTH = 1/64,
-  HUNDREDTWENTYEIGHTH = 1/128,
-  TWOHUNDREDFIFTYSIXTH = 1/256
-}
 
 export const _testing = {toneAsMIDINote};
 
