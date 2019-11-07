@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Staff, {Chord, MajorThree, MinorThree, Position} from "./Staff";
+import Staff, {Chord, majorThree, Position} from "./Staff";
 import {BaseTone, createTone, NoteValues} from "./Notes";
 
 function TSXApp() {
@@ -49,14 +49,17 @@ function TSXApp() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Staff>
+          <Chord tones={majorThree(root, NoteValues.HALF, Position.ROOT)}/>
+          <Chord tones={majorThree(root, NoteValues.HALF, Position.FIRST_INVERSION)}/>
+          <Chord tones={majorThree(root, NoteValues.HALF, Position.SECOND_INVERSION)}/>
           {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
-          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.ROOT}/>
-          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.FIRST_INVERSION}/>
-          <MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.SECOND_INVERSION}/>
+          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.ROOT}/>*/}
+          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.FIRST_INVERSION}/>*/}
+          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.SECOND_INVERSION}/>*/}
           {/*<MinorThree root={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />*/}
           {/*<MajorThree root={createTone({baseTone: BaseTone.G, octave: 0})} noteValue={NoteValues.HALF}/>*/}
           {/*<MajorThree root={createTone({baseTone: BaseTone.F, octave: 0})} noteValue={NoteValues.HALF}/>*/}
-          <Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>
+          {/*<Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>*/}
         </Staff>
         <a
           className="App-link"

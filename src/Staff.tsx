@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
-import {addToTone, BaseTone, MIDINote, NoteValues, Tone, getAccidental, Accidental} from "./Notes";
+import {Accidental, addToTone, BaseTone, getAccidental, MIDINote, NoteValues, Tone} from "./Notes";
+import {ReactElementLike} from "prop-types";
 
 type PositionInStaff = number;
 
@@ -374,6 +375,9 @@ export const Chord = (props: ChordProps) => {
 
   const staffPositions = notesProps.map(noteProps => noteProps.toneInfo.staffPosition);
 
+  // const minStaffPosition = Math.min(...staffPositions);
+  // const maxStaffPosition = Math.max(...staffPositions);
+
   const accidentalsStackWidth = 34;
   const noteHeadsStackWidth = 27;
   const stemWidth = 1;
@@ -454,14 +458,18 @@ const SharpSymbolDefinition = () => <symbol id={"sharp"} width={40} height={LINE
   </g>
 </symbol>;
 
-export default (props: {children: any}) => {
+interface ElementOnStaff extends ReactElementLike {
+  staffPosition: PositionInStaff
+}
+
+export default (props: {children: Array<ElementOnStaff>}) => {
   const staffWidth = (React.Children.count(props.children) * 150 + 100) || 0;
   return (
       <div className={"staff"}>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width={staffWidth}
-            height="300"
+            height={"300"}
             className={"staff"}
         >
           <HollowNoteHeadMask direction={Side.LEFT}/>
@@ -489,26 +497,18 @@ export enum Position {
 }
 
 
-interface ScaleProps {
-  root: Tone,
-  noteValue: NoteValue,
-  position?: Position,
-}
-
-export const MajorThree = ({root, noteValue, position = Position.ROOT}: ScaleProps) => {
+export const majorThree = (root : Tone, noteValue : NoteValue, position = Position.ROOT): Array<Tone> => {
   const first = addToTone(root, position > 0 ? 6 : 0);
   const second = addToTone(root, 2 + (position > 1 ? 6 : 0));
   const third = addToTone(root, 2 + 1.5);
-  const tones = [first, second, third];
-  return <Chord tones={tones} noteValue={noteValue}/>
+  return [first, second, third];
 };
 
-export const MinorThree = ({root, noteValue, position = Position.ROOT}: ScaleProps) => {
+export const minorThree = (root : Tone, noteValue : NoteValue, position = Position.ROOT): Array<Tone> => {
   const first = addToTone(root, position > 0 ? 6 : 0);
   const second = addToTone(root, 1.5 + (position > 1 ? 6 : 0));
   const third = addToTone(root, 2 + 1.5);
-  const tones = [first, second, third];
-  return <Chord tones={tones} noteValue={noteValue}/>
+  return [first, second, third];
 };
 
 export const _testing = { Note, LedgerLines, cluster };
