@@ -30,6 +30,17 @@ const SharpSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol i
   </g>
 </symbol>;
 
+const FlatSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol id={"flat"} width={40} height={lineHeight * 2.5} viewBox={`0 0 10 20`}>
+    <text
+        x={0}
+        y={20}
+        lengthAdjust={"spacingAndGlyphs"}
+        textLength={10}
+        color={"white"}
+        style={{font: "bold 30px sans-serif", fill: "white"}}
+        strokeWidth={1.5}>♭</text>
+</symbol>;
+
 interface ElementOnStaff extends ReactElementLike {
   // staffPosition: PositionInStaff
 }
@@ -47,6 +58,7 @@ export default (props: {children?: any}) => {
           <HollowNoteHeadMask direction={Side.LEFT}/>
           <HollowNoteHeadMask direction={Side.RIGHT}/>
           <SharpSymbolDefinition lineHeight={LINE_HEIGHT}/>
+          <FlatSymbolDefinition lineHeight={LINE_HEIGHT}/>
 
 
           {[1, 3, 5, 7, 9].map(lineIdx => (

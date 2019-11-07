@@ -3,7 +3,7 @@ import {Side, ToneInfo} from "./subcomponents/Types";
 import {Note, NoteProps, StemSide} from "./subcomponents/Note";
 import {getAccidental} from "../domain/Tone";
 import {cluster, flattenArray, PositionInStaff} from "./subcomponents/Utils";
-import {AccidentalProps, Sharp} from "./subcomponents/Accidentals";
+import {AccidentalProps, Flat, Sharp} from "./subcomponents/Accidentals";
 import React, {useContext} from "react";
 import {Cursor, CursorContext} from "./subcomponents/Cursor";
 import {Stem} from "./subcomponents/Stem";
@@ -137,7 +137,7 @@ export const Chord = (props: ChordProps) => {
         accidentalClusters.map((cluster, clusterIdx) => {
             return cluster.map(
                 (toneInfo: ToneInfo, positionInCluster: number) => ({
-                    accidental: "sharp",
+                    accidental: toneInfo.accidental,
                     isTop: clusterIdx === accidentalClusters.length - 1 && positionInCluster === cluster.length - 1,
                     isBottom: clusterIdx === 0 && positionInCluster === 0,
                     staffPosition: toneInfo.staffPosition,
@@ -184,6 +184,8 @@ export const Chord = (props: ChordProps) => {
                 {accidentalsProps.map((accidentalProps: AccidentalProps) => (
                     accidentalProps.accidental === "sharp"
                     && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
+                    || accidentalProps.accidental === "flat"
+                    && <Flat {...accidentalProps} key={accidentalProps.strKey}/>
                 ))}
             </Cursor>
             <Cursor x={leftNoteHeadsStartX}>

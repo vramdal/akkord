@@ -10,5 +10,5 @@ export interface ToneInfo extends Tone {
     midiNote: MIDINote;
     strKey: string;
     staffPosition: PositionInStaff;
-    accidental: Accidental
+    accidental: Accidental,
 }

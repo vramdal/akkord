@@ -55,6 +55,7 @@ function TSXApp() {
           <Chord tones={majorThree(root, NoteValues.HALF, Position.ROOT)}/>
           <Chord tones={majorThree(root, NoteValues.HALF, Position.FIRST_INVERSION)}/>
           <Chord tones={majorThree(root, NoteValues.HALF, Position.SECOND_INVERSION)}/>
+          <Chord tones={[{baseTone: BaseTone.HFlat, octave: 0}]}/>
           {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
           {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.ROOT}/>*/}
           {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.FIRST_INVERSION}/>*/}

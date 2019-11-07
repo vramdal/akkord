@@ -6,17 +6,21 @@ import {CursorContext} from "./Cursor";
 export interface AccidentalProps {
     staffPosition: PositionInStaff;
     accidental: Accidental
-    isTop: boolean;
-    isBottom: boolean;
     column: number;
     strKey: string;
-}
+};
 
-export const Sharp = ({staffPosition, column}: AccidentalProps) => {
+const AccidentalUse = ({staffPosition, column, symbolId}: AccidentalProps & {symbolId: string})  => {
     const cursor = useContext(CursorContext);
     const startY = positionInStaffToY(staffPosition - 1);
-    // const endY = positionInStaffToY(staffPosition + 2);
     const xOffset = (30 * column);
-    // const length = endY - startY - 3;
-    return <use xlinkHref="#sharp" x={cursor.x + xOffset} y={startY}/>
+    return <use xlinkHref={`#${symbolId}`} x={cursor.x + xOffset} y={startY} />
+};
+
+export const Sharp = (props: AccidentalProps) => {
+    return <AccidentalUse {...props} symbolId={"sharp"}/>
+};
+
+export const Flat = (props: AccidentalProps) => {
+    return <AccidentalUse {...props} symbolId={"flat"}/>
 };
