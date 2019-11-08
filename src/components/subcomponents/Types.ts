@@ -1,4 +1,4 @@
-import {Accidental, MIDINote, Tone} from "../../domain/Types";
+import {Accidental, BaseTone, MIDINote, Tone} from "../../domain/Types";
 import {PositionInStaff} from "./Utils";
 
 export enum Side {
@@ -12,3 +12,7 @@ export interface ToneInfo extends Tone {
     staffPosition: PositionInStaff;
     accidental: Accidental,
 }
+
+export type PreferredAccidentalsMap = {
+    [tone in BaseTone]?: Accidental;
+};

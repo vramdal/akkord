@@ -51,18 +51,12 @@ function TSXApp() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Staff>
+        <Staff preferredAccidentals={{[BaseTone.HFlat]: "flat"}}>
           <Chord tones={majorThree(root, NoteValues.HALF, Position.ROOT)}/>
           <Chord tones={majorThree(root, NoteValues.HALF, Position.FIRST_INVERSION)}/>
           <Chord tones={majorThree(root, NoteValues.HALF, Position.SECOND_INVERSION)}/>
           <Chord tones={[{baseTone: BaseTone.HFlat, octave: 0}]}/>
           {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
-          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.ROOT}/>*/}
-          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.FIRST_INVERSION}/>*/}
-          {/*<MajorThree root={root} noteValue={NoteValues.HALF}  position={Position.SECOND_INVERSION}/>*/}
-          {/*<MinorThree root={createTone({baseTone: BaseTone.C, octave: 0})} noteValue={NoteValues.HALF} />*/}
-          {/*<MajorThree root={createTone({baseTone: BaseTone.G, octave: 0})} noteValue={NoteValues.HALF}/>*/}
-          {/*<MajorThree root={createTone({baseTone: BaseTone.F, octave: 0})} noteValue={NoteValues.HALF}/>*/}
           {/*<Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>*/}
         </Staff>
         <a

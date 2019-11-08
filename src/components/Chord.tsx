@@ -1,91 +1,18 @@
-import {BaseTone, MIDINote, NoteValue, NoteValues, Tone} from "../domain/Types";
+import {MIDINote, NoteValue, NoteValues, Tone} from "../domain/Types";
 import {Side, ToneInfo} from "./subcomponents/Types";
 import {Note, NoteProps, StemSide} from "./subcomponents/Note";
-import {getAccidental} from "../domain/Tone";
-import {cluster, flattenArray, PositionInStaff} from "./subcomponents/Utils";
-import {AccidentalProps, Flat, Sharp} from "./subcomponents/Accidentals";
+import {cluster, flattenArray} from "./subcomponents/Utils";
+import {AccidentalProps, Flat, PreferredAccidentalsContext, Sharp} from "./subcomponents/Accidentals";
 import React, {useContext} from "react";
 import {Cursor, CursorContext} from "./subcomponents/Cursor";
 import {Stem} from "./subcomponents/Stem";
+import {toneToToneInfo} from "../domain/ToneInfo";
 
 interface ChordProps {
     tones: Array<Tone>;
     noteValue: NoteValue;
 }
 
-const mapToneToStaffPosition = (tone: Tone): PositionInStaff => {
-    const getBasePosition = () => {
-        switch (tone.baseTone) {
-            case BaseTone.C:
-            case BaseTone.CSharp:
-                return 11;
-            case BaseTone.D:
-            case BaseTone.DSharp:
-                return 10;
-            case BaseTone.E:
-            case BaseTone.EFlat:
-                return 9;
-            case BaseTone.F:
-            case BaseTone.FSharp:
-                return 8;
-            case BaseTone.G:
-            case BaseTone.GFlat:
-            case BaseTone.GSharp:
-                return 7;
-            case BaseTone.A:
-            case BaseTone.AFlat:
-            case BaseTone.ASharp:
-                return 6;
-            case BaseTone.H:
-            case BaseTone.HFlat:
-                return 5;
-            default:
-                throw new Error("Invalid tone: " + JSON.stringify(tone));
-        }
-    };
-    return getBasePosition() - tone.octave * 7;
-};
-const toneToMidiNote = (tone: Tone): MIDINote => {
-    const baseTones = [
-        BaseTone.C,
-        BaseTone.CSharp,
-        BaseTone.D,
-        BaseTone.DSharp,
-        BaseTone.E,
-        BaseTone.F,
-        BaseTone.FSharp,
-        BaseTone.G,
-        BaseTone.GSharp,
-        BaseTone.A,
-        BaseTone.ASharp,
-        BaseTone.H
-    ];
-
-    const getNormalizedBaseTone = (baseTone: BaseTone) => {
-        switch (baseTone) {
-            case BaseTone.EFlat:
-                return BaseTone.DSharp;
-            case BaseTone.GFlat:
-                return BaseTone.FSharp;
-            case BaseTone.AFlat:
-                return BaseTone.GSharp;
-            case BaseTone.HFlat:
-                return BaseTone.ASharp;
-            default:
-                return baseTone;
-        }
-    };
-
-    const baseTone = getNormalizedBaseTone(tone.baseTone);
-    // noinspection UnnecessaryLocalVariableJS
-    const midiNote: MIDINote =
-        baseTones.findIndex(currentBaseTone => currentBaseTone === baseTone) +
-        12 +
-        tone.octave * 12;
-
-    return midiNote;
-};
-const toneToStrKey = (tone: Tone) => tone.baseTone + tone.octave;
 const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) =>
     MIDINoteA.valueOf() - MIDINoteB.valueOf();
 const compareToneInfos = (
@@ -103,14 +30,11 @@ const determineStemSide = (note: ToneInfo,
         return (positionInCluster % 2 === 0 && Side.RIGHT) || Side.LEFT;
     }
 };
+
+
 export const Chord = (props: ChordProps) => {
-    const partialToneInfos: Array<ToneInfo> = props.tones.map((tone: Tone) => ({
-        ...tone,
-        midiNote: toneToMidiNote(tone),
-        strKey: toneToStrKey(tone),
-        staffPosition: mapToneToStaffPosition(tone),
-        accidental: getAccidental(tone),
-    })).sort(compareToneInfos);
+    const preferredAccidentalsReplacer = useContext(PreferredAccidentalsContext);
+    const partialToneInfos: Array<ToneInfo> = props.tones.map(toneToToneInfo).map(preferredAccidentalsReplacer.replacer).sort(compareToneInfos);
 
     const noteClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos, 1);
     const accidentalClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos.filter(toneInfo => toneInfo.accidental), 2);
