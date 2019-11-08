@@ -39,7 +39,7 @@ export const Chord = (props: ChordProps) => {
     const noteClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos, 1);
     const accidentalClusters: Array<Array<ToneInfo>> = cluster(partialToneInfos.filter(toneInfo => toneInfo.accidental), 2);
 
-    const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 5 ? Side.LEFT : Side.RIGHT;
+    const stemSideForChord = partialToneInfos[partialToneInfos.length - 1].staffPosition < 6 ? Side.LEFT : Side.RIGHT;
 
     const notesProps: Array<NoteProps> = flattenArray<NoteProps>(
         noteClusters.map((cluster, clusterIdx) => {
