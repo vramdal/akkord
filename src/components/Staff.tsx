@@ -30,12 +30,12 @@ const SharpSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol i
     </g>
 </symbol>;
 
-const FlatSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol id={"flat"} width={40} height={lineHeight * 2.5} viewBox={`0 0 10 20`}>
+const FlatSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol id={"flat"} width={40} height={lineHeight * 2.5} viewBox={`5 0 10 20`}>
     <text
         x={0}
         y={20}
         lengthAdjust={"spacingAndGlyphs"}
-        textLength={10}
+        textLength={20}
         color={"white"}
         style={{font: "bold 30px sans-serif", fill: "white"}}
         strokeWidth={1.5}>♭</text>
