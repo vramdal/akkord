@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="">
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Fikser på FlatSymbol">
+      <change afterPath="$PROJECT_DIR$/src/controls/ChordButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Staff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/akkord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/akkord.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__snapshots__/Staff.test.jsx.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Functions.ts" afterDir="false" />
     </list>
+    <list id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,143 +24,17 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="361" column="29" selection-start-line="361" selection-start-column="29" selection-end-line="361" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Notes.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es5.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8310">
-              <caret line="567" column="4" selection-start-line="567" selection-start-column="4" selection-end-line="567" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="46" column="58" lean-forward="true" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="TypeScript File" />
+        <option value="TypeScript TSX component" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>stem</find>
-      <find>COLUMN</find>
-      <find>debug</find>
-      <find>json</find>
-      <find>expect(result).toM</find>
-      <find>staffline</find>
-      <find>C</find>
-      <find>accident</find>
-      <find>accidentalst</find>
-      <find>stemside</find>
-      <find>chord</find>
-      <find>note</find>
-      <find>50</find>
-      <find>xoffset</find>
-      <find>id=&quot;sharp</find>
-      <find>sharp</find>
-      <find>tost</find>
-      <find>definit</find>
-      <find>accidental</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Staff.test.jsx" />
-        <option value="$PROJECT_DIR$/src/TSXApp.tsx" />
-        <option value="$PROJECT_DIR$/src/Staff.tsx" />
-      </list>
-    </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -172,65 +49,15 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="305" />
-    <option name="y" value="23" />
-    <option name="width" value="1340" />
-    <option name="height" value="944" />
-  </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="akkord" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="akkord" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="akkord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="akkord" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Notes.ts" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="js.introduce.parameter.generate.optional" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -244,11 +71,25 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/domain/ToneInfo.tsx" />
+      <recent name="$PROJECT_DIR$/src/components/subcomponents/Types.tsx" />
+      <recent name="$PROJECT_DIR$/src/components/Chord.tsx" />
+      <recent name="$PROJECT_DIR$/src/components/Accidentals.tsx" />
+      <recent name="$PROJECT_DIR$/src/components/Cursor.tsx" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/subcomponents" />
+      <recent name="$PROJECT_DIR$/src/domain" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -262,7 +103,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.Staff.test.jsx">
+  <component name="RunManager" selected="Jest.toneInfoAccidentalTranslator.should not replace another accidental">
     <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -291,16 +132,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Notes.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST_FILE" />
-      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
-      <method v="2" />
-    </configuration>
     <configuration name="Staff" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -324,30 +155,44 @@
       <test-file value="$PROJECT_DIR$/src/Staff.test.jsx" />
       <method v="2" />
     </configuration>
-    <configuration name="addToTone" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="toneInfoAccidentalTranslator" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/domain/Functions.test.ts" />
       <test-names>
-        <test-name value="addToTone" />
+        <test-name value="toneInfoAccidentalTranslator" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="addToTone.should add 1.5 notes to F" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="toneInfoAccidentalTranslator.should not replace another accidental" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Notes.test.ts" />
+      <test-file value="$PROJECT_DIR$/src/domain/Functions.test.ts" />
       <test-names>
-        <test-name value="addToTone" />
-        <test-name value="should add 1.5 notes to F" />
+        <test-name value="toneInfoAccidentalTranslator" />
+        <test-name value="should not replace another accidental" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="toneInfoAccidentalTranslator.should replace an accidental" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/domain/Functions.test.ts" />
+      <test-names>
+        <test-name value="toneInfoAccidentalTranslator" />
+        <test-name value="should replace an accidental" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -355,19 +200,19 @@
       <item itemvalue="Jest.Jest-tests" />
       <item itemvalue="Jest.Note.should render a single note" />
       <item itemvalue="Jest.Staff" />
-      <item itemvalue="Jest.addToTone" />
-      <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
-      <item itemvalue="Jest.Notes.test.ts" />
       <item itemvalue="Jest.Chord.should render a half note" />
       <item itemvalue="Jest.Staff.test.jsx" />
+      <item itemvalue="Jest.toneInfoAccidentalTranslator.should replace an accidental" />
+      <item itemvalue="Jest.toneInfoAccidentalTranslator" />
+      <item itemvalue="Jest.toneInfoAccidentalTranslator.should not replace another accidental" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.toneInfoAccidentalTranslator.should not replace another accidental" />
+        <item itemvalue="Jest.toneInfoAccidentalTranslator" />
+        <item itemvalue="Jest.toneInfoAccidentalTranslator.should replace an accidental" />
         <item itemvalue="Jest.Staff.test.jsx" />
         <item itemvalue="Jest.Chord.should render a half note" />
-        <item itemvalue="Jest.Notes.test.ts" />
-        <item itemvalue="Jest.addToTone" />
-        <item itemvalue="Jest.addToTone.should add 1.5 notes to F" />
       </list>
     </recent_temporary>
   </component>
@@ -387,6 +232,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="" />
+      <changelist id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
       <created>1570519148048</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -398,6 +244,11 @@
       <workItem from="1571953268904" duration="1801000" />
       <workItem from="1572205257439" duration="269000" />
       <workItem from="1572208459205" duration="10970000" />
+      <workItem from="1573139277879" duration="9771000" />
+      <workItem from="1573200103467" duration="9505000" />
+      <workItem from="1573913942117" duration="1022000" />
+      <workItem from="1574530933082" duration="559000" />
+      <workItem from="1574536886138" duration="5486000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -546,28 +397,59 @@
       <option name="project" value="LOCAL" />
       <updated>1572564775626</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sharp">
+      <created>1573066156852</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1573066156852</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Gjør om akkorder til funksjoner, ikke komponenter">
+      <created>1573139665921</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1573139665922</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Deler opp i filer">
+      <created>1573156649422</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1573156649422</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Flat">
+      <created>1573162139757</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1573162139757</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Kan overstyre accidental for en tone">
+      <created>1573222938578</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1573222938578</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Retter stemside for H">
+      <created>1573223845927</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1573223845927</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fikser på FlatSymbol">
+      <created>1573230073734</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1573230073734</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Chord_should_render_a_half_note - 2019.10.31 at 23h 59m 03s.xml">
-      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Staff - 2019.10.31 at 23h 59m 28s.xml">
-      <configuration name="Staff" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Notes_test_ts - 2019.11.01 at 00h 00m 08s.xml">
-      <configuration name="Notes.test.ts" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 00m 29s.xml">
-      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 00s.xml">
-      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 33s.xml">
-      <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="Chord_should_render_a_half_note - 2019.11.01 at 00h 01m 58s.xml">
       <configuration name="Chord.should render a half note" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -580,53 +462,24 @@
     <history-entry file="Staff_test_jsx - 2019.11.01 at 00h 17m 35s.xml">
       <configuration name="Staff.test.jsx" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14961000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="305" y="23" width="1340" height="944" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" x="-13" y="67" width="314" height="805" id="Project" order="0" type="WINDOWED" visible="true" weight="0.21743388" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="JRebel" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="aws.explorer" order="5" side_tool="true" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="UI Designer" order="7" />
-      <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info id="npm" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.31966224" />
-      <window_info anchor="bottom" x="483" y="701" width="1021" height="270" id="Run" order="2" type="SLIDING" weight="0.2955368" />
-      <window_info anchor="bottom" x="209" y="129" width="525" height="940" id="Debug" order="3" weight="0.31483716" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29915562" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="AWS Tail" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="RNConsole" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3289941" />
-      <window_info anchor="bottom" id="GraphQL" order="15" />
-      <window_info anchor="bottom" id="JRebel Executor" order="16" />
-      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="18" weight="0.2726176" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24974516" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout>
+    <history-entry file="toneInfoAccidentalTranslator_should_replace_an_accidental - 2019.11.08 at 13h 33m 58s.xml">
+      <configuration name="toneInfoAccidentalTranslator.should replace an accidental" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneInfoAccidentalTranslator_should_replace_an_accidental - 2019.11.08 at 13h 34m 09s.xml">
+      <configuration name="toneInfoAccidentalTranslator.should replace an accidental" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneInfoAccidentalTranslator_should_replace_an_accidental - 2019.11.08 at 13h 34m 20s.xml">
+      <configuration name="toneInfoAccidentalTranslator.should replace an accidental" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneInfoAccidentalTranslator - 2019.11.08 at 13h 41m 25s.xml">
+      <configuration name="toneInfoAccidentalTranslator" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneInfoAccidentalTranslator_should_not_replace_another_accidental - 2019.11.08 at 13h 42m 12s.xml">
+      <configuration name="toneInfoAccidentalTranslator.should not replace another accidental" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="toneInfoAccidentalTranslator_should_not_replace_another_accidental - 2019.11.08 at 13h 42m 26s.xml">
+      <configuration name="toneInfoAccidentalTranslator.should not replace another accidental" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -637,12 +490,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -683,28 +530,33 @@
     <MESSAGE value="Begynner på treakkorder" />
     <MESSAGE value="Fikser 3-tone-akkorder" />
     <MESSAGE value="Posisjonering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Posisjonering" />
+    <MESSAGE value="Sharp" />
+    <MESSAGE value="Gjør om akkorder til funksjoner, ikke komponenter" />
+    <MESSAGE value="Deler opp i filer" />
+    <MESSAGE value="Flat" />
+    <MESSAGE value="Kan overstyre accidental for en tone" />
+    <MESSAGE value="Retter stemside for H" />
+    <MESSAGE value="Fikser på FlatSymbol" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fikser på FlatSymbol" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>58</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>59</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Notes.ts</url>
-          <line>54</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/components/Staff.test.tsx</url>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="akkord" type="b2602c69:ProjectViewProjectNode" />
+        <item name="akkord" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -739,124 +591,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Notes.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.test.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Notes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TSXApp.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="46" column="58" lean-forward="true" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="361" column="29" selection-start-line="361" selection-start-column="29" selection-end-line="361" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>akkord</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

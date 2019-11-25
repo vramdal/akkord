@@ -1,20 +1,44 @@
-import {Accidental, NoteValue, Position, Tone} from "./Types";
+import {Accidental, Position, Tone} from "./Types";
 import {addToTone} from "./Tone";
 import {PreferredAccidentalsMap, ToneInfo} from "../components/subcomponents/Types";
 import {PositionInStaff} from "../components/subcomponents/Utils";
 
-export const majorThree = (root : Tone, noteValue : NoteValue, position = Position.ROOT): Array<Tone> => {
-    const first = addToTone(root, position > 0 ? 6 : 0);
-    const second = addToTone(root, 2 + (position > 1 ? 6 : 0));
-    const third = addToTone(root, 2 + 1.5);
-    return [first, second, third];
+export const majorThree = (root : Tone, position = Position.ROOT): Array<Tone> => {
+    return inverseThree([
+            root,
+            addToTone(root, 1.5),
+            addToTone(root, 3.5)
+        ] ,
+        position
+    )
+    // const first = addToTone(root, position > 0 ? 6 : 0);
+    // const second = addToTone(root, 2 + (position > 1 ? 6 : 0));
+    // const third = addToTone(root, 2 + 1.5);
+    // return [first, second, third];
 };
 
-export const minorThree = (root : Tone, noteValue : NoteValue, position = Position.ROOT): Array<Tone> => {
-    const first = addToTone(root, position > 0 ? 6 : 0);
-    const second = addToTone(root, 1.5 + (position > 1 ? 6 : 0));
-    const third = addToTone(root, 2 + 1.5);
-    return [first, second, third];
+export const minorThree = (root : Tone, position = Position.ROOT): Array<Tone> => {
+    return inverseThree([
+            root,
+            addToTone(root, 2),
+            addToTone(root, 3.5)
+        ],
+        position
+    );
+    // const first = addToTone(root, position > 0 ? 6 : 0);
+    // const second = addToTone(root, 1.5 + (position > 1 ? 6 : 0));
+    // const third = addToTone(root, 2 + 1.5);
+    // return [first, second, third];
+};
+
+export const inverseThree = (rootChordTones: Array<Tone>, position: Position) : Array<Tone> => {
+    if (position === Position.FIRST_INVERSION) {
+        return [addToTone(rootChordTones[0], 6), rootChordTones[1], rootChordTones[2]]
+    } else if (position === Position.SECOND_INVERSION) {
+        return [addToTone(rootChordTones[0], 6), addToTone(rootChordTones[1], 6), rootChordTones[2]]
+    } else {
+        return rootChordTones;
+    }
 };
 
 type PartialToneInfo = Pick<ToneInfo, 'baseTone' | 'accidental' | 'staffPosition'>;
