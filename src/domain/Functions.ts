@@ -2,6 +2,7 @@ import {Accidental, Position, Tone} from "./Types";
 import {addToTone} from "./Tone";
 import {PreferredAccidentalsMap, ToneInfo} from "../components/subcomponents/Types";
 import {PositionInStaff} from "../components/subcomponents/Utils";
+import { ChordSpecWithInversion } from "../controls/ControlPanel";
 
 export const majorThree = (root : Tone, position = Position.ROOT): Array<Tone> => {
     return inverseThree([
@@ -56,3 +57,13 @@ export const toneInfoAccidentalTranslator = <T extends PartialToneInfo>(map: Pre
         return needsReplacement(toneInfo) ? {...toneInfo, ...(replace(toneInfo))} : toneInfo;
     };
 } ;
+
+export const inverseChord = <T extends ChordSpecWithInversion>(chord: T, position: Position): T => {
+  const result = {
+    ...chord,
+    inversion: position,
+    tones: inverseThree(chord.rootTones, position),
+  };
+  return result
+};
+

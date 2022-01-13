@@ -37,6 +37,8 @@ const toneA1 : ToneInfo  = {
   accidental: null,
 };
 
+const NOOP = () => {}
+
 describe('Staff', () => {
   const toneA0: Tone = { baseTone: BaseTone.A, octave: 0 };
 
@@ -49,7 +51,7 @@ describe('Staff', () => {
 
   it('should render a single chord', () => {
     const result = TestRenderer.create(<Staff>
-      <Chord tones={[toneA0]}/>
+      <Chord tones={[toneA0]} inverseChord={NOOP}/>
     </Staff>);
 
     expect(result.toJSON()).toMatchSnapshot();
@@ -57,7 +59,7 @@ describe('Staff', () => {
 
   it('should render a half note', () => {
     const result = TestRenderer.create(
-        <Chord tones={[toneA0]} noteValue={NoteValues.HALF}/>
+        <Chord tones={[toneA0]} noteValue={NoteValues.HALF} inverseChord={NOOP}/>
     );
 
     expect(result.toJSON()).toMatchSnapshot();
@@ -69,7 +71,7 @@ describe("Chord", () => {
   it("should render a single Note", () => {
     const toneA0: Tone = { baseTone: BaseTone.A, octave: 0 };
 
-    const result = TestRenderer.create(<Chord tones={[toneA0]} />);
+    const result = TestRenderer.create(<Chord tones={[toneA0]} inverseChord={NOOP}/>);
 
     expect(result.toJSON()).toMatchSnapshot();
   });
@@ -80,7 +82,7 @@ describe("Chord", () => {
     const toneH0: Tone = { baseTone: BaseTone.H, octave: 0 };
     const tones = [toneA0, toneD0, toneH0];
 
-    const result = TestRenderer.create(<Chord tones={tones} />);
+    const result = TestRenderer.create(<Chord tones={tones} inverseChord={NOOP}/>);
 
     expect(result.toJSON()).toMatchSnapshot();
   });
@@ -89,7 +91,7 @@ describe("Chord", () => {
     const toneA1: Tone = { baseTone: BaseTone.A, octave: 1 };
     const toneD0: Tone = { baseTone: BaseTone.D, octave: 0 };
 
-    const result = TestRenderer.create(<Chord tones={[toneA1, toneD0]}/>);
+    const result = TestRenderer.create(<Chord tones={[toneA1, toneD0]} inverseChord={NOOP}/>);
 
     expect(result.toJSON()).toMatchSnapshot();
   });
@@ -98,7 +100,7 @@ describe("Chord", () => {
     const toneA0: Tone = { baseTone: BaseTone.A, octave: 0 };
     const tones = [toneA0];
 
-    const renderer = TestRenderer.create(<Chord tones={tones} noteValue={NoteValues.HALF}/>);
+    const renderer = TestRenderer.create(<Chord tones={tones} noteValue={NoteValues.HALF} inverseChord={NOOP}/>);
     expect(renderer.toJSON()).toMatchSnapshot()
   });
 });

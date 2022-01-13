@@ -34,6 +34,7 @@ const NoteHead = ({x, positionInStaff, noteValue}: NoteHeadProps) => {
             fill={"white"}
             strokeWidth={0}
             mask={maskReference(noteValue)}
+            onClick={() => console.log("Klikk", noteValue)}
         />
     );
 };

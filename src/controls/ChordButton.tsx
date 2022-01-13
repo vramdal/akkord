@@ -1,9 +1,9 @@
 import React from "react";
-import {ChordSpec} from "./ControlPanel";
+import { ChordSpec, ChordSpecWithInversion, NamedChordSpec } from "./ControlPanel";
 
 interface ChordButtonProps {
-    chordSpec: ChordSpec;
-    onClick: (chordSpec: ChordSpec) => void;
+    chordSpec: NamedChordSpec & ChordSpecWithInversion;
+    onClick: (chordSpec: NamedChordSpec & ChordSpecWithInversion) => void;
 }
 
 export const ChordButton = (props : ChordButtonProps) => {

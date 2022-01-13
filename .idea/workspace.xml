@@ -2,24 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Fikser på FlatSymbol">
-      <change afterPath="$PROJECT_DIR$/src/controls/ChordButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/akkord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/akkord.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chord.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chord.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chord.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Staff.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Staff.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/subcomponents/Note.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subcomponents/Note.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controls/ChordButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ChordButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Functions.ts" afterDir="false" />
     </list>
     <list id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -36,6 +39,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -49,9 +60,21 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -59,7 +82,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="js.introduce.parameter.generate.optional" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/package.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,6 +99,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
@@ -90,18 +114,6 @@
       <recent name="$PROJECT_DIR$/src/components/subcomponents" />
       <recent name="$PROJECT_DIR$/src/domain" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Jest.toneInfoAccidentalTranslator.should not replace another accidental">
     <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
@@ -226,6 +238,7 @@
       </serviceView>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -249,6 +262,9 @@
       <workItem from="1573913942117" duration="1022000" />
       <workItem from="1574530933082" duration="559000" />
       <workItem from="1574536886138" duration="5486000" />
+      <workItem from="1641897460578" duration="3549000" />
+      <workItem from="1642079761167" duration="5730000" />
+      <workItem from="1642111409387" duration="1692000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -482,16 +498,14 @@
     </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -510,6 +524,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />

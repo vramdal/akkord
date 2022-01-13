@@ -7,10 +7,11 @@ import React, {useContext} from "react";
 import {Cursor, CursorContext} from "./subcomponents/Cursor";
 import {Stem} from "./subcomponents/Stem";
 import {toneToToneInfo} from "../domain/ToneInfo";
+import { ChordSpec, ChordSpecWithInversion, NamedChordSpec } from "../controls/ControlPanel";
 
-interface ChordProps {
-    tones: Array<Tone>;
-    noteValue: NoteValue;
+interface ChordProps extends ChordSpec {
+  onClick?: () => void;
+  onShiftClick ?: () => void
 }
 
 const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) =>
@@ -87,47 +88,45 @@ export const Chord = (props: ChordProps) => {
     const leftNoteHeadsStartX = accidentalsStartX + (numAccidentalColumns) * accidentalsStackWidth;
     const stemX = (notesProps.find(noteProps => noteProps.stemSide === Side.RIGHT) ? leftNoteHeadsStartX + noteHeadsStackWidth : leftNoteHeadsStartX);
     const rightNodeHeadsStartX = stemX + stemWidth;
-    // const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
+  // const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
     // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
     // TODO: Test accidentals
-    return (
-        <>
-            {/*<rect*/}
-            {/*    x={cursor.x}*/}
-            {/*    y={0}*/}
-            {/*    width={endX}*/}
-            {/*    height={positionInStaffToY(12) + 2}*/}
-            {/*    stroke={'white'}*/}
-            {/*    fill={'transparent'}*/}
-            {/*    strokeWidth={2}*/}
-            {/*    className={'outline'}*/}
-            {/*>*/}
-            {/*</rect>*/}
-            <Cursor x={accidentalsStartX}>
-                {accidentalsProps.map((accidentalProps: AccidentalProps) => (
-                    accidentalProps.accidental === "sharp"
-                    && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
-                    || accidentalProps.accidental === "flat"
-                    && <Flat {...accidentalProps} key={accidentalProps.strKey}/>
-                ))}
-            </Cursor>
-            <Cursor x={leftNoteHeadsStartX}>
-                {notesProps.filter(noteProps => noteProps.stemSide === Side.RIGHT).map((noteProps: NoteProps) => (
-                    <Note key={noteProps.toneInfo.strKey} {...noteProps} />
-                ))}
-            </Cursor>
-            <Cursor x={stemX}>
-                <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
-            </Cursor>
-            <Cursor x={rightNodeHeadsStartX}>
-                {notesProps.filter(noteProps => noteProps.stemSide === Side.LEFT).map((noteProps: NoteProps) => (
-                    <Note key={noteProps.toneInfo.strKey} {...noteProps} />
-                ))}
-            </Cursor>
+    return <g onClick={(event) => {
+      if (event.shiftKey && props.onShiftClick) {
+        props.onShiftClick();
+      } else if (props.onClick) {
+        props.onClick();
+      }
+    }}>
+        {/*<rect*/}
+        {/*    x={cursor.x}*/}
+        {/*    y={0}*/}
+        {/*    width={endX}*/}
+        {/*    height={positionInStaffToY(12) + 2}*/}
+        {/*    stroke={'white'}*/}
+        {/*    fill={'transparent'}*/}
+        {/*    strokeWidth={2}*/}
+        {/*    className={'outline'}*/}
+        {/*>*/}
+        {/*</rect>*/}
+        <Cursor x={accidentalsStartX}>
+            {accidentalsProps.map((accidentalProps: AccidentalProps) => accidentalProps.accidental === "sharp"
+                && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
+                || accidentalProps.accidental === "flat"
+                && <Flat {...accidentalProps} key={accidentalProps.strKey}/>)}
+        </Cursor>
+        <Cursor x={leftNoteHeadsStartX}>
+            {notesProps.filter(noteProps => noteProps.stemSide === Side.RIGHT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps} />)}
+        </Cursor>
+        <Cursor x={stemX}>
+            <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
+        </Cursor>
+        <Cursor x={rightNodeHeadsStartX}>
+            {notesProps.filter(noteProps => noteProps.stemSide === Side.LEFT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps} />)}
+        </Cursor>
 
-        </>
-    );
+    </g>;
 };
 
 Chord.defaultProps = {
