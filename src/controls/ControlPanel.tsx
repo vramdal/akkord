@@ -1,6 +1,6 @@
 import React from "react";
 import { BaseTone, MIDIOctave, NoteValue, NoteValues, Position, Tone } from "../domain/Types";
-import { inverseThree, majorThree, minorThree } from "../domain/Functions";
+import { majorThree, minorThree } from "../domain/Functions";
 import { ChordButton } from "./ChordButton";
 
 interface ControlPanelProps {
@@ -29,10 +29,7 @@ export const ControlPanel = (props: ControlPanelProps) =>
             const major = majorThree(root, Position.ROOT);
             const minor = minorThree(root, Position.ROOT);
             const setChord = (chordSpec: NamedChordSpec & ChordSpecWithInversion) => props.setChords([
-                chordSpec,
-                {...chordSpec, tones: inverseThree(chordSpec.tones, Position.FIRST_INVERSION)},
-                {...chordSpec, tones: inverseThree(chordSpec.tones, Position.SECOND_INVERSION)}
-
+                chordSpec
             ]);
             const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
             return <React.Fragment key={idx}>
