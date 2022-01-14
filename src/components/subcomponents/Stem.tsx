@@ -2,13 +2,14 @@ import {PositionInStaff, positionInStaffToY} from "./Utils";
 import React, {useContext} from "react";
 import {NoteValue} from "../../domain/Types";
 import {CursorContext} from "./Cursor";
+import { ScrollTarget } from "./Types";
 
-interface StemProps {
+interface StemProps extends ScrollTarget {
     sortedNotePositions: Array<PositionInStaff>,
     noteValue: NoteValue;
 }
 
-export const Stem = ({sortedNotePositions}: StemProps) => {
+export const Stem = ({sortedNotePositions, scrollTargetGroup}: StemProps) => {
     const topNotePosition = sortedNotePositions[0];
     const bottomNotePosition = sortedNotePositions[sortedNotePositions.length - 1];
     const stemDirection: "up" | "down" = (bottomNotePosition > 5 && bottomNotePosition < 14) ? "up" : "down";
@@ -23,7 +24,8 @@ export const Stem = ({sortedNotePositions}: StemProps) => {
             x={cursor.x}
             width={4}
             height={length}
-            className={"staff__line"}
+            className={"stem__line"}
+            data-scrolltargetgroup={scrollTargetGroup}
         />
     );
 };

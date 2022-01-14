@@ -49,7 +49,7 @@ interface StaffProps {
 export default (props: StaffProps) => {
     const staffWidth = (React.Children.count(props.children) * 150 + 100) || 0;
     return (
-        <div className={"staff"}>
+        <div className={"staff"} style={{"overflowX": "scroll", "width": "100%"}}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={staffWidth}
@@ -68,7 +68,7 @@ export default (props: StaffProps) => {
                         <StaffLine key={lineIdx} position={lineIdx} width={staffWidth}/>
                     ))}
                     {React.Children.map(props.children, (child, idx) =>
-                        <Cursor x={idx * 150} key={`child-${idx}`}>
+                        <Cursor x={idx * 100} key={`child-${idx}`}>
                             {child}
                         </Cursor>
                     )}

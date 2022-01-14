@@ -1,60 +1,31 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Staff from "./components/Staff";
-import { createTone } from "./domain/Tone";
-import { BaseTone, NoteValues, Position } from "./domain/Types";
-import { inverseChord, majorThree } from "./domain/Functions";
+import { BaseTone, Position } from "./domain/Types";
+import { inverseChord } from "./domain/Functions";
 import { ChordSpecWithInversion, ControlPanel, NamedChordSpec } from "./controls/ControlPanel";
 import { Chord } from "./components/Chord";
 
 function TSXApp() {
-  // noinspection JSUnusedLocalSymbols
-  const toneA1 = createTone({
-    baseTone: BaseTone.A,
-    octave: 1
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneA0 = createTone({
-    baseTone: BaseTone.A,
-    octave: 0
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneH0 = createTone({
-    baseTone: BaseTone.H,
-    octave: 0
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneD0 = createTone({
-    baseTone: BaseTone.D,
-    octave: 0
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneG0 = createTone({
-    baseTone: BaseTone.G,
-    octave: 0
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneE0 = createTone({
-    baseTone: BaseTone.E,
-    octave: 0
-  });
-  // noinspection JSUnusedLocalSymbols
-  const toneF0 = createTone({
-    baseTone: BaseTone.F,
-    octave: 0
-  });
-  const root = createTone({baseTone: BaseTone.D, octave: 0});
-  const rootTones = majorThree(root, Position.ROOT);
-  const [chords, setChords] = useState<Array<NamedChordSpec & ChordSpecWithInversion>>([
-    {
-      tones: rootTones,
-      noteValue: NoteValues.HALF,
-      name: "D",
-      inversion: Position.ROOT,
-      rootTones: rootTones
-    } as NamedChordSpec & ChordSpecWithInversion
-  ] as Array<NamedChordSpec & ChordSpecWithInversion>);
+  const [chords, setChords] = useState<Array<NamedChordSpec & ChordSpecWithInversion>>([] as Array<NamedChordSpec & ChordSpecWithInversion>);
+
+  const [scrollTargetGroup, setScrollTargetGroupGroup] = useState<string | null>(null);
+
+  useLayoutEffect(() => {
+    if (scrollTargetGroup) {
+      const scrollTargetDomElements = document.querySelectorAll(`*[data-scrolltargetgroup = '${scrollTargetGroup}']`);
+      const scrollTargetDomElement = scrollTargetDomElements[scrollTargetDomElements.length - 1];
+      if (scrollTargetDomElement) {
+        scrollTargetDomElement.scrollIntoView();
+      }
+    }
+  }, [scrollTargetGroup])
+
+  const addChord = (chord: NamedChordSpec & ChordSpecWithInversion) => {
+    setChords([...chords, chord]);
+    setScrollTargetGroupGroup("chord-" + (chords.length - 1))
+  }
 
   const updateChord = (idx: number, chord: NamedChordSpec & ChordSpecWithInversion) => {
     const updatedChords = [...chords];
@@ -74,11 +45,13 @@ function TSXApp() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
-        <ControlPanel setChords={setChords}/>
+        <ControlPanel setChords={setChords} addChord={addChord}/>
         <Staff preferredAccidentals={{[BaseTone.HFlat]: "flat"}}>
           {chords.map((chord, idx) => <Chord tones={chord.tones} noteValue={chord.noteValue}
                                              key={idx}
-                                             onClick={() => rotateChordInversion(idx, +1)}/>)}
+                                             onClick={() => rotateChordInversion(idx, +1)}
+                                             scrollTargetGroup={"chord-" + idx}
+          />)}
         </Staff>
         <a
           className="App-link"

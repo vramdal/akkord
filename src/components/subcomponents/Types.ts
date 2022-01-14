@@ -6,6 +6,10 @@ export enum Side {
     RIGHT = "RIGHT"
 }
 
+export interface ScrollTarget {
+    scrollTargetGroup?: string
+}
+
 export interface ToneInfo extends Tone {
     midiNote: MIDINote;
     strKey: string;

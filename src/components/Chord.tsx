@@ -1,5 +1,5 @@
 import { MIDINote, NoteValues } from "../domain/Types";
-import { Side, ToneInfo } from "./subcomponents/Types";
+import { ScrollTarget, Side, ToneInfo } from "./subcomponents/Types";
 import { Note, NoteProps, StemSide } from "./subcomponents/Note";
 import { cluster, flattenArray } from "./subcomponents/Utils";
 import {
@@ -14,9 +14,9 @@ import { Stem } from "./subcomponents/Stem";
 import { toneToToneInfo } from "../domain/ToneInfo";
 import { ChordSpec } from "../controls/ControlPanel";
 
-interface ChordProps extends ChordSpec {
+interface ChordProps extends ChordSpec, ScrollTarget {
   onClick?: () => void;
-  onShiftClick ?: () => void
+  onShiftClick ?: () => void;
 }
 
 const compareMIDINotes = (MIDINoteA: MIDINote, MIDINoteB: MIDINote) =>
@@ -96,6 +96,7 @@ export const Chord = (props: ChordProps) => {
   // const endX = rightNodeHeadsStartX + noteHeadsStackWidth;
     // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
+    const scrollTargetProps = {scrollTargetGroup: props.scrollTargetGroup}
     // TODO: Test accidentals
     return <g onClick={props.onClick}>
         {/*<rect*/}
@@ -111,18 +112,18 @@ export const Chord = (props: ChordProps) => {
         {/*</rect>*/}
         <Cursor x={accidentalsStartX}>
             {accidentalsProps.map((accidentalProps: AccidentalProps) => accidentalProps.accidental === "sharp"
-                && <Sharp {...accidentalProps} key={accidentalProps.strKey}/>
+                && <Sharp {...accidentalProps} key={accidentalProps.strKey}  {...scrollTargetProps}/>
                 || accidentalProps.accidental === "flat"
-                && <Flat {...accidentalProps} key={accidentalProps.strKey}/>)}
+                && <Flat {...accidentalProps} key={accidentalProps.strKey}  {...scrollTargetProps}/> )}
         </Cursor>
         <Cursor x={leftNoteHeadsStartX}>
-            {notesProps.filter(noteProps => noteProps.stemSide === Side.RIGHT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps} />)}
+            {notesProps.filter(noteProps => noteProps.stemSide === Side.RIGHT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps}  {...scrollTargetProps} />)}
         </Cursor>
         <Cursor x={stemX}>
-            <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue}/>
+            <Stem sortedNotePositions={staffPositions} noteValue={props.noteValue} {...scrollTargetProps}/>
         </Cursor>
         <Cursor x={rightNodeHeadsStartX}>
-            {notesProps.filter(noteProps => noteProps.stemSide === Side.LEFT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps} />)}
+            {notesProps.filter(noteProps => noteProps.stemSide === Side.LEFT).map((noteProps: NoteProps) => <Note key={noteProps.toneInfo.strKey} {...noteProps}  {...scrollTargetProps} />)}
         </Cursor>
 
     </g>;
