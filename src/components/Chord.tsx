@@ -1,13 +1,18 @@
-import {MIDINote, NoteValue, NoteValues, Tone} from "../domain/Types";
-import {Side, ToneInfo} from "./subcomponents/Types";
-import {Note, NoteProps, StemSide} from "./subcomponents/Note";
-import {cluster, flattenArray} from "./subcomponents/Utils";
-import {AccidentalProps, Flat, PreferredAccidentalsContext, Sharp} from "./subcomponents/Accidentals";
-import React, {useContext} from "react";
-import {Cursor, CursorContext} from "./subcomponents/Cursor";
-import {Stem} from "./subcomponents/Stem";
-import {toneToToneInfo} from "../domain/ToneInfo";
-import { ChordSpec, ChordSpecWithInversion, NamedChordSpec } from "../controls/ControlPanel";
+import { MIDINote, NoteValues } from "../domain/Types";
+import { Side, ToneInfo } from "./subcomponents/Types";
+import { Note, NoteProps, StemSide } from "./subcomponents/Note";
+import { cluster, flattenArray } from "./subcomponents/Utils";
+import {
+  AccidentalProps,
+  Flat,
+  PreferredAccidentalsContext,
+  Sharp
+} from "./subcomponents/Accidentals";
+import React, { useContext } from "react";
+import { Cursor, CursorContext } from "./subcomponents/Cursor";
+import { Stem } from "./subcomponents/Stem";
+import { toneToToneInfo } from "../domain/ToneInfo";
+import { ChordSpec } from "../controls/ControlPanel";
 
 interface ChordProps extends ChordSpec {
   onClick?: () => void;
@@ -92,13 +97,7 @@ export const Chord = (props: ChordProps) => {
     // console.log("accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns = ", accidentalsStartX, leftNoteHeadsStartX, stemX, rightNodeHeadsStartX, numAccidentalColumns);
 
     // TODO: Test accidentals
-    return <g onClick={(event) => {
-      if (event.shiftKey && props.onShiftClick) {
-        props.onShiftClick();
-      } else if (props.onClick) {
-        props.onClick();
-      }
-    }}>
+    return <g onClick={props.onClick}>
         {/*<rect*/}
         {/*    x={cursor.x}*/}
         {/*    y={0}*/}

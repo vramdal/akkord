@@ -4,13 +4,8 @@ import "./App.css";
 import Staff from "./components/Staff";
 import { createTone } from "./domain/Tone";
 import { BaseTone, NoteValues, Position } from "./domain/Types";
-import { inverseChord, inverseThree, majorThree } from "./domain/Functions";
-import {
-  NamedChordSpec,
-  ControlPanel,
-  ChordSpecWithInversion,
-  ChordSpec
-} from "./controls/ControlPanel";
+import { inverseChord, majorThree } from "./domain/Functions";
+import { ChordSpecWithInversion, ControlPanel, NamedChordSpec } from "./controls/ControlPanel";
 import { Chord } from "./components/Chord";
 
 function TSXApp() {
@@ -20,12 +15,12 @@ function TSXApp() {
     octave: 1
   });
   // noinspection JSUnusedLocalSymbols
-  const toneA0 = createTone( {
+  const toneA0 = createTone({
     baseTone: BaseTone.A,
     octave: 0
   });
   // noinspection JSUnusedLocalSymbols
-  const toneH0 = createTone( {
+  const toneH0 = createTone({
     baseTone: BaseTone.H,
     octave: 0
   });
@@ -51,11 +46,17 @@ function TSXApp() {
   });
   const root = createTone({baseTone: BaseTone.D, octave: 0});
   const rootTones = majorThree(root, Position.ROOT);
-  const [chords, setChords] = useState<Array<NamedChordSpec & ChordSpecWithInversion>>(   [
-      {tones: rootTones, noteValue: NoteValues.HALF, name: "D", inversion: Position.ROOT, rootTones: rootTones} as NamedChordSpec & ChordSpecWithInversion
+  const [chords, setChords] = useState<Array<NamedChordSpec & ChordSpecWithInversion>>([
+    {
+      tones: rootTones,
+      noteValue: NoteValues.HALF,
+      name: "D",
+      inversion: Position.ROOT,
+      rootTones: rootTones
+    } as NamedChordSpec & ChordSpecWithInversion
   ] as Array<NamedChordSpec & ChordSpecWithInversion>);
 
-  const updateChord = (idx : number, chord: NamedChordSpec & ChordSpecWithInversion) => {
+  const updateChord = (idx: number, chord: NamedChordSpec & ChordSpecWithInversion) => {
     const updatedChords = [...chords];
     updatedChords[idx] = chord;
     setChords(updatedChords);
@@ -64,29 +65,20 @@ function TSXApp() {
   const rotateChordInversion = (idx: number, delta: number) => {
     const chord = chords[idx];
     const positions = [Position.ROOT, Position.FIRST_INVERSION, Position.SECOND_INVERSION];
-    let inversedPositionIdx = (chord.inversion + delta);
-    if (inversedPositionIdx >= positions.length) {
-      inversedPositionIdx = positions.length - 1;
-    } else if (inversedPositionIdx < 0) {
-      inversedPositionIdx = 0;
-    }
+    let inversedPositionIdx = (chord.inversion + delta) % positions.length;
     const inversedChord = inverseChord(chord, positions[inversedPositionIdx]);
     updateChord(idx, inversedChord);
   }
 
   return (
-      <div className="App">
+    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo"/>
         <ControlPanel setChords={setChords}/>
         <Staff preferredAccidentals={{[BaseTone.HFlat]: "flat"}}>
-          {chords.map((chord, idx) => <Chord tones={chord.tones} noteValue={chord.noteValue} key={idx} onClick={() => rotateChordInversion(idx, +1)} onShiftClick={() => rotateChordInversion(idx, -1)}/>)}
-          {/*<Chord tones={majorThree(root, Position.ROOT)}/>*/}
-          {/*<Chord tones={majorThree(root, Position.FIRST_INVERSION)}/>*/}
-          {/*<Chord tones={majorThree(root, Position.SECOND_INVERSION)}/>*/}
-          {/*<Chord tones={[{baseTone: BaseTone.HFlat, octave: 0}]}/>*/}
-          {/*<Chord tones={[{baseTone: BaseTone.C, octave: 0}]}/>*/}
-          {/*<Chord tones={[{baseTone: BaseTone.FSharp, octave: 0}, {baseTone: BaseTone.GSharp, octave: 0}, {baseTone: BaseTone.ASharp, octave: 0}]}/>*/}
+          {chords.map((chord, idx) => <Chord tones={chord.tones} noteValue={chord.noteValue}
+                                             key={idx}
+                                             onClick={() => rotateChordInversion(idx, +1)}/>)}
         </Staff>
         <a
           className="App-link"
