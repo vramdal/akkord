@@ -1,10 +1,10 @@
 import React from "react";
-import {cluster, LINE_HEIGHT} from "./subcomponents/Utils";
-import {StaffLine} from "./subcomponents/StaffLine";
-import {LedgerLines, Note} from "./subcomponents/Note";
-import {PreferredAccidentalsMap, Side} from "./subcomponents/Types";
-import {Cursor} from "./subcomponents/Cursor";
-import {PreferredAccidentalsContextProvider} from "./subcomponents/Accidentals";
+import { cluster, LINE_HEIGHT } from "./subcomponents/Utils";
+import { StaffLine } from "./subcomponents/StaffLine";
+import { LedgerLines, Note } from "./subcomponents/Note";
+import { PreferredAccidentalsMap, Side } from "./subcomponents/Types";
+import { Cursor } from "./subcomponents/Cursor";
+import { PreferredAccidentalsContextProvider } from "./subcomponents/Accidentals";
 
 
 const HollowNoteHeadMask = ({ direction } : {direction: Side }) => (
@@ -44,16 +44,26 @@ const FlatSymbolDefinition = ({lineHeight} : {lineHeight: number}) => <symbol id
 interface StaffProps {
     children?: any,
     preferredAccidentals?: PreferredAccidentalsMap
+    topStaffLine?: number,
+    bottomStaffLine?: number
 }
 
+export const calculateStaffWidth = (children : React.ReactChildren) => (React.Children.count(children) * 150 + 100) || 0
+
 export default (props: StaffProps) => {
-    const staffWidth = (React.Children.count(props.children) * 150 + 100) || 0;
+    const topStaffLine = Math.min(props.topStaffLine || 0, 0);
+    const bottomStaffLine = Math.max(props.bottomStaffLine || 9, 9);
+
+    console.log('topStaffLine, bottomStaffLine = ', topStaffLine, bottomStaffLine);
+
+    const staffWidth = calculateStaffWidth(props.children);
     return (
         <div className={"staff"} style={{"overflowX": "scroll", "width": "100%"}}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={staffWidth}
-                height={"300"}
+                height={(bottomStaffLine - topStaffLine) * 20}
+                viewBox={`0 ${topStaffLine * 20 - 20} ${staffWidth} ${bottomStaffLine * 20 + 50}`}
                 className={"staff"}
             >
                 <HollowNoteHeadMask direction={Side.LEFT}/>
@@ -65,7 +75,7 @@ export default (props: StaffProps) => {
                 <PreferredAccidentalsContextProvider preferredAccidentals={props.preferredAccidentals || {}}>
 
                     {[1, 3, 5, 7, 9].map(lineIdx => (
-                        <StaffLine key={lineIdx} position={lineIdx} width={staffWidth}/>
+                        <StaffLine key={lineIdx} position={lineIdx} width={staffWidth + 100}/>
                     ))}
                     {React.Children.map(props.children, (child, idx) =>
                         <Cursor x={idx * 100} key={`child-${idx}`}>

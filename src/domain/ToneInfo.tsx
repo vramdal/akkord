@@ -3,7 +3,7 @@ import {ToneInfo} from "../components/subcomponents/Types";
 import {getAccidental} from "./Tone";
 import {PositionInStaff} from "../components/subcomponents/Utils";
 
-const mapToneToStaffPosition = (tone: Tone): PositionInStaff => {
+export const mapToneToStaffPosition = (tone: Tone): PositionInStaff => {
     const getBasePosition = () => {
         switch (tone.baseTone) {
             case BaseTone.C:

@@ -5,7 +5,7 @@ import Staff from "./components/Staff";
 import { BaseTone, Position } from "./domain/Types";
 import { inverseChord } from "./domain/Functions";
 import { ChordSpecWithInversion, ControlPanel, NamedChordSpec } from "./controls/ControlPanel";
-import { Chord } from "./components/Chord";
+import { calculateTopAndBottomStaffLine, Chord } from "./components/Chord";
 
 function TSXApp() {
   const [chords, setChords] = useState<Array<NamedChordSpec & ChordSpecWithInversion>>([] as Array<NamedChordSpec & ChordSpecWithInversion>);
@@ -41,12 +41,14 @@ function TSXApp() {
     updateChord(idx, inversedChord);
   }
 
+  const [topStaffLine, bottomStaffLine] = calculateTopAndBottomStaffLine(chords);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <ControlPanel setChords={setChords} addChord={addChord}/>
-        <Staff preferredAccidentals={{[BaseTone.HFlat]: "flat"}}>
+        <Staff preferredAccidentals={{[BaseTone.HFlat]: "flat"}} topStaffLine={topStaffLine} bottomStaffLine={bottomStaffLine}>
           {chords.map((chord, idx) => <Chord tones={chord.tones} noteValue={chord.noteValue}
                                              key={idx}
                                              onClick={() => rotateChordInversion(idx, +1)}
