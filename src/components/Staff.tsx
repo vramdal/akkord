@@ -48,7 +48,7 @@ interface StaffProps {
     bottomStaffLine?: number
 }
 
-export const calculateStaffWidth = (children : React.ReactChildren) => (React.Children.count(children) * 150 + 100) || 0
+export const calculateStaffWidth = (children : React.ReactChildren) => (React.Children.count(children) * 150 + 200) || 0
 
 export default (props: StaffProps) => {
     const topStaffLine = Math.min(props.topStaffLine || 0, 0);
@@ -57,13 +57,14 @@ export default (props: StaffProps) => {
     console.log('topStaffLine, bottomStaffLine = ', topStaffLine, bottomStaffLine);
 
     const staffWidth = calculateStaffWidth(props.children);
+    const staffHeight = (bottomStaffLine - topStaffLine) * 20 + 50
     return (
         <div className={"staff"} style={{"overflowX": "scroll", "width": "100%"}}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={staffWidth}
                 height={(bottomStaffLine - topStaffLine) * 20}
-                viewBox={`0 ${topStaffLine * 20 - 20} ${staffWidth} ${bottomStaffLine * 20 + 50}`}
+                viewBox={`0 ${topStaffLine * 20 - 50} ${staffWidth} ${staffHeight}`}
                 className={"staff"}
             >
                 <HollowNoteHeadMask direction={Side.LEFT}/>
