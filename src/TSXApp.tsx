@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from "react";
-import logo from "./logo.svg";
+import logo from "./musical-notes.svg";
 import "./App.css";
 import Staff from "./components/Staff";
 import { BaseTone, Position } from "./domain/Types";
