@@ -49,5 +49,6 @@ export type NoteValue = number;
 export enum Position {
     ROOT = 0,
     FIRST_INVERSION = 1,
-    SECOND_INVERSION = 2
+    SECOND_INVERSION = 2,
+    THIRD_INVERSION = 3
 }

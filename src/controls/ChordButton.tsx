@@ -1,5 +1,5 @@
 import React from "react";
-import { ChordSpec, ChordSpecWithInversion, NamedChordSpec } from "./ControlPanel";
+import { ChordSpecWithInversion, NamedChordSpec } from "./ControlPanel";
 
 interface ChordButtonProps {
     chordSpec: NamedChordSpec & ChordSpecWithInversion;
@@ -7,5 +7,5 @@ interface ChordButtonProps {
 }
 
 export const ChordButton = (props : ChordButtonProps) => {
-    return <button onClick={() => props.onClick(props.chordSpec)}>{props.chordSpec.name}</button>
+    return <button className={'chord-button'} onClick={() => props.onClick(props.chordSpec)}>{props.chordSpec.name}</button>
 };

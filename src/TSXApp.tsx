@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import logo from "./musical-notes.svg";
 import "./App.css";
 import Staff from "./components/Staff";
@@ -43,6 +43,10 @@ function TSXApp() {
 
   const [topStaffLine, bottomStaffLine] = calculateTopAndBottomStaffLine(chords);
 
+  useEffect(() => {
+    window.onbeforeunload = () => true;
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -55,14 +59,6 @@ function TSXApp() {
                                              scrollTargetGroup={"chord-" + idx}
           />)}
         </Staff>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
