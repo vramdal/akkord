@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="For å deploye til Github Pages">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/ChordButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ChordButton.tsx" afterDir="false" />
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="7-akkorder">
       <change beforePath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Functions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Types.ts" afterDir="false" />
     </list>
     <list id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -248,7 +243,7 @@
       <workItem from="1641897460578" duration="3549000" />
       <workItem from="1642079761167" duration="5730000" />
       <workItem from="1642111409387" duration="1692000" />
-      <workItem from="1701008338554" duration="6402000" />
+      <workItem from="1701008338554" duration="6922000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -453,7 +448,14 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1701008725670</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="7-akkorder">
+      <option name="closed" value="true" />
+      <created>1701040977053</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1701040977053</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -517,7 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Innfører testing-library" />
     <MESSAGE value="Forskyving av nabo-noter" />
     <MESSAGE value="Tester" />
     <MESSAGE value="Fiks på overlinje" />
@@ -542,7 +543,8 @@
     <MESSAGE value="Retter stemside for H" />
     <MESSAGE value="Fikser på FlatSymbol" />
     <MESSAGE value="For å deploye til Github Pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="For å deploye til Github Pages" />
+    <MESSAGE value="7-akkorder" />
+    <option name="LAST_COMMIT_MESSAGE" value="7-akkorder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -27,51 +27,27 @@ export const ControlPanel = (props: ControlPanelProps) => {
     props.addChord(chordSpec);
   };
 
-  return <>
-    <div className={'chord-button-row'}>
-      {Object.values(BaseTone).map((baseTone: BaseTone, idx: number) => {
-        const root = {baseTone, octave: 0 as MIDIOctave};
-        const major = majorThree(root, Position.ROOT);
-        const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
-        return <React.Fragment key={idx}>
-          <ChordButton chordSpec={{
-            tones: major,
-            noteValue: NoteValues.HALF,
-            name: baseName,
-            inversion: Position.ROOT,
-            rootTones: major
-          }} onClick={addChord}/>
-        </React.Fragment>
-      })}
-    </div>
-    <div className={'chord-button-row'}>
-      {Object.values(BaseTone).map((baseTone: BaseTone, idx: number) => {
-        const root = {baseTone, octave: 0 as MIDIOctave};
-        const minor = minorThree(root, Position.ROOT);
-        const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
-        return <ChordButton key={idx} chordSpec={{
-          tones: minor,
-          noteValue: NoteValues.HALF,
-          name: baseName + "m",
-          inversion: Position.ROOT,
-          rootTones: minor
-        }} onClick={addChord}/>
-      })}
-    </div>
-    <div className={'chord-button-row'}>
-      {Object.values(BaseTone).map((baseTone: BaseTone, idx: number) => {
-        const root = {baseTone, octave: 0 as MIDIOctave};
-        const maj7 = dominantSevenFour(root, Position.ROOT);
-        const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
-        return <ChordButton key={idx} chordSpec={{
-          tones: maj7,
-          noteValue: NoteValues.HALF,
-          name: baseName + "7",
-          inversion: Position.ROOT,
-          rootTones: maj7
-        }} onClick={addChord}/>
-      })}
+  const chordButtonRows = [
+    {chordTonesFunc: majorThree, name: (baseName: string) => baseName},
+    {chordTonesFunc: minorThree, name: (baseName: string) => baseName + "m"},
+    {chordTonesFunc: dominantSevenFour, name: (baseName: string) => baseName + "7"}
+  ];
 
-    </div>
+  return <>
+    {chordButtonRows.map(({chordTonesFunc, name}) =>
+      <div className={'chord-button-row'} key={chordTonesFunc.name}>
+        {Object.values(BaseTone).map((baseTone: BaseTone, idx: number) => {
+          const root = {baseTone, octave: 0 as MIDIOctave};
+          const chordTones = chordTonesFunc(root, Position.ROOT);
+          const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
+          return <ChordButton key={chordTones[0].baseTone} chordSpec={{
+            tones: chordTones,
+            noteValue: NoteValues.HALF,
+            name: name(baseName),
+            inversion: Position.ROOT,
+            rootTones: chordTones
+          }} onClick={addChord}/>
+        })}
+      </div>)}
   </>;
 };
