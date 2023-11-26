@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/akkord/static/css/main.d7a34deb.chunk.css",
+    "main.js": "/akkord/static/js/main.2a5bfe79.chunk.js",
+    "main.js.map": "/akkord/static/js/main.2a5bfe79.chunk.js.map",
+    "runtime-main.js": "/akkord/static/js/runtime-main.5ea0c9e3.js",
+    "runtime-main.js.map": "/akkord/static/js/runtime-main.5ea0c9e3.js.map",
+    "static/js/2.8cba5537.chunk.js": "/akkord/static/js/2.8cba5537.chunk.js",
+    "static/js/2.8cba5537.chunk.js.map": "/akkord/static/js/2.8cba5537.chunk.js.map",
+    "index.html": "/akkord/index.html",
+    "precache-manifest.0e151f80db4da588dc899032b4597c72.js": "/akkord/precache-manifest.0e151f80db4da588dc899032b4597c72.js",
+    "service-worker.js": "/akkord/service-worker.js",
+    "static/css/main.d7a34deb.chunk.css.map": "/akkord/static/css/main.d7a34deb.chunk.css.map",
+    "static/media/musical-notes.svg": "/akkord/static/media/musical-notes.b0e1bcc7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ea0c9e3.js",
+    "static/js/2.8cba5537.chunk.js",
+    "static/css/main.d7a34deb.chunk.css",
+    "static/js/main.2a5bfe79.chunk.js"
+  ]
+}
