@@ -40,7 +40,7 @@ export const ControlPanel = (props: ControlPanelProps) => {
           const root = {baseTone, octave: 0 as MIDIOctave};
           const chordTones = chordTonesFunc(root, Position.ROOT);
           const baseName = baseTone.replace("Sharp", "#").replace("Flat", "♭");
-          return <ChordButton key={chordTones[0].baseTone} chordSpec={{
+          return <ChordButton key={idx} chordSpec={{
             tones: chordTones,
             noteValue: NoteValues.HALF,
             name: name(baseName),

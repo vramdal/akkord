@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="7-akkorder">
-      <change beforePath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Functions.ts" afterDir="false" />
-    </list>
+    <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Refaktorering" />
     <list id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,32 +56,32 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "app.teamhub.trackedBranches": "1iap60o/master",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "/Users/vramdal/dev/akkord/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;app.teamhub.trackedBranches&quot;: &quot;1iap60o/master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/vramdal/dev/akkord/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/src/domain/ToneInfo.tsx" />
@@ -243,7 +240,7 @@
       <workItem from="1641897460578" duration="3549000" />
       <workItem from="1642079761167" duration="5730000" />
       <workItem from="1642111409387" duration="1692000" />
-      <workItem from="1701008338554" duration="6922000" />
+      <workItem from="1701008338554" duration="7226000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -455,7 +452,14 @@
       <option name="presentableId" value="LOCAL−00030" />
       <updated>1701040977053</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL−00031" summary="Refaktorering">
+      <option name="closed" value="true" />
+      <created>1701041585221</created>
+      <option name="number" value="LOCAL−00031" />
+      <option name="presentableId" value="LOCAL−00031" />
+      <updated>1701041585221</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -519,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Forskyving av nabo-noter" />
     <MESSAGE value="Tester" />
     <MESSAGE value="Fiks på overlinje" />
     <MESSAGE value="Integrasjonstest" />
@@ -544,7 +547,8 @@
     <MESSAGE value="Fikser på FlatSymbol" />
     <MESSAGE value="For å deploye til Github Pages" />
     <MESSAGE value="7-akkorder" />
-    <option name="LAST_COMMIT_MESSAGE" value="7-akkorder" />
+    <MESSAGE value="Refaktorering" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refaktorering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
