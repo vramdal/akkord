@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="febb166c-911d-45c8-9741-14c5d11bcd69" name="Default Changelist" comment="Fikser på FlatSymbol">
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TSXApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/TSXApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chord.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chord.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chord.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Staff.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Staff.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/subcomponents/Note.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/subcomponents/Note.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/ChordButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ChordButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/controls/ControlPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <list id="ba39dd26-fe9e-4500-bd13-aab409eb8a20" name="Ikke commit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +48,9 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -66,41 +64,32 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="1RuZsYQzKjn4bZgEBCoDlQHkBYY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="TF_FMT" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="js.introduce.parameter.generate.optional" value="false" />
-    <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "app.teamhub.trackedBranches": "1iap60o/master",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "/Users/vramdal/dev/akkord/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="es6.move.members.recent.items">
       <recent name="$PROJECT_DIR$/src/domain/ToneInfo.tsx" />
@@ -118,7 +107,6 @@
   <component name="RunManager" selected="Jest.toneInfoAccidentalTranslator.should not replace another accidental">
     <configuration name="Chord.should render a half note" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -132,7 +120,6 @@
     </configuration>
     <configuration name="Note.should render a single note" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -146,7 +133,6 @@
     </configuration>
     <configuration name="Staff" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -159,7 +145,6 @@
     </configuration>
     <configuration name="Staff.test.jsx" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -169,7 +154,6 @@
     </configuration>
     <configuration name="toneInfoAccidentalTranslator" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -182,7 +166,6 @@
     </configuration>
     <configuration name="toneInfoAccidentalTranslator.should not replace another accidental" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -196,7 +179,6 @@
     </configuration>
     <configuration name="toneInfoAccidentalTranslator.should replace an accidental" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -265,6 +247,7 @@
       <workItem from="1641897460578" duration="3549000" />
       <workItem from="1642079761167" duration="5730000" />
       <workItem from="1642111409387" duration="1692000" />
+      <workItem from="1701008338554" duration="328000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1570536611960</created>
@@ -501,15 +484,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -524,7 +498,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
